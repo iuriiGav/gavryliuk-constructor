@@ -1,0 +1,38 @@
+@mixin grid-12-col {
+    display: grid;
+    width: 100vw;
+    grid-template-columns: repeat(12, 1fr);
+}
+
+.web-constructor-container {
+@include grid-12-col;
+}
+
+.constructor-navbar {
+    
+    &__container {
+        grid-column: span 12;
+        // background-color: red;
+        @include grid-12-col;
+    
+    }
+    &__control-panel {
+        grid-column: span 2;
+        min-height: 200px;
+        background-color: #0C3647;
+        color: var(--color-white);
+        padding-left: 1em;
+        font-size: 1.2rem;
+        &--pt {
+            padding-top: 2em;
+        }
+
+    }
+
+    &__content {
+        grid-column: span 10;
+        // background-color: green;
+        position: relative;
+    }
+
+}

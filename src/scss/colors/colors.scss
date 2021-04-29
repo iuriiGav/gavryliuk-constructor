@@ -1,0 +1,30 @@
+:root {
+
+    --color-dark: #040710;
+    --color-gray: #fff;
+    --color-gray--light: #fff;
+    --color-white: #fff;
+    --color-overlay:  #040710;
+
+
+
+    ///////////////////////////
+
+
+    --color-main: #fff;
+    --color-secondary: #eee;
+    --color-brand: rgb(62, 50, 173);
+    --color-accent: #fff;
+
+
+
+
+}
+
+// button colors 
+
+$btnc--light: var(--color-white);
+$btnc--dark: var(--color-dark);
+
+$main-navbar--light: var(--color-white);
+$main-navbar--dark: var(--color-dark);

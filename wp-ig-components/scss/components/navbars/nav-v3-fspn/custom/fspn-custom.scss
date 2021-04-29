@@ -1,0 +1,57 @@
+.ig-main__fspn {
+  @include flex-cc;
+  background-color: #9db4a9;
+}
+
+.ig-fspn-prenav {
+  &__container {
+    background-color: #253141;
+  }
+
+  &__wrapper {
+    margin-top: 10em;
+    background-color: #253141;
+    @include flex-justify-center;
+
+    @media only screen and (max-width: $bp-md) {
+      padding-left: 5em;
+    }
+  }
+  &__title {
+    font-size: 1em;
+    font-weight: 600;
+    color: hsla(0, 0%, 100%, 0.5);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+  }
+}
+
+.ig-fspn-nav {
+  &__link {
+    transition: all 0.1s;
+    font-size: 48.8281px;
+    font-family: var(--font-secondary);
+    color: white;
+   @include opacityOnHover(.8, 1);
+   &:hover {
+       color: white;
+   }
+  }
+}
+
+
+.ig-fspn-dropdown-menu {
+
+    &__link {
+        transition: all 0.1s;
+        font-size: 43.8281px;
+        font-family: var(--font-secondary);
+        color: var(--color-white);
+    
+        opacity: 0.8;
+        &:hover {
+          color: var(--color-white);
+          opacity: 1;
+        }
+      }
+}

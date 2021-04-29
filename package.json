@@ -1,0 +1,52 @@
+{
+  "name": "wp-ig-components-test-2",
+  "version": "0.0.12",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "gulp:start": "gulp",
+    "gulp:build": "gulp build --prod",
+    "gulp:bundle": "gulp bundle --prod",
+    "npmpush": "git add . && git commit -m 'publishing npm package' && git push origin constructor && npm version patch && npm publish",
+    "npmvp": "npm version patch && npm publish"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.12.16",
+    "@babel/preset-env": "^7.12.16",
+    "@babel/register": "^7.12.13",
+    "@types/jquery": "^3.5.5",
+    "babel-loader": "^8.2.2",
+    "browser-sync": "^2.26.14",
+    "del": "^6.0.0",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-if": "^3.0.0",
+    "gulp-imagemin": "^7.1.0",
+    "gulp-postcss": "^9.0.0",
+    "gulp-sass": "^4.1.0",
+    "gulp-sourcemaps": "^3.0.0",
+    "gulp-uglify": "^3.0.2",
+    "gulp-zip": "^5.0.2",
+    "postcss": "^8.2.6",
+    "vinyl-named": "^1.1.0",
+    "webpack-stream": "^6.1.2",
+    "yargs": "^7.1.1"
+  },
+  "browserslist": [
+    "defaults",
+    "not IE 11",
+    "maintained node versions"
+  ],
+  "dependencies": {
+    "bootstrap": "^5.0.0-beta3",
+    "ig-components-library": "^0.0.11",
+    "jquery": "^3.6.0",
+    "lightbox2": "^2.11.3",
+    "swiper": "^6.4.15",
+    "wp-ig-components-test-2": "^0.0.1"
+  }
+}

@@ -1,0 +1,114 @@
+.text-replace {
+  overflow: hidden;
+  color: transparent;
+  text-indent: 100%;
+  white-space: nowrap;
+}
+
+.btn-hamburger__arrow-and-ring {
+  position: fixed;
+  z-index: 3;
+  top: 20px;
+  left: 1.25em;
+  height: 54px;
+  width: 54px;
+  cursor: pointer;
+  background-color: #253141;
+  border-radius: 50%;
+  transition: transform 0.5s;
+  &--reverse {
+    left: auto;
+    right: 1.25em;
+  }
+
+  &__icon {
+    position: absolute;
+    top: calc(50% - 1px);
+    left: calc(50% - 11px);
+    width: 22px;
+    height: 2px;
+    background-color: #fff;
+    background-color: var(--color-white);
+    cursor: pointer;
+    transition: transform 0.3s;
+    transition: transform 0.3s, transform 0.3s;
+    &:before,
+    &:after {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      background-color: inherit;
+      backface-visibility: hidden;
+      transition: transform 0.5s, width 0.5s, top 0.3s;
+    }
+    &:before {
+      transform-origin: right top;
+      transform: translateY(-6px);
+    }
+
+    &:after {
+      transform-origin: right bottom;
+      transform: translateY(6px);
+    }
+  }
+
+  &__svg-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+  }
+
+  &__circle {
+    stroke: #666f7a;
+    stroke: gray;
+    transition: stroke-dashoffset 0.4s;
+  }
+}
+
+.btn-arrow-and-ring--active .btn-hamburger__arrow-and-ring circle {
+  stroke-dashoffset: 0;
+  transition: stroke-dashoffset 0.4s 0.3s;
+}
+
+.btn-arrow-and-ring--active .btn-hamburger__arrow-and-ring {
+  transform: rotate(180deg);
+}
+
+.btn-arrow-and-ring--active .btn-hamburger__arrow-and-ring.btn-hamburger__arrow-and-ring--reverse {
+  transform: rotate(360deg);
+}
+
+.btn-arrow-and-ring--active .btn-hamburger__arrow-and-ring__icon::before {
+  transform: rotate(45deg);
+
+  width: 50%;
+}
+
+.btn-arrow-and-ring--active .btn-hamburger__arrow-and-ring__icon::after {
+  transform: rotate(-45deg);
+  width: 50%;
+}
+
+.btn-hamburger__arrow-and-ring:active .btn-hamburger__arrow-and-ring__icon {
+  transform: scale(0.9);
+}
+
+//
+//  Button code:
+//  to reverse arrow, add class 'btn-hamburger__arrow-and-ring--reverse' to a tag
+//     <a id='test-btn' class="btn-hamburger__arrow-and-ring text-replace">
+//   Menu
+//       <span class="btn-hamburger__arrow-and-ring__icon" aria-hidden="true"></span>
+//       <svg viewBox="0 0 54 54" aria-hidden="true" class="btn-hamburger__arrow-and-ring__svg-container">
+//            <circle class="btn-hamburger__arrow-and-ring__circle" fill="transparent" stroke-width="1" cx="27" cy="27" r="25" stroke-dasharray="157 157" stroke-dashoffset="157"></circle>
+//        </svg>
+//     </a>
+//
+//
+//
+//

@@ -1,0 +1,94 @@
+.homepage-wrapper {
+    padding: 0 5em;
+}
+
+.homepage-container {
+  background-color: #040710;
+  height: 100%;
+  overflow: hidden;
+}
+.hero-text-container {
+  position: absolute;
+  top: 40%;
+  transform: translateY(-40%);
+  left: 100px;
+  @media only screen and (max-width: $bp-lg) {
+    left: 60px;
+  }
+  @media only screen and (max-width: $bp-md) {
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+  }
+}
+
+.gavryliuk-container {
+  display: flex;
+  align-items: baseline;
+  justify-content: flex-start;
+  color: #f3f9ff;
+  & h2 {
+    font-size: 8.75rem;
+    align-self: baseline;
+  }
+  & img {
+    width: 45.75rem;
+    @media only screen and (max-width: $bp-lg) {
+        width: 40.75rem;
+      }
+    @media only screen and (max-width: $bp-md) {
+        width: 32.75rem;
+      }
+  }
+}
+
+.tax-email-wrapper {
+  margin-left: 31px;
+  margin-top: -35px;
+  @media only screen and (max-width: $bp-xxl) {
+    margin-left: 26px;
+    margin-top: -32px;
+  }
+  @media only screen and (max-width: $bp-xl) {
+    margin-left: 24px;
+    margin-top: -26px;
+  }
+  @media only screen and (max-width: $bp-lg) {
+    margin-left: 23px;
+    margin-top: -21px;
+  }
+  @media only screen and (max-width: $bp-md) {
+    margin-left: 22px;
+    margin-top: -6px;
+  }
+ 
+}
+
+.tagline {
+  font-size: 4.5rem;
+  color: #f3f9ff;
+  @media only screen and (max-width: $bp-lg) {
+    font-size: 3.9rem
+  }
+  @media only screen and (max-width: $bp-md) {
+    font-size: 3rem;
+    line-height: 29px;
+}
+  
+}
+
+.email {
+  color: #514c5b;
+  margin-left: 3px;
+  & a {
+    display: inline-block;
+    transition: all 0.2s ease-in-out;
+    &:hover {
+      transform: scale(1.02);
+    }
+    &:active {
+      transform: translateY(2px);
+    }
+  }
+}

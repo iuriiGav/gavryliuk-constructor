@@ -1,0 +1,5 @@
+/node_modules
+/vendor
+/drafts
+config.env
+README.md

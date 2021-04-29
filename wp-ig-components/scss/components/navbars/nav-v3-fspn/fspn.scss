@@ -1,0 +1,95 @@
+@import "../../../mixins/mixins";
+
+.ig-main__fspn {
+  position: relative;
+  min-height: 100vh;
+  will-change: transform;
+  transition: transform 0.7s cubic-bezier(0.91, 0.01, 0.6, 0.99);
+  z-index: 2;
+}
+
+.ig-fspn-prenav {
+  &__container {
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    min-height: 100vh;
+    width: 100%;
+    transition: visibility 0.7s;
+    overflow-y: scroll;
+  }
+
+  &__wrapper {
+    height: 100%;
+    will-change: transform;
+    transform: translateX(-50%);
+    transition: transform 0.7s cubic-bezier(0.86, 0.01, 0.77, 0.78);
+    &--reverse {
+    transform: translateX(50%);
+
+    }
+  
+  }
+  &__title {
+    position: relative;
+    margin-bottom: 2em;
+    &:after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -20px;
+      height: 1px;
+      width: 60px;
+      background-color: currentColor;
+    }
+  }
+}
+
+.ig-fspn-nav-is-open {
+    .ig-main {
+        transform: translateX(100%);
+        &--reverse {
+        transform: translateX(-100%);
+
+        }
+      }
+}
+
+
+
+.ig-fspn-nav-is-open .ig-fspn-prenav__wrapper {
+  transform: translateX(0);
+  transition: transform 0.5s cubic-bezier(0.82, 0.01, 0.77, 0.78);
+}
+
+
+
+.ig-fspn-nav {
+  &__container {
+    display: flex;
+    flex-wrap: wrap;
+    & aside {
+      width: 30%;
+    }
+  }
+  &__list {
+    width: 65%;
+    @media only screen and (max-width: $bp-md) {
+      width: 100%;
+    }
+  }
+
+}
+
+.ig-fspn-dropdown-menu {
+  &__container {
+    pointer-events: none;
+  }
+  &__list {
+    pointer-events: all;
+    margin-left: 40px;
+  }
+}
+
+@import "./custom/fspn-custom";

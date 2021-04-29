@@ -1,0 +1,38 @@
+/*!
+Theme Name: Gavryliuk Portfolio
+Theme URI: 
+Author: Iurii Gavryliuk 
+Author URI: 
+Description: Portfolio
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: gavryliuk-portfolio
+Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+*/
+
+// in case if I really need to use it - bootstrap grid::
+// @import "../../node_modules/bootstrap/scss/functions";
+// @import "../../node_modules/bootstrap/scss/variables";
+// @import "../../node_modules/bootstrap/scss/mixins";
+// @import "../../node_modules/bootstrap/scss/grid";
+// @import "../../node_modules/bootstrap/scss/containers";
+
+@import "./base/reset.scss";
+@import "./base/base.scss";
+@import "./base/typography";
+@import "./colors/colors";
+@import "./typography/typography";
+
+
+
+
+// GLOBAL PACKAGE STYLES
+@import '../../wp-ig-components/scss/components-bundle';
+
+
+
+//pages
+
+@import "./pages/homepage/homepage";
+@import "./pages/web-constructor/web-constructor";

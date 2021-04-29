@@ -1,0 +1,98 @@
+$nav-height: 100px;
+$logo-font-size: 1.6rem;
+$logo-font-weight: 900;
+$logo-font-family: var(--font-secondary);
+
+@import "../../../../mixins/mixins";
+
+.ig-snttb-nav-logo {
+  &__text {
+    color: var(--color-white);
+    font-size: $logo-font-size;
+    font-weight: $logo-font-weight;
+    font-family: $logo-font-family;
+    text-transform: uppercase;
+  }
+  @media only screen and (max-width: $bp-lg) {
+    font-weight: 700;
+  }
+
+  &__tagline {
+    text-transform: none;
+    color: var(--color-white);
+    opacity: 0.5;
+    font-weight: 300;
+    font-size: 12px;
+  }
+}
+
+.ig-snttb-navbar-toggler__line {
+  background: var(--color-white);
+}
+
+.ig-snttb-nav {
+  &__container {
+    background: var(--color-dark);
+    height: $nav-height;
+    min-height: $nav-height;
+  }
+  &__list {
+    margin-top: calc(#{$nav-height} + 20px);
+  }
+  &__list-item {
+    font-size: 1.6rem;
+    padding: 0 1.5em;
+  }
+  &__link {
+    text-transform: uppercase;
+    color: var(--color-white);
+    font-weight: 700;
+    font-family: var(--font-secondary);
+    display: inline-block;
+    padding: 30px;
+
+    &:hover,
+    &:focus {
+      @include outline-focus;
+      color: var(--color-white);
+    }
+  }
+}
+
+.ig-snttb-dropdown-menu {
+  &__list {
+    @media only screen and (max-width: $navbar-breakpoint-main) {
+      background-color: lighten(#040710, 3%);
+      @include absolute-horizontal-center;
+    }
+  }
+  &__link {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: var(--color-white);
+    font-weight: 400;
+    padding: 30px;
+    @media only screen and (max-width: $navbar-breakpoint-main) {
+     min-width: 150px;
+    }
+
+    &:hover,
+    &:focus {
+      @include outline-focus;
+      color: var(--color-white);
+    }
+  }
+}
+
+// if you leave this styles incomented, then add false to the
+// js import 
+//   addFunctionalityToIgNavbarsnttbCollapse('snttbc', false);
+// otherwise leave true;
+
+// .ig-snttb-dropdown-menu__container:hover > ul,
+// .ig-snttb-dropdown-menu__container:focus-within > ul,
+// .ig-snttb-dropdown-menu__container ul:hover {
+//   visibility: visible;
+//   opacity: 1;
+//   display: block;
+// }

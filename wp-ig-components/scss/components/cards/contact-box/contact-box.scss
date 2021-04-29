@@ -1,0 +1,42 @@
+.ig-contact-box {
+  &__container {
+    font-family: var(--font-secondary);
+    color: var(--color-white);
+    font-style: normal;
+    text-align: right;
+  }
+
+  &__email-list-item {
+    font-size: 43.8281px;
+    @include opacityOnHover(0.8, 1);
+  }
+
+  &__phone-link {
+    font-size: 33.8281px;
+    opacity: 0.8;
+
+    @include opacityOnHover(0.8, 1);
+  }
+}
+
+// <address>
+// <ul class="ig-contact-box__container">
+//     <li class="ig-contact-box__email-list-item">
+//         <a class="ig-contact-box__email-link" href="mailto:info@myemail.co">info@myemail.co</a>
+//     </li>
+//     <br>
+//     <li class="ig-contact-box__phone-list-item">
+//         <a class="ig-contact-box__phone-link" href="tel:29123123">
+//             29123123
+//         </a>
+//     </li>
+//     <br>
+
+//     <li class="ig-contact-box__address-list-item">
+//         <p>Some stree name 123</p>
+//         <p> MyStreetName 24 </p>
+//         <p>LV-1111</p>
+//         <p>Riga, Latvia</p>
+//     </li>
+// </ul>
+// </address>

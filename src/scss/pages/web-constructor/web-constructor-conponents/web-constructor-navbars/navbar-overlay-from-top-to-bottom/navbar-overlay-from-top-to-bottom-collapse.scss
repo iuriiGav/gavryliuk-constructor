@@ -1,0 +1,287 @@
+@import "../../../../../mixins/mixins";
+
+// remove this mixin and add a general one in mixins file
+@mixin absolute-center-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+$button-height: 27px;
+$button-width: 35px;
+
+$nav-font-size: 3.5rem;
+
+// hamburger button
+.ig-ttbc-hamburger-btn-container {
+  opacity: 0;
+  visibility: hidden;
+  position: fixed;
+  top: 5%;
+  right: 2%;
+  height: $button-height;
+  width: $button-width;
+  cursor: pointer;
+  z-index: 100;
+  transition: opacity 0.25s ease;
+
+  @media only screen and (max-width: $bp-lg) {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &:hover {
+    opacity: 0.7;
+  }
+
+  &.ig-ttbc-nav-is-active {
+    .ttbc-patty-top {
+      transform: translateY(10px) translateX(0) rotate(45deg);
+      background: var(--color-white);
+    }
+    .ttbc-patty-middle {
+      opacity: 0;
+      background: var(--color-white);
+    }
+
+    .ttbc-patty-bottom {
+      transform: translateY(-10px) translateX(0) rotate(-45deg);
+      background: var(--color-white);
+    }
+  }
+
+  span {
+    border: none;
+    height: 3px;
+    width: 100%;
+    position: absolute;
+    top: 0px;
+    background: var(--color-white);
+    left: 0;
+    transition: all 0.35s ease;
+    cursor: pointer;
+
+    &:nth-of-type(2) {
+      top: 10px;
+    }
+
+    &:nth-of-type(3) {
+      top: 20px;
+    }
+  }
+}
+
+.ig-ttbc-main-nav-overlay {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+
+  // change opacity if you want fade in effect
+  transition: opacity 0.35s, visibility 0.35s, height 0.35s;
+  z-index: 50;
+
+  @media only screen and (max-width: $bp-lg) {
+    position: fixed;
+    overflow: hidden;
+    height: 0%;
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  &.ttbc-nav-is-open {
+    opacity: 0.9;
+    visibility: visible;
+    height: 100%;
+
+    li {
+      animation: fadeInRight 0.5s ease forwards;
+      animation-delay: 0.35s;
+
+      &:nth-of-type(2) {
+        animation-delay: 0.4s;
+      }
+      &:nth-of-type(3) {
+        animation-delay: 0.45s;
+      }
+      &:nth-of-type(4) {
+        animation-delay: 0.5s;
+      }
+      &:nth-of-type(5) {
+        animation-delay: 0.55s;
+      }
+      &:nth-of-type(6) {
+        animation-delay: 0.6s;
+      }
+      &:nth-of-type(7) {
+        animation-delay: 0.65s;
+      }
+      &:nth-of-type(8) {
+        animation-delay: 0.7s;
+      }
+      &:nth-of-type(9) {
+        animation-delay: 0.75s;
+      }
+      &:nth-of-type(10) {
+        animation-delay: 0.8s;
+      }
+    }
+  }
+  nav {
+    font-size: calc(#{$nav-font-size} - 1.4rem);
+    font-family: var(--font-secondary);
+    font-weight: 400;
+    text-align: center;
+    width: 100%;
+    z-index: 100;
+    background-color: var(--color-dark);
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 1em;
+    @media only screen and (max-width: $bp-lg) {
+      display: block;
+      font-size: $nav-font-size;
+      position: relative;
+      height: 100%;
+      top: 50%;
+      transform: translateY(-50%);
+    padding-right: 0;
+    overflow-y: scroll;
+
+    }
+  }
+  ul.ig-ttbc-main-navbar {
+    list-style: none;
+    padding: .7em;
+
+    display: flex;
+    flex-direction: row;
+    gap: 2em;
+    @media only screen and (max-width: $bp-lg) {
+      margin-top: 7%;
+      display: inline-block;
+    }
+
+    li {
+      display: block;
+      min-height: 50px;
+      position: relative;
+      @media only screen and (max-width: $bp-lg) {
+        opacity: 0;
+        padding: 0.3em 0;
+      }
+
+      a {
+        display: block;
+        position: relative;
+        color: var(--color-white);
+        text-decoration: none;
+        overflow: hidden;
+
+        &:hover:after,
+        &:focus:after,
+        &:active:after {
+          width: 100%;
+        }
+
+        &:active {
+          @include button-pressed;
+        }
+        &:after {
+          content: "";
+          position: absolute;
+          bottom: 0;
+          left: 50%;
+          width: 0%;
+          transform: translateX(-50%);
+          height: 3px;
+          background: var(--color-white);
+          transition: 0.35s;
+        }
+      }
+    }
+  }
+}
+
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    left: 20%;
+  }
+  100% {
+    opacity: 1;
+    left: 0;
+  }
+}
+
+.ig-ttbc-dropdown-menu {
+  position: absolute;
+  width: 100%;
+  visibility: hidden;
+  opacity: 0;
+  z-index: 900;
+  transition: all 0.2s ease;
+  background: var(--color-dark);
+
+  @media only screen and (max-width: $bp-lg) {
+    position: absolute;
+    left: 0;
+    top: inherit;
+    background-color: lighten(#040710, 3%);
+    max-height: 500px;
+  }
+
+  & .ig-ttbc-nav-item {
+    opacity: 1;
+    font-size: calc(#{$nav-font-size} - 10px);
+    transition: 0.5s;
+    transition-delay: 0s;
+  }
+  & .ig-ttbc-dropdown-item {
+    text-decoration: none;
+    color: var(--color-white);
+    font-weight: 400;
+    font-family: sans-serif;
+    display: flex;
+  }
+}
+
+// add this if there is a dropdown arrow item
+.ig-ttbc-dropdown-toggle {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+} // end
+
+
+.ig-ttbc-dropdown__open-on {
+  visibility: visible;
+  opacity: 1;
+  display: block;
+
+
+  &--hover {
+    position: absolute;
+  }
+  &--click { 
+    position: relative;
+
+
+  }
+}
+
+
+
+// accessibility styling
+
+.ig-ttbc-navbar-container .ig-ttbc-nav-link,
+.ig-ttbc-dropdown-menu li a {
+  &:focus {
+    color: lighten($color: #31116d, $amount: 50%);
+  }
+}
+
+.ig-ttbc-dropdown:focus-within {
+  color: lighten($color: #31116d, $amount: 50%);
+}

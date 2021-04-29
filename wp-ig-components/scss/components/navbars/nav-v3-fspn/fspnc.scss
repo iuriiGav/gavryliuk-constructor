@@ -1,0 +1,135 @@
+@import "../../../mixins/mixins";
+
+$breakpoint-main: $bp-md;
+
+.btn-hamburger__arrow-and-ring {
+  transition: opacity 0.3s ease;
+  @include hidden;
+
+  @media only screen and (max-width: $breakpoint-main) {
+    @include visible(1);
+  }
+}
+
+.ig-main__fspnc {
+  position: relative;
+  min-height: 100vh;
+  will-change: transform;
+  transition: transform 0.7s cubic-bezier(0.91, 0.01, 0.6, 0.99);
+  z-index: 1;
+  @media only screen and (max-width: $breakpoint-main) {
+    z-index: 2;
+  }
+}
+
+.ig-fspnc-prenav {
+  &__container {
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    min-height: 100vh;
+    width: 100%;
+    transition: visibility 0.7s;
+    overflow-y: scroll;
+    @media only screen and (max-width: $breakpoint-main) {
+      z-index: 1;
+    }
+  }
+
+  &__wrapper {
+    height: 100%;
+
+    transition: transform 0.7s cubic-bezier(0.86, 0.01, 0.77, 0.78);
+
+    @media only screen and (max-width: $breakpoint-main) {
+      will-change: transform;
+      transform: translateX(-50%);
+
+      &--reverse {
+        transform: translateX(50%);
+      }
+    }
+  }
+  &__title {
+  
+
+    @include hidden;
+
+    @media only screen and (max-width: $breakpoint-main) {
+      position: relative;
+      margin-bottom: 2em;
+      &:after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -20px;
+        height: 1px;
+        width: 60px;
+        background-color: currentColor;
+      }
+      @include visible(1);
+    }
+  }
+}
+
+.ig-fspnc-nav-is-open {
+  .ig-main__fspnc {
+    transform: translateX(100%);
+    &--reverse {
+      transform: translateX(-100%);
+    }
+  }
+}
+
+.ig-fspnc-nav-is-open .ig-fspnc-prenav__wrapper {
+  transform: translateX(0);
+  transition: transform 0.5s cubic-bezier(0.82, 0.01, 0.77, 0.78);
+}
+
+.ig-fspnc-nav {
+  &__container {
+    display: flex;
+    flex-wrap: wrap;
+    & aside {
+      width: 30%;
+    }
+  }
+  &__list {
+    display: flex;
+    gap: 2em;
+  }
+  
+}
+
+.ig-fspnc-dropdown-menu {
+  &__container {
+    @media only screen and (max-width: $breakpoint-main) {
+    
+      pointer-events: none;
+    }
+  }
+  &__list {
+    transition: all .2s ease-in-out;
+    position: absolute;
+    transform: translateY(3px);
+    @include hidden;
+    @media only screen and (max-width: $breakpoint-main) {
+      
+      pointer-events: all;
+      margin-left: 40px;
+    }
+  }
+}
+
+
+.ig-fspnc-dropdown-menu__container:hover > .ig-fspnc-dropdown-menu__list {
+  @include visible(1);
+  transform: none;
+
+
+};
+
+
+
+@import "./custom/fspnc-custom";

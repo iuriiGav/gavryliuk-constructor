@@ -1,0 +1,75 @@
+// breakpoints
+
+$bp-sm: 576px;
+$bp-md: 767px;
+$bp-lg: 992px;
+$bp-xl: 1200px;
+$bp-xxl: 1400px;
+$navbar-breakpoint-main: 767px;
+
+html, body {
+  background-color: var(--color-dark);
+  overflow-x: hidden;
+  overflow: hidden;
+
+  background-color: #32343B;
+}
+
+@media only screen and (max-width: $bp-xxl) {
+    html {
+      font-size: 90.5%;
+    }
+  }
+  @media only screen and (max-width: $bp-xl) {
+    html {
+      font-size: 80.5%;
+    }
+  }
+  @media only screen and (max-width: $bp-lg) {
+    html {
+      font-size: 70.5%;
+    }
+  }
+
+  @media only screen and (min-width: 1024px) and (max-height: 1366px) and (-webkit-min-device-pixel-ratio: 1.5) {
+    body, html {
+      overflow-x: hidden;
+    }
+  }
+
+  /* Portrait */
+  @media only screen and (min-width: 1024px) and (max-height: 1366px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1.5) {
+body, html {
+  overflow-x: hidden;
+}
+  }
+
+  /* Landscape */
+  @media only screen and (min-width: 1024px) and (max-height: 1366px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 1.5) {
+    body, html {
+      overflow-x: hidden;
+    }
+  }
+
+  @media only screen and (max-width: $bp-md) {
+    html {
+      font-size: 65.5%;
+    }
+    body {
+      overflow-x: hidden;
+
+    }
+  }
+  
+  @media only screen and (max-width: $bp-md) {
+    html {
+      background-attachment: scroll;
+    }
+  }
+  
+  .container-fluid {
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+  }
+
+ 

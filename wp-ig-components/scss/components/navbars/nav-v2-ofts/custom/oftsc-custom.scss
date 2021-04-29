@@ -1,0 +1,40 @@
+@import "../../../../mixins/mixins";
+$nav-font-size: 3.5rem;
+
+.ig-oftsc-nav {
+  &__container {
+    font-size: $nav-font-size;
+    font-family: var(--font-secondary);
+    font-weight: 400;
+    text-align: center;
+  }
+
+  &__link {
+    color: var(--color-white);
+    text-decoration: none;
+    &:hover {
+      color: var(--color-white);
+    }
+  }
+}
+
+.ig-oftsc-dropdown-menu {
+  &__list {
+    min-width: 300px;
+    background-color: lighten(#040710, 3%);
+    @media only screen and (max-width: $bp-lg) {
+      min-width: auto;
+      & li {
+        font-size: calc(#{$nav-font-size} - 10px);
+      }
+    }
+  }
+  &__link {
+    transition: all 0.2s ease;
+    color: var(--color-white);
+    justify-content: flex-start !important;
+    &:hover {
+      color: var(--color-white);
+    }
+  }
+}
