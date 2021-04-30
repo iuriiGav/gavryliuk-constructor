@@ -65,7 +65,7 @@
 
   
 
-    <div class=" <?php echo $overlay_class  ?>" id="fts-main-nav-overlay" data-js-trigger="overlay">
+    <div class=" <?php echo $overlay_class  ?>" data-js-trigger="overlay">
         <nav class="ig-<?php echo $navbar_name; ?>-nav__container" data-js-trigger="<?php echo $navbar_name; ?>-nav__container">
 
             <?php
