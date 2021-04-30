@@ -16,10 +16,10 @@
 
                 <br>
                 <button class="btn-hamburger__middle-patty-sliding-off" data-js-trigger="btn-hamburger-middle-sliding-off">
-    <span></span>
-    <span></span>
-    <span></span>
-</button>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
                 <br>
 
 
