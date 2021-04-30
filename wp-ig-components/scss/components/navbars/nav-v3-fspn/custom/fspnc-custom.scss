@@ -8,14 +8,21 @@
     background-color: transparent;
     @media only screen and (max-width: $breakpoint-main) {
       background-color: #253141;
+      overflow-y: scroll;
     }
   }
 
   &__wrapper {
     // background-color: #253141;
-    @include flex-justify-center;
+    // @include flex-justify-center;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 5em;
     @media only screen and (max-width: $breakpoint-main) {
       margin-top: 10em;
+      padding-right: 0;
+      padding-left: 5em;
+      justify-content: flex-start;
       
     }
     @media only screen and (max-width: $bp-md) {

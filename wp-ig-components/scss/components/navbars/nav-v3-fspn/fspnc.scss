@@ -45,6 +45,7 @@ $breakpoint-main: $bp-md;
     @media only screen and (max-width: $breakpoint-main) {
       will-change: transform;
       transform: translateX(-50%);
+      margin-bottom: 300px; // this is to help with scrolling, remove when other sollution is found 
 
       &--reverse {
         transform: translateX(50%);
@@ -98,7 +99,11 @@ $breakpoint-main: $bp-md;
   &__list {
     display: flex;
     gap: 2em;
+    @media only screen and (max-width: $breakpoint-main) {
+    flex-direction: column;
+    }
   }
+
   
 }
 
@@ -115,7 +120,8 @@ $breakpoint-main: $bp-md;
     transform: translateY(3px);
     @include hidden;
     @media only screen and (max-width: $breakpoint-main) {
-      
+      @include visible(1);
+      position: relative;
       pointer-events: all;
       margin-left: 40px;
     }
