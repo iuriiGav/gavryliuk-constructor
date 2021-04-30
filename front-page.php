@@ -15,10 +15,11 @@
 
 
                 <br>
-                <a class="ig-dropdown-arrow-icon ig-dropdown-arrow-icon-noHover">
-                    <span class="ig-dropdown-arrow-icon__left-bar"></span>
-                    <span class="ig-dropdown-arrow-icon__right-bar"></span>
-                </a>
+                <button class="btn-hamburger__middle-patty-sliding-off" data-js-trigger="btn-hamburger-middle-sliding-off">
+    <span></span>
+    <span></span>
+    <span></span>
+</button>
                 <br>
 
 
