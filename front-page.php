@@ -15,17 +15,19 @@
 
 
                 <br>
-<button class="btnc btnc--pill  btnc--h__arrow-right btnc--h__arrow-right--lr">Continue
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-        <g data-name="Layer 2">
-            <g data-name="arrow-circle-right">
-                <rect width="14" height="14" transform="rotate(-90 12 12)" opacity="0" />
-                <path d="M17 12v-.09a.88.88 0 0 0-.06-.28.72.72 0 0 0-.11-.19 1 1 0 0 0-.09-.13l-2.86-3a1 1 0 0 0-1.45 1.38L13.66 11H8a1 1 0 0 0 0 2h5.59l-1.3 1.29a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3-3a1 1 0 0 0 .21-.32A1 1 0 0 0 17 12z" />
-                <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8z" />
-            </g>
-        </g>
-    </svg>
-</button>
+
+
+                <button class="btnc btnc--pill  btnc--h__arrow-left btnc--h__arrow-left--rl">
+                    Back
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <g data-name="Layer 2">
+                            <g data-name="arrow-ios-forward">
+                                <rect width="24" height="24" transform="rotate(-90 12 12)" opacity="0" />
+                                <path d="M10 19a1 1 0 0 1-.64-.23 1 1 0 0 1-.13-1.41L13.71 12 9.39 6.63a1 1 0 0 1 .15-1.41 1 1 0 0 1 1.46.15l4.83 6a1 1 0 0 1 0 1.27l-5 6A1 1 0 0 1 10 19z" />
+                            </g>
+                        </g>
+                    </svg>
+                </button>
                 <br>
 
                 <button class="btn-close__gudzyk" title="Close" aria-live="polite" tabindex="0">
