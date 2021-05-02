@@ -1,0 +1,26 @@
+@import "../../../mixins/mixins";
+
+.btn-close__gudzyk {
+  position: absolute;
+  cursor: pointer;
+  z-index: 999;
+  border: none;
+  background-color: #424242;
+  padding: 5px;
+  margin: 0;
+  fill: #fff;
+  border-radius: 100%;
+  min-width: auto;
+  box-shadow: 0px 0px 0px #424242;
+    transition: fill 0.2s ease, background-color 0.2s ease;
+
+  &:hover {
+    border: none;
+    background-color: #fff;
+    fill: #424242;
+  }
+
+  &:active {
+    @include button-pressed;
+  }
+}

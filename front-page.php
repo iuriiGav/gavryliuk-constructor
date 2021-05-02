@@ -15,11 +15,16 @@
 
 
                 <br>
-<button class="btnc btnc--lg btnc--h__arrow-right">Hello 
-    <!-- <img style="height: 30px; width: 30px;" src="<?php echo get_template_directory_uri() . '/wp-ig-components/assets/icons/arrow/arrow_right_alt_black_24dp.svg'?>" alt=""> -->
+<button class="btnc btnc--pill  btnc--h__arrow-right">Continue
+<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" class="arrow"><path d="M0 0h24v24H0z" fill="none"/><path d="M16.01 11H4v2h12.01v3L20 12l-3.99-4z"/></svg>
 </button>
                 <br>
 
+                <button class="btn-close__gudzyk" title="Close" aria-live="polite" tabindex="0">
+                    <svg viewBox="0 0 1792 1792" style="display:block;height:22px;width:22px">
+                        <path d="M1490 1322q0 40-28 68l-136 136q-28 28-68 28t-68-28l-294-294-294 294q-28 28-68 28t-68-28l-136-136q-28-28-28-68t28-68l294-294-294-294q-28-28-28-68t28-68l136-136q28-28 68-28t68 28l294 294 294-294q28-28 68-28t68 28l136 136q28 28 28 68t-28 68l-294 294 294 294q28 28 28 68z"></path>
+                    </svg>
+                </button>
 
 
                 <h2 class="tagline">Web development for artists</h2>

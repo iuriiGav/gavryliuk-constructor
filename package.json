@@ -43,10 +43,9 @@
   ],
   "dependencies": {
     "bootstrap": "^5.0.0-beta3",
-    "ig-components-library": "^0.0.11",
     "jquery": "^3.6.0",
     "lightbox2": "^2.11.3",
     "swiper": "^6.4.15",
-    "wp-ig-components-test-2": "^0.0.1"
+    "wp-ig-components": "^0.0.17"
   }
 }
