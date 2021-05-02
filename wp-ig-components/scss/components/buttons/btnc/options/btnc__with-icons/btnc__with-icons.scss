@@ -1,0 +1,13 @@
+.btnc__with-icon {
+  & svg {
+    margin-left: 15px;
+    fill: currentColor;
+  }
+}
+.btnc__with-icon--before {
+  & svg {
+    margin-right: 15px;
+    fill: currentColor;
+  }
+}
+
