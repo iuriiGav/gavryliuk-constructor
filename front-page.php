@@ -15,11 +15,16 @@
 
 
                 <br>
-                <button class="btn-hamburger__middle-patty-sliding-off" data-js-trigger="btn-hamburger-middle-sliding-off">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
+                <a href="#" class="btn-close__in-and-out">
+                    <div class="btn-close__in-and-out__in">
+                        <div class="btn-close__in-and-out__block"></div>
+                        <div class="btn-close__in-and-out__block"></div>
+                    </div>
+                    <div class="btn-close__in-and-out__out">
+                        <div class="btn-close__in-and-out__block"></div>
+                        <div class="btn-close__in-and-out__block"></div>
+                    </div>
+                </a>
                 <br>
 
 
