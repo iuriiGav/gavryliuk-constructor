@@ -1,0 +1,12 @@
+.btnc--h__arrow-right {
+    padding: .5rem 2rem;
+    &:after {
+        display: inline-flex;
+        content: '';
+        // background-image: url('');
+        background-size: 40px 40px;
+        height: 40px;
+        width: 40px;
+    }
+
+}

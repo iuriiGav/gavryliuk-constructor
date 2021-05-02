@@ -15,16 +15,9 @@
 
 
                 <br>
-<a href="#" class="btn-close__in-and-out">
-    <div class="btn-close__in-and-out__in">
-        <div class="btn-close__in-and-out__block"></div>
-        <div class="btn-close__in-and-out__block"></div>
-    </div>
-    <div class="btn-close__in-and-out__out">
-        <div class="btn-close__in-and-out__block"></div>
-        <div class="btn-close__in-and-out__block"></div>
-    </div>
-</a>
+<button class="btnc btnc--lg btnc--h__arrow-right">Hello 
+    <!-- <img style="height: 30px; width: 30px;" src="<?php echo get_template_directory_uri() . '/wp-ig-components/assets/icons/arrow/arrow_right_alt_black_24dp.svg'?>" alt=""> -->
+</button>
                 <br>
 
 
