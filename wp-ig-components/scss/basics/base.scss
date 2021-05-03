@@ -6,12 +6,6 @@ $bp-lg: 992px;
 $bp-xl: 1200px;
 $bp-xxl: 1400px;
 
-html, body {
-  background-color: var(--color-dark);
-  overflow-x: hidden;
-  overflow: hidden;
-}
-
 @media only screen and (max-width: $bp-xxl) {
     html {
       font-size: 90.5%;
