@@ -3,13 +3,13 @@
     text-transform: uppercase;
     color: white;
     background-color: transparent;
-    transition: color .2s ease-in-out, background-color .2s ease-in-out;
+    transition: color .2s ease-in-out, background-color .2s ease-in-out, opacity .2s ease-in-out;
     &--h-invert {
         &:hover {
 color: inherit;
 background-color: white;
 opacity: 1;
-border: solid 1px transparent;
+border: solid 2px transparent;
         }
     }
 
