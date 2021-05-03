@@ -50,3 +50,10 @@
         opacity: $afterHovOpacity;
     }
 }
+
+@mixin outline {
+  box-shadow: 0 0 1px 3px rgba(59, 153, 252, .7);
+  box-shadow: 0 0 0 3px activeborder; /* Blink, Chrome */ 
+  box-shadow: 0 0 0 3px -moz-mac-focusring; /* Firefox */
+  outline: auto 0 -webkit-focus-ring-color; /* Webkit, Safari */
+}

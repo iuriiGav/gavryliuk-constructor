@@ -20,6 +20,9 @@
     fill: #424242;
   }
 
+  &:focus {
+    @include outline;
+  }
   &:active {
     @include button-pressed;
   }

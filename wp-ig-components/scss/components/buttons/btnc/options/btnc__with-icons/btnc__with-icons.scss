@@ -1,4 +1,5 @@
 .btnc__with-icon {
+  position: relative;
   & svg {
     margin-left: 15px;
     fill: currentColor;
@@ -11,3 +12,58 @@
   }
 }
 
+.btnc__with-icon-on-bg {
+  overflow: hidden;
+  // border-top-right-radius: 0px;
+  // border-bottom-right-radius: 0px;
+  border: none;
+  background-color: green;
+  padding-right: 58px;
+  &:after {
+    content: "";
+    width: 40px;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    background-color: darken(green, 10%);
+    // border-top-right-radius: 8px;
+    // border-bottom-right-radius: 8px;
+  }
+
+  & svg {
+    fill: currentColor;
+    position: absolute;
+    left: 77%;
+    z-index: 2;
+  }
+
+  &.btnc--sm {
+    padding-right: 42px;
+
+    &:after {
+      width: 36px;
+    }
+
+    & svg {
+      left: 73%;
+    }
+  }
+
+  &.btnc--lg svg {
+    left: 80%;
+  }
+
+  &.btnc--xl svg {
+    left: 81.5%;
+  }
+}
+
+
+
+.btnc__with-icon-on-bg {
+  color: white;
+  background-color: yellow;
+  &:after {
+    background-color: darken(yellow, 20%);
+  }
+}
