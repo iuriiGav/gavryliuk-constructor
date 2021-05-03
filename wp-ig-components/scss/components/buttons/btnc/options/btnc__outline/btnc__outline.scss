@@ -1,0 +1,17 @@
+.btnc__outline {
+    padding: .7em 2.4em;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    color: white;
+    background-color: black;
+    transition: color .2s ease-in-out, background-color .2s ease-in-out;
+    &--h-invert {
+        &:hover {
+color: black;
+background-color: white;
+opacity: 1;
+border: none;
+        }
+    }
+}
+
