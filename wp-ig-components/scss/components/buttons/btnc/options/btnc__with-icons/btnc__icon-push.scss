@@ -3,20 +3,19 @@
 .btnc__icon-push {
     overflow: hidden;
 
-    & div {
+    & span {
         transition: all 0.2s cubic-bezier(.53,-0.05,.72,.66);
-
     }
     & svg {
         transition: all 0.2s cubic-bezier(.53,-0.05,.72,.66);
    position: absolute;
    left: 50%;
-   transform: translate(-50%, -160%);
+   transform: translate(-50%, -500px);
     }
 
     &:hover {
 
-        & div {
+        & span {
 
             transform: translateY(120%);
 
@@ -25,4 +24,25 @@
             transform: translate(-50%, 0);
         }
     }
+}
+
+.btnc__icon-push--vertical {
+    & svg {
+        transition: all 0.2s cubic-bezier(.53,-0.05,.72,.66);
+   transform: translateX(-500px);
+    }
+
+    &:hover {
+
+        & span {
+
+            transform: translateX(300%);
+
+        }
+        & svg {
+
+            transform: translateX(-50%);
+        }
+    }
+
 }

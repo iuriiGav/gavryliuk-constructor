@@ -50,9 +50,21 @@
 }
 
 .btnc--xl {
-  padding: 0.5rem 0.75rem;
+  padding: 0.5rem 1.75rem;
   font-size: 1.5rem;
 }
+
+.btnc--xxl {
+padding: 1rem 4rem;
+font-size: 1.75rem;
+
+& svg {
+  width: 2rem;
+  height: 2rem;
+}
+}
+
+
 
 //=========================SHAPES==============================
 
