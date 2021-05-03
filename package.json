@@ -45,7 +45,6 @@
     "bootstrap": "^5.0.0-beta3",
     "jquery": "^3.6.0",
     "lightbox2": "^2.11.3",
-    "swiper": "^6.4.15",
-    "wp-ig-components": "^0.0.17"
+    "swiper": "^6.4.15"
   }
 }
