@@ -80,7 +80,7 @@
     }
   
     &:hover svg {
-      transform:  rotate(180deg) translateX(0);
+      transform:  rotate(180deg) translateX(6px);
     }
   }
   
@@ -93,7 +93,7 @@
     }
   
     &:hover svg {
-      transform:  rotate(180deg)  translateX(0);
+      transform:  rotate(180deg)  translateX(6px);
       opacity: 1;
     }
   }
