@@ -90,5 +90,24 @@
         }
     }
   }
+
+  &--line-only {
+      &:after {
+
+          background-color: transparent;
+          opacity: .3;
+          border-left: solid 2px currentColor;
+
+      }
+
+      &.btnc__with-icon-on-bg--start {
+
+        &:after {
+            border-left: none;
+            border-right: solid 2px currentColor;
+        }
+
+      }
+  }
 }
 

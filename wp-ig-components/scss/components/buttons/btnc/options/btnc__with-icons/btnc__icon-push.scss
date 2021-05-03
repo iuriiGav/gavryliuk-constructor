@@ -1,0 +1,28 @@
+@import '../../../../../mixins/mixins';
+
+.btnc__icon-push {
+    overflow: hidden;
+
+    & div {
+        transition: all 0.2s cubic-bezier(.53,-0.05,.72,.66);
+
+    }
+    & svg {
+        transition: all 0.2s cubic-bezier(.53,-0.05,.72,.66);
+   position: absolute;
+   left: 50%;
+   transform: translate(-50%, -160%);
+    }
+
+    &:hover {
+
+        & div {
+
+            transform: translateY(120%);
+
+        }
+        & svg {
+            transform: translate(-50%, 0);
+        }
+    }
+}
