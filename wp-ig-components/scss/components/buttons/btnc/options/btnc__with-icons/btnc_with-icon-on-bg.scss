@@ -1,100 +1,124 @@
 .btnc__with-icon-on-bg {
   overflow: hidden;
   border: none;
-  background-color: green;
-  padding-right: 58px;
+  padding-right: 3.625rem;
   &:after {
     content: "";
-    width: 40px;
+    width: 2.5rem;
     height: 100%;
     position: absolute;
     right: 0;
-    background-color: darken(green, 10%);
   }
 
   & svg {
     fill: currentColor;
     position: absolute;
-    left: 77%;
+    right: 4%;
     z-index: 2;
+    height: 1.5rem;
+    width: 1.5rem;
   }
 
   &.btnc--sm {
-    padding-right: 42px;
+    padding-right: 2.625rem;
 
     &:after {
-      width: 36px;
+      width: 2.25rem;
     }
 
+  }
+
+
+  &.btnc--lg {
+    &:after {
+      width: 2.7rem;
+    }
+  
+  
+  }
+
+  &.btnc--xl {
+
+    &:after {
+      width: 3rem;
+    }
+    padding-right: 3.875rem;
+
+  }
+  &.btnc--xxl {
+
+    &:after {
+      width: 4rem;
+    }
+    padding-right: 4.875rem;
     & svg {
-      left: 73%;
+      right: 5%;
     }
+
   }
 
-  &.btnc--lg svg {
-    left: 80%;
-  }
-
-  &.btnc--xl svg {
-    left: 81.5%;
-  }
+  // icon at the beginning of the button
 
   &--start {
     padding-right: 0.75rem;
-    padding-left: 50px;
+    padding-left: 3.125rem;
 
     &:after {
       left: 0;
     }
 
     & svg {
-        left: 6%;
+        left: 4%;
 
     }
 
     &.btnc--sm {
         padding-right: 0.75rem;
-        padding-left: 46px;
+        padding-left: 2.875rem;
 
         &:after {
-          width: 36px;
+          width: 2.25rem;
         }
     
-        & svg {
-          left: 6%;
-        }
+   
     }
 
     &.btnc--lg {
         padding-right: 1rem;
-        padding-left: 56px;
+        padding-left: 3.5rem;
 
         &:after {
-          width: 40px;
+          width: 2.5rem;
         }
-    
-        & svg {
-          left: 5.5%;
-        }
+  
     }
     &.btnc--xl {
         padding-right: .75rem;
-        padding-left: 56px;
+        padding-left: 3.5rem;
 
         &:after {
-          width: 46px;
+          width: 2.875rem;
         }
-    
+
+    }
+    &.btnc--xxl {
+        padding-right: .75rem;
+        padding-left: 4.875rem;
+
+        &:after {
+          width: 4rem;
+        }
         & svg {
-          left: 6.7%;
+          left: 5.4%;
         }
+
     }
   }
 
   &--line-only {
       &:after {
 
-          background-color: transparent;
+          background-color: transparent !important;
           opacity: .3;
           border-left: solid 2px currentColor;
 
