@@ -6,11 +6,18 @@
   position: relative;
   overflow: hidden;
 
+  &:hover {
+    opacity: .9;
+  }
+  &:focus {
+    opacity: 1;
+  }
+
   & svg {
     transition: all 0.2s ease-in;
     width: 30px;
     position: absolute;
-    left: 73%;
+    right: 4%;
     font-size: 3rem;
     fill: inherit;
   }
@@ -45,11 +52,16 @@
 .btnc--h__arrow-left {
     padding: 0.5rem 3rem;
     position: relative;
-    display: flex;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
-  
+  &:hover {
+    opacity: .9;
+  }
+  &:focus {
+    opacity: 1;
+  }
     & svg {
     transform: rotate(180deg);
 
@@ -64,7 +76,7 @@
   
   .btnc--h__arrow-left--rl {
     & svg {
-      transform: rotate(180deg) translateX(140%);
+      transform: rotate(180deg) translateX(70px);
     }
   
     &:hover svg {
