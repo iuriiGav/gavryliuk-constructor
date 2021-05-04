@@ -1,3 +1,9 @@
+.btn-hamburger__arrow-and-ring {
+  --btn-hamburger-arrow-and-ring-background: #253141;
+  --btn-hamburger-arrow-and-ring-hamburger: white;
+  --btn-hamburger-arrow-and-ring-hover-circle: #666f7a;
+}
+
 .text-replace {
   overflow: hidden;
   color: transparent;
@@ -14,6 +20,7 @@
   width: 54px;
   cursor: pointer;
   background-color: #253141;
+  background-color: var(--btn-hamburger-arrow-and-ring-background);
   border-radius: 50%;
   transition: transform 0.5s;
   &--reverse {
@@ -28,7 +35,7 @@
     width: 22px;
     height: 2px;
     background-color: #fff;
-    background-color: var(--color-white);
+    background-color: var(--btn-hamburger-arrow-and-ring-hamburger);
     cursor: pointer;
     transition: transform 0.3s;
     transition: transform 0.3s, transform 0.3s;
@@ -65,7 +72,7 @@
 
   &__circle {
     stroke: #666f7a;
-    stroke: gray;
+    stroke: var(--btn-hamburger-arrow-and-ring-hover-circle);
     transition: stroke-dashoffset 0.4s;
   }
 }
@@ -101,13 +108,13 @@
 //
 //  Button code:
 //  to reverse arrow, add class 'btn-hamburger__arrow-and-ring--reverse' to a tag
-  //   <a id='test-btn' class="btn-hamburger__arrow-and-ring text-replace">
-  // Menu
-  //     <span class="btn-hamburger__arrow-and-ring__icon" aria-hidden="true"></span>
-  //     <svg viewBox="0 0 54 54" aria-hidden="true" class="btn-hamburger__arrow-and-ring__svg-container">
-  //          <circle class="btn-hamburger__arrow-and-ring__circle" fill="transparent" stroke-width="1" cx="27" cy="27" r="25" stroke-dasharray="157 157" stroke-dashoffset="157"></circle>
-  //      </svg>
-  //   </a>
+//   <a id='test-btn' class="btn-hamburger__arrow-and-ring text-replace">
+// Menu
+//     <span class="btn-hamburger__arrow-and-ring__icon" aria-hidden="true"></span>
+//     <svg viewBox="0 0 54 54" aria-hidden="true" class="btn-hamburger__arrow-and-ring__svg-container">
+//          <circle class="btn-hamburger__arrow-and-ring__circle" fill="transparent" stroke-width="1" cx="27" cy="27" r="25" stroke-dasharray="157 157" stroke-dashoffset="157"></circle>
+//      </svg>
+//   </a>
 //
 //
 //
