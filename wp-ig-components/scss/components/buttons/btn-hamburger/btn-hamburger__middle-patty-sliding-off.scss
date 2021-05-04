@@ -13,7 +13,6 @@ $patty-color-active-state: white;
   transform: translate(-50%, -50%);
   cursor: pointer;
   background: transparent;
-  // border-radius: 50%;
   border: none;
   outline: none;
   transition: opacity .2s linear;
@@ -24,7 +23,7 @@ $patty-color-active-state: white;
     height: 4px;
     top: 50%;
     left: 50%;
-    background: $patty-color;
+    background-color: $black;
     border-radius: 2px;
     overflow: hidden;
     transition: all 0.3s linear;
@@ -36,7 +35,7 @@ $patty-color-active-state: white;
       height: 100%;
       top: 0;
       right: 0;
-      background: $patty-color-active-state;
+      background-color: $patty-color-active-state;
       transition: all 0.3s linear;
     }
     
@@ -114,7 +113,7 @@ $patty-color-active-state: white;
     transform: translate(-50%, -50%);
   }
   25% {
-    background: $patty-color-active-state;
+    background-color: $patty-color-active-state;
   }
   50% {
     transform: translate(-50%, -50%) scale(1);
@@ -128,7 +127,7 @@ $patty-color-active-state: white;
     transform: translate(-150%, -50%) scale(0);
   }
   25% {
-    background: $patty-color-active-state;
+    background-color: $patty-color-active-state;
   }
   50% {
     transform: translate(-50%, -50%) scale(1);
