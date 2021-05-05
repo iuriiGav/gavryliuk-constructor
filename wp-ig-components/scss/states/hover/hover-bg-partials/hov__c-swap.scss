@@ -1,0 +1,12 @@
+@mixin hov__c-swap($color, $bg-color) {
+    transition: color .3s ease, background-color .3s ease;
+  
+    color: $color;
+    background-color: $bg-color;
+    &:hover,
+    &:focus,
+    &:active {
+      color: $bg-color;
+      background-color: $color;
+    }
+  }

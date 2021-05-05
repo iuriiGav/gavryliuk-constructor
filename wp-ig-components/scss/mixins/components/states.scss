@@ -57,16 +57,3 @@
   box-shadow: 0 0 0 3px -moz-mac-focusring; /* Firefox */
   outline: auto 0 -webkit-focus-ring-color; /* Webkit, Safari */
 }
-
-@mixin c-swap($color, $bg-color) {
-  transition: color .3s ease, background-color .3s ease;
-
-  color: $color;
-  background-color: $bg-color;
-  &:hover,
-  &:focus,
-  &:active {
-    color: $bg-color;
-    background-color: $color;
-  }
-}
