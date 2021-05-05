@@ -49,20 +49,20 @@ const BTN_DROPDOWN_INDICATOR = document.querySelectorAll(`[data-js-trigger="btn-
 
 const onMouseEnterHandler = () => {
   console.log(BTN_DROPDOWN_INDICATOR)
-  BTN_DROPDOWN_INDICATOR.classList.add("ig-dropdown-arrow-icon__open");
+  BTN_DROPDOWN_INDICATOR.classList.add("btn-dropdown__triangle-outline__open");
 };
 const onMouseLeaveHandler = () => {
-  BTN_DROPDOWN_INDICATOR.classList.remove("ig-dropdown-arrow-icon__open");
+  BTN_DROPDOWN_INDICATOR.classList.remove("btn-dropdown__triangle-outline__open");
 };
 
 const onFocusInHandler = () => {
-  if (!BTN_DROPDOWN_INDICATOR.classList.contains("ig-dropdown-arrow-icon__open")) {
-    BTN_DROPDOWN_INDICATOR.classList.add("ig-dropdown-arrow-icon__open");
+  if (!BTN_DROPDOWN_INDICATOR.classList.contains("btn-dropdown__triangle-outline__open")) {
+    BTN_DROPDOWN_INDICATOR.classList.add("btn-dropdown__triangle-outline__open");
   }
 };
 
 const onFocusOutHandler = () => {
-  if (BTN_DROPDOWN_INDICATOR.classList.contains("ig-dropdown-arrow-icon__open")) {
-    BTN_DROPDOWN_INDICATOR.classList.remove("ig-dropdown-arrow-icon__open");
+  if (BTN_DROPDOWN_INDICATOR.classList.contains("btn-dropdown__triangle-outline__open")) {
+    BTN_DROPDOWN_INDICATOR.classList.remove("btn-dropdown__triangle-outline__open");
   }
 };
