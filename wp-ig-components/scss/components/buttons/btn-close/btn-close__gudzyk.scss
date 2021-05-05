@@ -1,23 +1,28 @@
 @import "../../../mixins/mixins";
 
 .btn-close__gudzyk {
+--btn-gudzyk-background-color: #424242;
+--btn-gudzyk-icon-color: #fff;
+
+}
+
+.btn-close__gudzyk {
   position: absolute;
   cursor: pointer;
-  z-index: 999;
   border: none;
-  background-color: #424242;
+  background-color: var(--btn-gudzyk-background-color);
   padding: 5px;
   margin: 0;
-  fill: #fff;
+  fill: var(--btn-gudzyk-icon-color);
   border-radius: 100%;
   min-width: auto;
-  box-shadow: 0px 0px 0px #424242;
+  box-shadow: 0px 0px 0px var(--btn-gudzyk-background-color);
     transition: fill 0.2s ease, background-color 0.2s ease;
 
   &:hover {
     border: none;
-    background-color: #fff;
-    fill: #424242;
+    background-color: var(--btn-gudzyk-icon-color);
+    fill: var(--btn-gudzyk-background-color);
   }
 
   &:focus {
