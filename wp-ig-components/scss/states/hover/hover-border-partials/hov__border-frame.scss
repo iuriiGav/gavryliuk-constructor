@@ -1,0 +1,35 @@
+.hov__border-frame {
+  --hov-border-frame-border-color: #6a6481;
+}
+
+.hov__border-frame {
+  &:before {
+    transition: opacity 0.3s ease-out;
+    content: "";
+    position: absolute;
+    border: var(--hov-border-frame-border-color) solid 4px;
+    border-radius: 8px;
+    top: 4px;
+    left: 4px;
+    right: 4px;
+    bottom: 4px;
+    opacity: 0;
+  }
+
+  &.btnc--square.hov__border-frame:before {
+    border-radius: 0;
+  }
+  &.btnc--pill.hov__border-frame:before {
+    border-radius: 40px;
+  }
+  &.btnc--circle.hov__border-frame:before {
+    border-radius: 50%;
+  }
+  &.btnc--sm.hov__border-frame:before {
+    border: var(--hov-border-frame-border-color) solid 2px;
+  }
+
+  &:hover::before {
+    opacity: 1;
+  }
+}

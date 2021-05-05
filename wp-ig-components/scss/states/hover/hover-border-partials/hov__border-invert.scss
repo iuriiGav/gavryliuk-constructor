@@ -1,0 +1,14 @@
+.hov__border-invert {
+    --hov-border-invert-bg-color: #78a497;
+    --hov-border-invert-text-color: white;
+  }
+  
+  .hov__border-invert {
+    transition: background-color 0.2s linear, box-shadow 0.2s linear, color 0.2s linear;
+    &:hover {
+      background-color: transparent;
+      box-shadow: inset 0 0 0 4px var(--hov-border-invert-bg-color);
+      color: var(--hov-border-invert-text-color);
+    }
+  }
+  

@@ -1,0 +1,46 @@
+.hov__border-puff-out {
+  --hov-border-puff-out-color: #e1e1e1;
+}
+
+.hov__border-puff-out {
+  transition: all 0.2s ease-in-out 0.1s;
+
+  &:before {
+    content: "";
+    position: absolute;
+    border: var(--hov-border-puff-out-color) solid 6px;
+    border-radius: 8px;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+  }
+
+  &.btnc--square.hov__border-puff-out:before {
+    border-radius: 0;
+  }
+  &.btnc--pill.hov__border-puff-out:before {
+    border-radius: 40px;
+  }
+  &.btnc--circle.hov__border-puff-out:before {
+    border-radius: 50%;
+  }
+
+  &:hover:before {
+    opacity: 0.6;
+    animation-name: hov-puff-out;
+  }
+}
+
+@keyframes hov-puff-out {
+    100% {
+      top: -12px;
+      right: -12px;
+      bottom: -12px;
+      left: -12px;
+      opacity: 0;
+    }
+  }
