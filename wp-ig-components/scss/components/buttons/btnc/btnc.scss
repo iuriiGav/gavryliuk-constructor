@@ -20,7 +20,7 @@
   position: relative;
 
   &:hover {
-    opacity: 0.67;
+    // opacity: 0.67;
   }
   &:focus {
     @include outline;
