@@ -1,0 +1,11 @@
+.hov__border-fade {
+    --hov-border-fade-border-color: #e1e1e1;
+  }
+  
+  .hov__border-fade {
+    transition: box-shadow 0.2s ease-in;
+    &:hover {
+      box-shadow: inset 0 0 0 4px var(--hov-border-fade-border-color);
+    }
+  }
+  
