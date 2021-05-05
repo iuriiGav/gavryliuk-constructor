@@ -1,0 +1,72 @@
+.btnc__h--rect {
+  --btnc-h-rect-color: #fff;
+}
+
+.btnc__h--rect {
+  svg {
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+
+  &.btnc {
+    svg {
+      height: 2.2rem;
+    }
+  }
+
+  &.btnc--sm {
+    svg {
+      height: 1.8rem;
+    }
+  }
+  &.btnc--lg {
+    svg {
+      height: 2.9rem;
+    }
+  }
+  &.btnc--xl {
+    svg {
+      height: 3.2rem;
+    }
+  }
+  &.btnc--xxl {
+    svg {
+      height: 4.6rem;
+    }
+  }
+  rect {
+    fill: none;
+    stroke: var(--btnc-h-rect-color);
+    stroke-width: 4;
+    stroke-dasharray: 422, 0;
+    transition: all 0.35s linear;
+  }
+}
+
+.btnc__h--rect:hover {
+  background-color: transparent;
+
+  rect {
+    stroke-width: 4;
+    stroke-dashoffset: 48;
+    transition: all 1.35s cubic-bezier(0.19, 1, 0.22, 1);
+  }
+
+  &.btnc svg rect {
+    stroke-dasharray: 15, 140;
+  }
+  &.btnc--sm svg rect {
+    stroke-dasharray: 15, 120;
+  }
+  &.btnc--lg svg rect {
+    stroke-dasharray: 15, 100;
+  }
+  &.btnc--xl svg rect {
+    stroke-dasharray: 15, 250;
+  }
+  &.btnc--xxl svg rect {
+    stroke-dasharray: 15, 390;
+  }
+}
