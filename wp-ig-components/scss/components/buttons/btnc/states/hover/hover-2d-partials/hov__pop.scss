@@ -1,0 +1,14 @@
+.hov__pop {
+  &:hover {
+    animation: hover-pop 0.3s linear 1;
+  }
+}
+
+@keyframes hover-pop {
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

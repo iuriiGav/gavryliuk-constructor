@@ -1,0 +1,15 @@
+.hov__left {
+  &:hover {
+    animation: hov-left 0.3s ease-in forwards;
+  }
+  &:active,
+  &:focus {
+    animation: none;
+  }
+}
+
+@keyframes hov-left {
+  100% {
+    transform: translateX(-8px);
+  }
+}

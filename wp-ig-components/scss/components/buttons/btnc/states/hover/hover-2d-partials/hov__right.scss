@@ -1,0 +1,15 @@
+.hov__right {
+  &:hover {
+    animation: hov-right 0.3s ease-in forwards;
+  }
+  &:active,
+  &:focus {
+    animation: none;
+  }
+}
+
+@keyframes hov-right {
+  100% {
+    transform: translateX(8px);
+  }
+}

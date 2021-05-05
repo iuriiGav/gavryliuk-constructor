@@ -1,0 +1,14 @@
+.hov__push {
+  &:hover {
+    animation: hov-push 0.3s linear 1;
+  }
+}
+
+@keyframes hov-push {
+  50% {
+    transform: scale(0.8);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

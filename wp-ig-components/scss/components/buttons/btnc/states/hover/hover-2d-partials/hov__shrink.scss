@@ -1,0 +1,9 @@
+.hov__shrink {
+    transition: transform 0.2s ease-in;
+    &:hover {
+      transform: scale(0.9);
+    }
+    &:active {
+      transform: scale(1.1);
+    }
+  }

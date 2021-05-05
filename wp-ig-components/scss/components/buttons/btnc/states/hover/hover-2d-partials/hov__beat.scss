@@ -1,0 +1,19 @@
+.hov__beat {
+  &:hover {
+    animation: hov-beat 1s linear infinite;
+  }
+
+  &:active,
+  &:focus {
+    animation: none;
+  }
+}
+
+@keyframes hov-beat {
+    25% {
+        transform: scale(1.1);
+    }
+    75% {
+        transform: scale(0.9);
+    }
+}

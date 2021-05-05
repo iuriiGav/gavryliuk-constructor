@@ -1,0 +1,9 @@
+.hov__grow {
+    transition: transform 0.2s ease-in;
+    &:hover {
+      transform: scale(1.1);
+    }
+    &:active {
+      transform: scale(0.9);
+    }
+  }

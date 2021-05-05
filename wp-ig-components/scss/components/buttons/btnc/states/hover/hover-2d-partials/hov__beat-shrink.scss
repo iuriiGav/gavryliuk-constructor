@@ -1,0 +1,20 @@
+.hov__beat-shrink {
+  &:hover {
+    animation: hov-beat-shrink 1s linear infinite;
+  }
+
+  &:active,
+  &:focus {
+    animation: none;
+  }
+}
+
+@keyframes hov-beat-shrink {
+  40% {
+    transform: scale(0.9);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}

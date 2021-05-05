@@ -1,0 +1,31 @@
+.hov__shake-y {
+  &:hover {
+    animation: hover-shake-y 1s ease-in-out 1;
+  }
+  &:active,
+  &:focus {
+    animation: none;
+  }
+}
+
+@keyframes hover-shake-y {
+  16.65% {
+    transform: translateY(8px);
+  }
+
+  33.3% {
+    transform: translateY(-6px);
+  }
+  49.95% {
+    transform: translateY(4px);
+  }
+  66.6% {
+    transform: translateY(-2px);
+  }
+  83.25% {
+    transform: translateY(1px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
