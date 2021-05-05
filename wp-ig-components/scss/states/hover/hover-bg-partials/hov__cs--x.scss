@@ -1,0 +1,29 @@
+@mixin hov__cs--x($color, $bg-color, $transform_origin1, $transform_origin2) {
+    & {
+        z-index: 1;
+        overflow: hidden;
+
+    }
+  &:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: $bg-color;
+    transform: scaleX(0);
+    transform-origin: $transform_origin1 $transform_origin2;
+    transition: transform 0.3s cubic-bezier(0.89, -0.1, 0.96, 0.64), color 0.3s cubic-bezier(0.89, -0.1, 0.96, 0.64);
+  }
+
+  &:hover {
+    color: $color;
+  }
+  &:hover:before,
+  &:active:before,
+  &:focus:before {
+    transform: scaleX(1);
+  }
+}
