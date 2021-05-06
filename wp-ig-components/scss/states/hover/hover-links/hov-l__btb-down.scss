@@ -1,0 +1,44 @@
+.hov-l__btb-down {
+  --hov-l-btb-down-color: #e8efff;
+  --hov-l-btb-down-opacity: 1;
+}
+
+.hov-l__btb-down {
+  position: relative;
+  &:before {
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    opacity: var(--hov-l-btb-down-opacity);
+    background-color: var(--hov-l-btb-down-color);
+    content: "";
+    transition: transform 0.3s;
+    transform: scale(0.85);
+  }
+  &:after {
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: var(--hov-l-btb-down-color);
+    content: "";
+    transition: transform 0.3s;
+    transform: scale(0.85);
+    opacity: 0;
+    transition: bottom 0.3s, opacity 0.3s, transform 0.3s;
+  }
+
+  &:hover {
+    &:before {
+      transform: scale(1);
+    }
+    &:after {
+      bottom: 0%;
+      transform: scale(1);
+      opacity: var(--hov-l-btb-down-opacity);
+    }
+  }
+}

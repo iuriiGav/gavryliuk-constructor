@@ -1,0 +1,40 @@
+.hov-l__b-full-zt {
+  --hov-l-b-full-zt-color-before-hover: #7e5f84;
+  --hov-l-b-full-zt-color-after-hover: #e8efff;
+  --hov-l-b-full-zt-opacity-border-before-hover: 1;
+  --hov-l-b-full-zt-opacity-border-after-hover: 1;
+  --hov-l-b-full-zt-border-thickness: 3px;
+}
+
+.hov-l__b-full-zt {
+  position: relative;
+  &:before,
+  &:after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: var(--hov-l-b-full-zt-border-thickness) solid var(--hov-l-b-full-zt-color-before-hover);
+    opacity: var(--hov-l-b-full-zt-opacity-border-before-hover);
+    content: "";
+    transition: transform 0.3s, opacity 0.3s;
+  }
+
+  &:after {
+    border-color: var(--hov-l-b-full-zt-color-after-hover);
+    opacity: 0;
+    transform: translateY(-7px) translateX(6px);
+  }
+
+  &:hover {
+    &:before {
+      opacity: 0;
+      transform: translateY(5px) translateX(-5px);
+    }
+    &:after {
+      opacity: var(--hov-l-b-full-zt-opacity-border-after-hover);
+      transform: translateY(0px) translateX(0px);
+    }
+  }
+}
