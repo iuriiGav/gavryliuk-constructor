@@ -1,0 +1,20 @@
+.hov-l__text-shrink {
+  --hov-l-text-shrink-color: #fff;
+}
+
+.hov-l__text-shrink {
+  position: relative;
+  &:before {
+    color: var(--hov-l-text-shrink-color);
+    content: attr(data-css-hov-l);
+    position: absolute;
+    transition: transform 0.3s, opacity 0.3s;
+  }
+
+  &:hover {
+    &:before {
+      transform: scale(0.9);
+      opacity: 0;
+    }
+  }
+}
