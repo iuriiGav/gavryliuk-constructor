@@ -1,8 +1,8 @@
-.btnc__h--rect {
+.hov__rect {
   --btnc-h-rect-color: #fff;
 }
 
-.btnc__h--rect {
+.hov__rect {
   svg {
     left: 0;
     position: absolute;
@@ -45,7 +45,7 @@
   }
 }
 
-.btnc__h--rect:hover {
+.hov__rect:hover {
   background-color: transparent;
 
   rect {
