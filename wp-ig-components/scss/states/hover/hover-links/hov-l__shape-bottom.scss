@@ -1,0 +1,28 @@
+.hov-l__shape-bottom {
+  --hov-l-shape-bottom-content: "•";
+  --hov-l-shape-bottom-content-distance: 10px;
+  --hov-l-shape-bottom-content-font-size: 1.2em;
+  --hov-l-shape-bottom-content-color: #fff;
+  --hov-l-shape-bottom-content-distance-from-link-to-content: 0;
+}
+
+.hov-l__shape-bottom {
+  position: relative;
+  &:before {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    color: transparent;
+    content: var(--hov-l-shape-bottom-content);
+    text-shadow: 0 0 transparent;
+    font-size: var(--hov-l-shape-bottom-content-font-size);
+    transition: text-shadow 0.3s, color 0.3s;
+    transform: translateX(-50%) translateY(var(--hov-l-shape-bottom-content-distance-from-link-to-content));
+    pointer-events: none;
+  }
+  &:hover:before {
+    color: var(--hov-l-shape-bottom-content-color);
+    text-shadow: var(--hov-l-shape-bottom-content-distance) 0 var(--hov-l-shape-bottom-content-color),
+      calc(var(--hov-l-shape-bottom-content-distance) * -1) 0 var(--hov-l-shape-bottom-content-color);
+  }
+}
