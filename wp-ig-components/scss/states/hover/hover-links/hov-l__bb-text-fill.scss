@@ -1,0 +1,24 @@
+.hov-l__bb-text-fill {
+  --hov-l-bb-text-fill-color: #e8efff;
+  --hov-l-bb-text-fill-border-size: 2px;
+}
+
+.hov-l__bb-text-fill {
+  position: relative;
+  &:before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    max-width: 0;
+    border-bottom: var(--hov-l-bb-text-fill-border-size) solid var(--hov-l-bb-text-fill-color);
+    color: var(--hov-l-bb-text-fill-color);
+    content: attr(data-css-hov-l);
+    transition: max-width 0.5s;
+  }
+
+  &:hover::before {
+    max-width: 100%;
+  }
+}
