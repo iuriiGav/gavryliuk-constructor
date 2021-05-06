@@ -1,0 +1,42 @@
+.hov-l__bx {
+  --hov-l-bx-shape-color: #7e5f84;
+  --hov-l-bx-border-height: 2px;
+  --hov-l-bx-border-distance: 20px;
+}
+
+.hov-l__bx {
+  position: relative;
+  z-index: 1;
+  &:before,
+  &:after {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 50%;
+    height: var(--hov-l-bx-border-height);
+    margin-top: -1px;
+    background: var(--hov-l-bx-shape-color);
+    content: "";
+    z-index: -1;
+    transition: transform 0.3s, opacity 0.3s;
+    pointer-events: none;
+  }
+
+  &:before {
+    transform: translateY(calc(-1 * var(--hov-l-bx-border-distance)));
+  }
+  &:after {
+    transform: translateY(var(--hov-l-bx-border-distance));
+  }
+
+  &:hover {
+    &:before {
+      opacity: 0.7;
+      transform: rotate(45deg);
+    }
+    &:after {
+      opacity: 0.7;
+      transform: rotate(-45deg);
+    }
+  }
+}
