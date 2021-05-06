@@ -1,0 +1,47 @@
+.hov__shadow-pop {
+  --hov-shadow-pop-bg-color: #fff;
+  --hov-shadow-pop-shadow-color: rgba(0, 0, 0, 0.2);
+}
+
+.hov__shadow-pop {
+  border: none;
+  display: inline-block;
+  transition: all 0.2s;
+
+  &:after {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 8px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all 0.4s;
+    background-color: var(--hov-shadow-pop-bg-color);
+  }
+
+  &.btnc--square.hov__shadow-pop:after {
+    border-radius: 0;
+  }
+  &.btnc--pill.hov__shadow-pop:after {
+    border-radius: 40px;
+  }
+  &.btnc--circle.hov__shadow-pop:after {
+    border-radius: 50%;
+  }
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px var(--hov-shadow-pop-shadow-color);
+    &:after {
+      transform: scaleX(1.4) scaleY(1.6);
+      opacity: 0;
+    }
+  }
+  &:active {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 10px var(--hov-shadow-pop-shadow-color);
+  }
+}
