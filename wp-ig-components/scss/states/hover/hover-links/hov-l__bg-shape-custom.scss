@@ -1,0 +1,45 @@
+.hov-l__bg-shape-custom {
+  --hov-l-bg-shape-custom-shape-color: rgba(0, 0, 0, 0.1);
+  --hov-l-bg-shape-custom-initial-border-size: 2px;
+  --hov-l-bg-shape-custom-small-shape-width: 5.25rem;
+  --hov-l-bg-shape-custom-small-shape-height: 5.25rem;
+  --hov-l-bg-shape-custom-big-shape-width: 4.625rem;
+  --hov-l-bg-shape-custom-big-shape-height: 4.625rem;
+  --hov-l-bg-shape-custom-big-shape-border-width: 6px;
+
+  // shape manipulations
+
+  --hov-l-bg-shape-custom-shape-border-radius: 10px;
+  --hov-l-bg-shape-custom-initial-rotation: 0;
+  --hov-l-bg-shape-custom-hovered-rotation: 135deg;
+}
+
+.hov-l__bg-shape-custom {
+  position: relative;
+  &:before,
+  &:after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: var(--hov-l-bg-shape-custom-small-shape-width);
+    height: var(--hov-l-bg-shape-custom-small-shape-height);
+    border: var(--hov-l-bg-shape-custom-initial-border-size) solid var(--hov-l-bg-shape-custom-shape-color);
+    border-radius: var(--hov-l-bg-shape-custom-shape-border-radius);
+    content: "";
+    opacity: 0;
+    transition: transform 0.3s, opacity 0.3s;
+    transform: translateX(-50%) translateY(-50%) scale(0.2) rotate(var(--hov-l-bg-shape-custom-initial-rotation));
+  }
+  &:after {
+    width: var(--hov-l-bg-shape-custom-big-shape-width);
+    height: var(--hov-l-bg-shape-custom-big-shape-height);
+    border-width: var(--hov-l-bg-shape-custom-big-shape-border-width);
+  }
+  &:hover {
+    &:before,
+    &:after {
+      opacity: 1;
+      transform: translateX(-50%) translateY(-50%) scale(1) rotate(var(--hov-l-bg-shape-custom-hovered-rotation));
+    }
+  }
+}
