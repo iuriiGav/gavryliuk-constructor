@@ -1,0 +1,25 @@
+.hov-l__bb-down {
+  --hov-l-bb-down-color: #e8efff;
+  --hov-l-bb-down-height: 5px;
+}
+
+.hov-l__bb-down {
+  position: relative;
+  &:after {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: var(--hov-l-bb-down-color);
+    content: "";
+    opacity: 0;
+    transition: height 0.3s, opacity 0.3s, transform 0.3s;
+    transform: translateY(-10px);
+  }
+  &:hover:after {
+    height: var(--hov-l-bb-down-height);
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}

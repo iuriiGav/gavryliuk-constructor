@@ -1,0 +1,27 @@
+.hov-l__bb-up {
+  --hov-l-bb-up-border-color: #e8efff;
+  --hov-l-bb-up-border-height: 4px;
+}
+
+.hov-l__bb-up {
+  position: relative;
+  &:after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: var(--hov-l-bb-up-border-height);
+    background: var(--hov-l-bb-up-border-color);
+    opacity: 0;
+    transition: opacity 0.3s, transform 0.3s;
+    transform: translateY(10px);
+  }
+
+  &:hover {
+    &::after {
+      transform: translateY(0px);
+      opacity: 1;
+    }
+  }
+}

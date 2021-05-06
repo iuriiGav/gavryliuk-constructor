@@ -1,0 +1,38 @@
+.hov-l__bld-down {
+  --hov-l-bld-down-color: #e8efff;
+}
+
+.hov-l__bld-down {
+  position: relative;
+  &:before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--hov-l-bld-down-color);
+    content: "";
+    transition: top 0.3s;
+  }
+
+  &:after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 2px;
+    height: 2px;
+    background: var(--hov-l-bld-down-color);
+    content: "";
+    transition: height 0.3s;
+  }
+
+  &:hover {
+    &:before {
+      top: 100%;
+      opacity: 1;
+    }
+    &:after {
+      height: 100%;
+    }
+  }
+}
