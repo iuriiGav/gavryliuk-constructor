@@ -1,0 +1,39 @@
+.hov-l__char {
+  --hov-l-char-content-left: "<";
+  --hov-l-char-left-adjustment-margin-rem: -0.875rem;
+  --hov-l-char-content-right: ">";
+}
+
+.hov-l__char {
+  position: relative;
+  &:before {
+    transition: transform 0.2s ease-out, opacity 0.2s ease-out;
+    position: absolute;
+    opacity: 0;
+    content: var(--hov-l-char-content-left);
+    margin-left: var(--hov-l-char-left-adjustment-margin-rem);
+    transform: translateX(12px);
+  }
+  &:after {
+    transition: transform 0.2s ease-out, opacity 0.2s ease-out;
+    position: absolute;
+    opacity: 0;
+    content: var(--hov-l-char-content-right);
+    transform: translateX(-12px);
+  }
+
+  &:hover {
+    &:before {
+      opacity: 1;
+      transform: translateX(-17px);
+    }
+    &:after {
+      opacity: 1;
+      transform: translateX(17px);
+    }
+  }
+
+  &:active {
+    @include button-pressed;
+  }
+}
