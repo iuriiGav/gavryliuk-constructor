@@ -1,0 +1,37 @@
+.hov__border-reveal {
+  --hov-border-reveal-color: #f4ecff;
+}
+
+.hov__border-reveal {
+  overflow: hidden;
+  &:before {
+    content: "";
+    position: absolute;
+    right: 0;
+    left: 0;
+    background: var(--hov-border-reveal-color);
+    height: 4px;
+    transition-property: transform;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-out;
+  }
+
+  &--b:before {
+    bottom: 0;
+
+    transform: translateY(4px);
+  }
+
+  &--b:hover:before {
+    transform: translateY(0);
+  }
+
+  &--t:before {
+    top: 0;
+    transform: translateY(-4px);
+  }
+
+  &--t:hover:before {
+    transform: translateY(0);
+  }
+}

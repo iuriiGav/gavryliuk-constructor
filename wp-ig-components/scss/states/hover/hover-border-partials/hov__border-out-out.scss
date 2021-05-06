@@ -1,0 +1,34 @@
+.hov__border-out-out {
+  --hov-border-out-out-color: #78a497;
+}
+.hov__border-out-out {
+  &:before {
+    content: "";
+    position: absolute;
+    border: var(--hov-border-out-out-color) solid 4px;
+    border-radius: 8px;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transition-duration: 0.3s;
+    transition-property: top, right, bottom, left;
+  }
+
+  &.btnc--square.hov__border-out-out:before {
+    border-radius: 0;
+  }
+  &.btnc--pill.hov__border-out-out:before {
+    border-radius: 40px;
+  }
+  &.btnc--circle.hov__border-out-out:before {
+    border-radius: 50%;
+  }
+
+  &:hover:before {
+    top: -8px;
+    right: -8px;
+    bottom: -8px;
+    left: -8px;
+  }
+}

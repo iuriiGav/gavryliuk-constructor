@@ -1,0 +1,46 @@
+.hov__border-overline {
+  --hov-border-overline-color: #f4ecff;
+}
+
+.hov__border-overline {
+  overflow: hidden;
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    background: var(--hov-border-overline-color);
+    height: 4px;
+    transition-property: right, left;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-out;
+  }
+
+  &--fl {
+    &:before {
+      left: 0;
+      right: 100%;
+    }
+    &:hover:before {
+      right: 0;
+    }
+  }
+  &--fc {
+    &:before {
+      left: 51%;
+      right: 51%;
+    }
+    &:hover:before {
+      left: 0;
+      right: 0;
+    }
+  }
+  &--fr {
+    &:before {
+      left: 100%;
+      right: 0;
+    }
+    &:hover:before {
+      left: 0;
+    }
+  }
+}
