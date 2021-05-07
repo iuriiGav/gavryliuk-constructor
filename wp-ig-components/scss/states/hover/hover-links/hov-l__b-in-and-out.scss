@@ -1,0 +1,28 @@
+.hov-l__b-in-and-out {
+  --hov-l-b-in-and-out-border-color: #e8efff;
+  --hov-l-b-in-and-out-border-height: 2px;
+  --hov-l-b-in-and-out-border-change-speed: 0.3s;
+}
+
+.hov-l__b-in-and-out {
+  position: relative;
+  &:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 0%;
+    height: 100%;
+    border-bottom: var(--hov-l-b-in-and-out-border-height) solid var(--hov-l-b-in-and-out-border-color);
+    transition: width var(--hov-l-b-in-and-out-border-change-speed) ease;
+  }
+
+  &:hover,
+  &:focus {
+    &:after {
+      left: 0;
+      width: 100%;
+      transition: width var(--hov-l-b-in-and-out-border-change-speed) ease;
+    }
+  }
+}

@@ -1,0 +1,67 @@
+.hov-l__b-two-corners {
+  --hov-l-b-two-corners-border-type: dashed;
+  --hov-l-b-two-corners-border-height: 3px;
+  --hov-l-b-two-corners-border-color: #e8efff;
+  --hov-l-b-two-corners-transition-speed: 0.2s;
+}
+
+.hov-l__b-two-corners {
+  position: relative;
+  &:before,
+  &:after {
+    content: "";
+    border: var(--hov-l-b-two-corners-border-type) 3px transparent;
+    position: absolute;
+    height: 20%;
+    width: 20%;
+    transition: var(--hov-l-b-two-corners-transition-speed);
+  }
+
+  &:hover,
+  &:focus {
+    &:before,
+    &:after {
+      width: 80%;
+      height: 80%;
+    }
+  }
+
+  &--bltr {
+    &:before {
+      left: -8px;
+      bottom: -8px;
+      border-left: var(--hov-l-b-two-corners-border-type) var(--hov-l-b-two-corners-border-height)
+        var(--hov-l-b-two-corners-border-color);
+      border-bottom: var(--hov-l-b-two-corners-border-type) var(--hov-l-b-two-corners-border-height)
+        var(--hov-l-b-two-corners-border-color);
+    }
+
+    &:after {
+      top: -8px;
+      right: -8px;
+      border-right: var(--hov-l-b-two-corners-border-type) var(--hov-l-b-two-corners-border-height)
+        var(--hov-l-b-two-corners-border-color);
+      border-top: var(--hov-l-b-two-corners-border-type) var(--hov-l-b-two-corners-border-height)
+        var(--hov-l-b-two-corners-border-color);
+    }
+  }
+
+  &--tlbr {
+    &:before {
+      left: -8px;
+      top: -8px;
+      border-left: var(--hov-l-b-two-corners-border-type) var(--hov-l-b-two-corners-border-height)
+        var(--hov-l-b-two-corners-border-color);
+      border-top: var(--hov-l-b-two-corners-border-type) var(--hov-l-b-two-corners-border-height)
+        var(--hov-l-b-two-corners-border-color);
+    }
+    &:after {
+      right: -8px;
+      bottom: -8px;
+      border-right: var(--hov-l-b-two-corners-border-type) var(--hov-l-b-two-corners-border-height)
+        var(--hov-l-b-two-corners-border-color);
+      border-bottom: var(--hov-l-b-two-corners-border-type) var(--hov-l-b-two-corners-border-height)
+        var(--hov-l-b-two-corners-border-color);
+    }
+  }
+}
