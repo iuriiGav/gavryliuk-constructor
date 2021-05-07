@@ -1,0 +1,96 @@
+.hov-l__b-slide {
+  --hov-l-b-slide-color: #e8efff;
+  --hov-l-b-slide-border-height: 4px;
+}
+
+.hov-l__b-slide {
+  position: relative;
+  z-index: 1;
+  &:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+
+    background: var(--hov-l-slide-color);
+    height: var(--hov-l-slide-border-height);
+    transition-property: left, right;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-out;
+  }
+  &--bt-from-left {
+    &:before {
+      top: 0;
+
+      right: 100%;
+      left: 0;
+    }
+
+    &:hover:before {
+      right: 0;
+      left: 0;
+    }
+  }
+  &--bt-from-right {
+    &:before {
+      top: 0;
+
+      right: 0;
+      left: 100%;
+    }
+
+    &:hover:before {
+      right: 0;
+      left: 0;
+    }
+  }
+  &--bt-from-center {
+    &:before {
+      top: 0;
+
+      left: 50%;
+      right: 50%;
+    }
+    &:hover:before {
+      left: 0;
+      right: 0;
+    }
+  }
+  &--bb-from-left {
+    &:before {
+      bottom: 0;
+
+      right: 100%;
+      left: 0;
+    }
+
+    &:hover:before {
+      right: 0;
+      left: 0;
+    }
+  }
+  &--bb-from-right {
+    &:before {
+      bottom: 0;
+
+      right: 0;
+      left: 100%;
+    }
+
+    &:hover:before {
+      right: 0;
+      left: 0;
+    }
+  }
+  &--bb-from-center {
+    &:before {
+      bottom: 0;
+
+      left: 50%;
+      right: 50%;
+    }
+    &:hover:before {
+      left: 0;
+      right: 0;
+    }
+  }
+}

@@ -1,0 +1,53 @@
+.hov-l__text-fill {
+  --hov-l-text-fill-color: #e8efff;
+}
+
+.hov-l__text-fill {
+  position: relative;
+  &:before {
+    position: absolute;
+    left: 0;
+    overflow: hidden;
+    color: var(--hov-l-text-fill-color);
+    content: attr(data-css-hov-l);
+    transition: max-height 0.5s, width 0.3s;
+  }
+
+  &--tb {
+    top: 0;
+
+    &:before {
+      max-height: 0;
+    }
+    &:hover:before {
+      max-height: 100%;
+    }
+  }
+
+  &--bt {
+    &:before {
+      max-height: 100%;
+    }
+    &:hover:before {
+      max-height: 0;
+    }
+  }
+  &--lr {
+    &:before {
+      width: 0;
+      white-space: nowrap;
+    }
+    &:hover:before {
+      width: 100%;
+    }
+  }
+  &--rl {
+    &:before {
+      width: 100%;
+      white-space: nowrap;
+    }
+    &:hover:before {
+      width: 0;
+    }
+  }
+}
