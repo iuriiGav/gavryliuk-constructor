@@ -3,6 +3,7 @@
   --hov-l-b-corners-corner-size: 5px;
   --hov-l-b-corners-corner-thickness: 2px;
   --hov-l-b-corners-corner-color: #e8efff;
+  --hov-l-b-corners-corner-distance: 5px;
 }
 
 .hov-l__b-corners {
@@ -36,14 +37,14 @@
 
   &:hover.hov-l__b-corners:before {
     opacity: 1;
-    right: 5px;
-    top: 5px;
+    right: var(--hov-l-b-corners-corner-distance);
+    top: var(--hov-l-b-corners-corner-distance);
   }
 
   &:hover.hov-l__b-corners:after {
     opacity: 1;
-    left: 5px;
-    bottom: 5px;
+    left: var(--hov-l-b-corners-corner-distance);
+    bottom: var(--hov-l-b-corners-corner-distance);
   }
 
   & span {
@@ -75,12 +76,12 @@
 
   &:hover span:before {
     opacity: 1;
-    left: 5px;
-    top: 5px;
+    left: var(--hov-l-b-corners-corner-distance);
+    top: var(--hov-l-b-corners-corner-distance);
   }
   &:hover span:after {
     opacity: 1;
-    right: 5px;
-    bottom: 5px;
+    right: var(--hov-l-b-corners-corner-distance);
+    bottom: var(--hov-l-b-corners-corner-distance);
   }
 }
