@@ -26,7 +26,8 @@
     transform: translateY(7px) translateX(-6px);
   }
 
-  &:hover {
+  &:hover,
+  &:focus {
     &:before {
       opacity: 0;
       transform: translateY(-5px) translateX(5px);

@@ -25,9 +25,12 @@
       left: 0;
     }
 
-    &:hover:before {
-      right: 0;
-      left: 0;
+    &:hover,
+    &:focus {
+      &:before {
+        right: 0;
+        left: 0;
+      }
     }
   }
   &--bt-from-right {
@@ -38,9 +41,12 @@
       left: 100%;
     }
 
-    &:hover:before {
-      right: 0;
-      left: 0;
+    &:hover,
+    &:focus {
+      &:before {
+        right: 0;
+        left: 0;
+      }
     }
   }
   &--bt-from-center {
@@ -50,9 +56,12 @@
       left: 50%;
       right: 50%;
     }
-    &:hover:before {
-      left: 0;
-      right: 0;
+    &:hover,
+    &:focus {
+      &:before {
+        left: 0;
+        right: 0;
+      }
     }
   }
   &--bb-from-left {
@@ -63,9 +72,12 @@
       left: 0;
     }
 
-    &:hover:before {
-      right: 0;
-      left: 0;
+    &:hover,
+    &:focus {
+      &:before {
+        right: 0;
+        left: 0;
+      }
     }
   }
   &--bb-from-right {
@@ -76,9 +88,12 @@
       left: 100%;
     }
 
-    &:hover:before {
-      right: 0;
-      left: 0;
+    &:hover,
+    &:focus {
+      &:before {
+        right: 0;
+        left: 0;
+      }
     }
   }
   &--bb-from-center {
@@ -88,9 +103,12 @@
       left: 50%;
       right: 50%;
     }
-    &:hover:before {
-      left: 0;
-      right: 0;
+    &:hover,
+    &:focus {
+      &:before {
+        left: 0;
+        right: 0;
+      }
     }
   }
 }

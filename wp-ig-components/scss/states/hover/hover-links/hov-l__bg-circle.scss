@@ -27,7 +27,8 @@
     height: var(--hov-l-bg-circle-big-circle-radius);
     border-width: var(--hov-l-bg-circle-big-circle-border-width);
   }
-  &:hover {
+  &:hover,
+  &:focus {
     &:before,
     &:after {
       opacity: 1;

@@ -29,7 +29,8 @@
     transform: translateY(var(--hov-l-bx-border-distance));
   }
 
-  &:hover {
+  &:hover,
+  &:focus {
     &:before {
       opacity: 0.7;
       transform: rotate(45deg);

@@ -17,9 +17,12 @@
     transition: height 0.3s, opacity 0.3s, transform 0.3s;
     transform: translateY(-10px);
   }
-  &:hover:after {
-    height: var(--hov-l-bb-down-height);
-    opacity: 1;
-    transform: translateY(0px);
+  &:hover,
+  &:focus {
+    &:after {
+      height: var(--hov-l-bb-down-height);
+      opacity: 1;
+      transform: translateY(0px);
+    }
   }
 }

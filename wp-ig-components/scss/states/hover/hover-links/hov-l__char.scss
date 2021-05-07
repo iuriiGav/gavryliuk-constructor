@@ -6,23 +6,24 @@
 
 .hov-l__char {
   position: relative;
-  &:before {
-    transition: transform 0.2s ease-out, opacity 0.2s ease-out;
-    position: absolute;
-    opacity: 0;
-    content: var(--hov-l-char-content-left);
-    margin-left: var(--hov-l-char-left-adjustment-margin-rem);
-    transform: translateX(12px);
-  }
+  &:before,
   &:after {
     transition: transform 0.2s ease-out, opacity 0.2s ease-out;
     position: absolute;
     opacity: 0;
+    transform: translateX(12px);
+  }
+  &:before {
+    content: var(--hov-l-char-content-left);
+    margin-left: var(--hov-l-char-left-adjustment-margin-rem);
+  }
+  &:after {
     content: var(--hov-l-char-content-right);
     transform: translateX(-12px);
   }
 
-  &:hover {
+  &:hover,
+  &:focus {
     &:before {
       opacity: 1;
       transform: translateX(-17px);
@@ -32,5 +33,4 @@
       transform: translateX(17px);
     }
   }
-
 }

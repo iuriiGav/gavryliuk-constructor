@@ -19,8 +19,11 @@
     &:before {
       max-height: 0;
     }
-    &:hover:before {
-      max-height: 100%;
+    &:hover,
+    &:focus {
+      &:before {
+        max-height: 100%;
+      }
     }
   }
 
@@ -28,8 +31,11 @@
     &:before {
       max-height: 100%;
     }
-    &:hover:before {
-      max-height: 0;
+    &:hover,
+    &:focus {
+      &:before {
+        max-height: 0;
+      }
     }
   }
   &--lr {
@@ -37,8 +43,11 @@
       width: 0;
       white-space: nowrap;
     }
-    &:hover:before {
-      width: 100%;
+    &:hover,
+    &:focus {
+      &:before {
+        width: 100%;
+      }
     }
   }
   &--rl {
@@ -46,8 +55,11 @@
       width: 100%;
       white-space: nowrap;
     }
-    &:hover:before {
-      width: 0;
+    &:hover,
+    &:focus {
+      &:before {
+        width: 0;
+      }
     }
   }
 }

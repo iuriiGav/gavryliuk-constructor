@@ -29,7 +29,8 @@
     pointer-events: none;
   }
 
-  &:hover {
+  &:hover,
+  &:focus {
     &:before {
       opacity: 0;
       transform: translateY(-2px);

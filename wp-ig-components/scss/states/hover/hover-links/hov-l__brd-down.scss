@@ -4,29 +4,29 @@
 
 .hov-l__brd-down {
   position: relative;
-  &:before {
+  &:before,
+  &:after {
     position: absolute;
     top: 0;
-    left: 0;
-    width: 100%;
     height: 2px;
     background-color: var(--hov-l-brd-down-color);
     content: "";
+  }
+
+  &:before {
+    left: 0;
+    width: 100%;
     transition: top 0.3s;
   }
 
   &:after {
-    position: absolute;
-    top: 0;
     right: 0;
     width: 2px;
-    height: 2px;
-    background: var(--hov-l-brd-down-color);
-    content: "";
     transition: height 0.3s;
   }
-
-  &:hover {
+  
+  &:hover,
+  &:focus {
     &:before {
       top: 100%;
       opacity: 1;

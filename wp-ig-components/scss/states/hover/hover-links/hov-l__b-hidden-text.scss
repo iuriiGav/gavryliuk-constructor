@@ -37,7 +37,8 @@
     transition: transform 0.3s, opacity 0.3s;
     transform: translateY(-10px);
   }
-  &:hover {
+  &:hover,
+  &:focus {
     & .hov-l__b-hidden-text__invisible {
       opacity: 1;
       transform: translateY(0) translateX(-50%);

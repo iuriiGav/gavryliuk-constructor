@@ -33,7 +33,8 @@
     transform: translateY(var(--hov-l-btb-and-t-border-bottom-distance-before-hover));
   }
 
-  &:hover {
+  &:hover,
+  &:focus {
     color: var(--hov-l-btb-and-t-text-color);
     &:before {
       top: 0;

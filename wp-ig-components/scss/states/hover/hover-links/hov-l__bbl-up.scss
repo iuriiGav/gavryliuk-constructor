@@ -4,29 +4,28 @@
 
 .hov-l__bbl-up {
   position: relative;
-  &:before {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background-color: var(--hov-l-bbl-up-color);
-    content: "";
-    transition: top 0.3s;
-  }
-
+  &:before,
   &:after {
     position: absolute;
     bottom: 0;
     left: 0;
-    width: 2px;
     height: 2px;
-    background: var(--hov-l-bbl-up-color);
+    background-color: var(--hov-l-bbl-up-color);
     content: "";
+  }
+
+  &:before {
+    width: 100%;
+    transition: top 0.3s;
+  }
+
+  &:after {
+    width: 2px;
     transition: height 0.3s;
   }
 
-  &:hover {
+  &:hover,
+  &:focus {
     &:before {
       opacity: 1;
     }

@@ -20,9 +20,12 @@
     transform: translateX(-50%) translateY(var(--hov-l-shape-bottom-content-distance-from-link-to-content));
     pointer-events: none;
   }
-  &:hover:before {
-    color: var(--hov-l-shape-bottom-content-color);
-    text-shadow: var(--hov-l-shape-bottom-content-distance) 0 var(--hov-l-shape-bottom-content-color),
-      calc(var(--hov-l-shape-bottom-content-distance) * -1) 0 var(--hov-l-shape-bottom-content-color);
+  &:hover,
+  &:focus {
+    &:before {
+      color: var(--hov-l-shape-bottom-content-color);
+      text-shadow: var(--hov-l-shape-bottom-content-distance) 0 var(--hov-l-shape-bottom-content-color),
+        calc(var(--hov-l-shape-bottom-content-distance) * -1) 0 var(--hov-l-shape-bottom-content-color);
+    }
   }
 }

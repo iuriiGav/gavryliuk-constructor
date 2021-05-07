@@ -35,7 +35,8 @@
     height: var(--hov-l-bg-shape-custom-big-shape-height);
     border-width: var(--hov-l-bg-shape-custom-big-shape-border-width);
   }
-  &:hover {
+  &:hover,
+  &:focus {
     &:before,
     &:after {
       opacity: 1;

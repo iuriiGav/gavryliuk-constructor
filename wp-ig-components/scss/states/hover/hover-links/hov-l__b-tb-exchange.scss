@@ -9,6 +9,7 @@
   &:before,
   &:after {
     height: var(--hov-l-b-tb-exchange-border-height);
+    left: 0;
     width: 100%;
     background-color: var(--hov-l-b-tb-exchange-color-1);
     content: "";
@@ -18,15 +19,14 @@
   }
 
   &:before {
-    left: 0;
     top: 0;
   }
   &:after {
-    left: 0;
     top: 100%;
   }
 
-  &:hover, &:focus {
+  &:hover,
+  &:focus {
     &:before,
     &:after {
       visibility: visible;

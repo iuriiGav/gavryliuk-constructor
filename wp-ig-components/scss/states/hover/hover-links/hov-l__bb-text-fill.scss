@@ -11,14 +11,65 @@
     left: 0;
     overflow: hidden;
     white-space: nowrap;
-    max-width: 0;
     border-bottom: var(--hov-l-bb-text-fill-border-size) solid var(--hov-l-bb-text-fill-color);
     color: var(--hov-l-bb-text-fill-color);
     content: attr(data-css-hov-l);
-    transition: max-width 0.5s;
+    transition: max-width 0.5s, height 0.5s, opacity 0.5s;
   }
 
-  &:hover::before {
-    max-width: 100%;
+  &--lr {
+    &:before {
+      max-width: 0;
+    }
+
+    &:hover,
+    &:focus {
+      &:before {
+        max-width: 100%;
+      }
+    }
+  }
+  &--rl {
+    &:before {
+      max-width: 100%;
+    }
+
+    &:hover,
+    &:focus {
+      &:before {
+        max-width: 0;
+      }
+    }
+  }
+
+  &--tb {
+    &:before {
+      height: 0;
+      opacity: 0;
+    }
+
+    &:hover,
+    &:focus {
+      &:before {
+        height: 100%;
+        opacity: 1;
+        border-bottom: var(--hov-l-bb-text-fill-border-size) solid var(--hov-l-bb-text-fill-color);
+      }
+    }
+  }
+  &--bt {
+    &:before {
+      height: 100%;
+      opacity: 1;
+    }
+
+    &:hover,
+    &:focus {
+      &:before {
+        height: 0;
+        opacity: 0;
+        border-bottom: var(--hov-l-bb-text-fill-border-size) solid var(--hov-l-bb-text-fill-color);
+      }
+    }
   }
 }
