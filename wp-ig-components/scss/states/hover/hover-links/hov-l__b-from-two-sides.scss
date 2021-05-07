@@ -1,0 +1,45 @@
+.hov-l__b-from-two-sides {
+  --border-color: #e8efff;
+  --border-height: 1px;
+  --transition-speed: 0.2s;
+}
+
+.hov-l__b-from-two-sides {
+  position: relative;
+  &:before,
+  &:after {
+    content: "";
+    border-bottom: solid var(--border-height) var(--border-color);
+    position: absolute;
+    width: 0;
+    transition: all var(--transition-speed) ease;
+  }
+
+  &--b {
+    &:before,
+    &:after {
+      bottom: 0;
+    }
+  }
+  &--t {
+    &:before,
+    &:after {
+      top: 0;
+    }
+  }
+
+  &:before {
+    left: 0;
+  }
+  &:after {
+    right: 0;
+  }
+
+  &:hover,
+  &:focus {
+    &:before,
+    &:after {
+      width: 50%;
+    }
+  }
+}
