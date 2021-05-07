@@ -1,0 +1,35 @@
+.hov-l__b-color-change {
+  --hov-l-b-color-change-border-color: #e8efff;
+  --hov-l-b-color-change-border-size: 1px;
+  --hov-l-b-color-change-border-size-hover: thin;
+  --hov-l-b-color-change-border-color-hover: #5caaef;
+}
+.hov-l__b-color-change {
+  position: relative;
+  &:before {
+    content: "";
+    border-bottom: solid var(--hov-l-b-color-change-border-size) var(--hov-l-b-color-change-border-color);
+    position: absolute;
+    left: 0;
+    width: 100%;
+    transition: all 0.2s ease;
+  }
+
+  &--b {
+    &:before {
+      bottom: 0;
+    }
+  }
+  &--t {
+    &:before {
+      top: 0;
+    }
+  }
+
+  &:hover,
+  &:focus {
+    &:before {
+      border-bottom: solid var(--hov-l-b-color-change-border-size-hover) var(--hov-l-b-color-change-border-color-hover);
+    }
+  }
+}

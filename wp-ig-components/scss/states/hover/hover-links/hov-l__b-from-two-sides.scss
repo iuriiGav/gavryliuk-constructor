@@ -1,7 +1,7 @@
 .hov-l__b-from-two-sides {
-  --border-color: #e8efff;
-  --border-height: 1px;
-  --transition-speed: 0.2s;
+  --hov-l-b-from-two-sides-border-color: #e8efff;
+  --hov-l-b-from-two-sides-border-height: 1px;
+  --hov-l-b-from-two-sides-transition-speed: 0.2s;
 }
 
 .hov-l__b-from-two-sides {
@@ -9,10 +9,10 @@
   &:before,
   &:after {
     content: "";
-    border-bottom: solid var(--border-height) var(--border-color);
+    border-bottom: solid var(--hov-l-b-from-two-sides-border-height) var(--hov-l-b-from-two-sides-border-color);
     position: absolute;
     width: 0;
-    transition: all var(--transition-speed) ease;
+    transition: all var(--hov-l-b-from-two-sides-transition-speed) ease;
   }
 
   &--b {

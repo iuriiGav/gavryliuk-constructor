@@ -1,0 +1,36 @@
+.hov-l__b-grow-subtle {
+  --hov-l-b-grow-subtle-border-color: #e8efff;
+  --hov-l-b-grow-subtle-border-size: 1px;
+  --hov-l-b-grow-subtle-scale-on-hover-amount: 4;
+}
+
+.hov-l__b-grow-subtle {
+  position: relative;
+  &:before {
+    content: "";
+    border-bottom: solid var(--hov-l-b-grow-subtle-border-size) var(--hov-l-b-grow-subtle-border-color);
+    position: absolute;
+    left: 0;
+    width: 100%;
+    transition: all 0.3s ease;
+  }
+
+  &--b {
+    &:before {
+      bottom: 0;
+    }
+  }
+
+  &--t {
+    &:before {
+      top: 0;
+    }
+  }
+
+  &:hover,
+  &:focus {
+    &:before {
+      transform: scaleY(var(--hov-l-b-grow-subtle-scale-on-hover-amount));
+    }
+  }
+}
