@@ -1,0 +1,86 @@
+.hov-l__b-corners {
+  --hov-l-b-corners-padding: 0.425em 1.05em;
+  --hov-l-b-corners-corner-size: 5px;
+  --hov-l-b-corners-corner-thickness: 2px;
+  --hov-l-b-corners-corner-color: #e8efff;
+}
+
+.hov-l__b-corners {
+  position: relative;
+  padding: var(--hov-l-b-corners-padding);
+  &::before,
+  &:after {
+    width: var(--hov-l-b-corners-corner-size);
+    height: var(--hov-l-b-corners-corner-size);
+    background: transparent;
+    content: "";
+    position: absolute;
+    transition-property: left, right, top, bottom;
+    transition: 0.3s;
+    opacity: 0;
+  }
+
+  &:before {
+    right: 0;
+    top: 0;
+    border-right: var(--hov-l-b-corners-corner-thickness) solid var(--hov-l-b-corners-corner-color);
+    border-top: var(--hov-l-b-corners-corner-thickness) solid var(--hov-l-b-corners-corner-color);
+  }
+
+  &:after {
+    left: 0;
+    bottom: 0;
+    border-left: var(--hov-l-b-corners-corner-thickness) solid var(--hov-l-b-corners-corner-color);
+    border-bottom: var(--hov-l-b-corners-corner-thickness) solid var(--hov-l-b-corners-corner-color);
+  }
+
+  &:hover.hov-l__b-corners:before {
+    opacity: 1;
+    right: 5px;
+    top: 5px;
+  }
+
+  &:hover.hov-l__b-corners:after {
+    opacity: 1;
+    left: 5px;
+    bottom: 5px;
+  }
+
+  & span {
+    &:before,
+    &:after {
+      width: var(--hov-l-b-corners-corner-size);
+      height: var(--hov-l-b-corners-corner-size);
+      background: transparent;
+      content: "";
+      position: absolute;
+      transition-property: left, right, top, bottom;
+      transition: 0.3s;
+      opacity: 0;
+    }
+
+    &:before {
+      left: 0;
+      top: 0;
+      border-top: var(--hov-l-b-corners-corner-thickness) solid var(--hov-l-b-corners-corner-color);
+      border-left: var(--hov-l-b-corners-corner-thickness) solid var(--hov-l-b-corners-corner-color);
+    }
+    &:after {
+      right: 0;
+      bottom: 0;
+      border-right: var(--hov-l-b-corners-corner-thickness) solid var(--hov-l-b-corners-corner-color);
+      border-bottom: var(--hov-l-b-corners-corner-thickness) solid var(--hov-l-b-corners-corner-color);
+    }
+  }
+
+  &:hover span:before {
+    opacity: 1;
+    left: 5px;
+    top: 5px;
+  }
+  &:hover span:after {
+    opacity: 1;
+    right: 5px;
+    bottom: 5px;
+  }
+}

@@ -11,8 +11,8 @@
     position: absolute;
     z-index: -1;
 
-    background: var(--hov-l-slide-color);
-    height: var(--hov-l-slide-border-height);
+    background: var(--hov-l-b-slide-color);
+    height: var(--hov-l-b-slide-border-height);
     transition-property: left, right;
     transition-duration: 0.3s;
     transition-timing-function: ease-out;
