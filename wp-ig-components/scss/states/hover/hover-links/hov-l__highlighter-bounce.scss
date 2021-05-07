@@ -1,0 +1,38 @@
+.hov-l__highlighter-bounce {
+  --hov-l-highlighter-bounce-border-color: rgba(236, 64, 122, 0.25);
+  --hov-l-highlighter-bounce-width: calc(100% - 46px);
+  --hov-l-highlighter-bounce-height: calc(100% - 26px);
+  --hov-l-highlighter-bounce-width-after-hover: 100%;
+  --hov-l-highlighter-bounce-height-after-hover: 80%;
+  --hov-l-highlighter-bounce-bottom-offset-after-hover: 4px;
+  --hov-l-highlighter-bounce-left-offset-after-hover: 4px;
+  --hov-l-highlighter-bounce-bottom-offset-before-hover: 4px;
+  --hov-l-highlighter-bounce-left-offset-before-hover: 32px;
+}
+
+.hov-l__highlighter-bounce {
+  position: relative;
+  overflow: hidden;
+  padding: 0.5em 1em;
+  z-index: 1;
+  &::after {
+    content: "";
+    background: var(--hov-l-highlighter-bounce-border-color);
+    position: absolute;
+    left: var(--hov-l-highlighter-bounce-left-offset-before-hover);
+    bottom: var(--hov-l-highlighter-bounce-bottom-offset-before-hover);
+    width: var(--hov-l-highlighter-bounce-width);
+    height: var(--hov-l-highlighter-bounce-height);
+    z-index: -1;
+    transition: 0.35s cubic-bezier(0.25, 0.1, 0, 2.05);
+  }
+  &:hover,
+  &:focus {
+    &:after {
+      left: var(--hov-l-highlighter-bounce-left-offset-after-hover);
+      bottom: var(--hov-l-highlighter-bounce-bottom-offset-after-hover);
+      width: var(--hov-l-highlighter-bounce-width-after-hover);
+      height: var(--hov-l-highlighter-bounce-height-after-hover);
+    }
+  }
+}

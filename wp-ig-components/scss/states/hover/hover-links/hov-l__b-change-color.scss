@@ -1,0 +1,33 @@
+.hov-l__b-change-color {
+  --hov-l-b-change-color-border-bottom-size: 3px;
+  --hov-l-b-change-color-border-bottom-color-before-hover: #e8efff;
+  --hov-l-b-change-color-border-bottom-color-after-hover: #61a3ff;
+  --hov-l-b-change-color-border-transform-origin: left;
+}
+
+.hov-l__b-change-color {
+  border-bottom: var(--hov-l-b-change-color-border-bottom-size) solid
+    var(--hov-l-b-change-color-border-bottom-color-before-hover);
+  position: relative;
+
+  &:after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: var(--hov-l-b-change-color-border-bottom-size);
+    background-color: var(--hov-l-b-change-color-border-bottom-color-after-hover);
+    position: absolute;
+    left: 0;
+    bottom: calc(-1 * var(--hov-l-b-change-color-border-bottom-size));
+    transform-origin: var(--hov-l-b-change-color-border-transform-origin);
+    transform: scale(0);
+    transition: 0.25s linear;
+    will-change: transform;
+  }
+  &:hover,
+  &:focus {
+    &:after {
+      transform: scale(1);
+    }
+  }
+}
