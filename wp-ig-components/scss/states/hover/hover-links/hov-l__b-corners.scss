@@ -35,13 +35,13 @@
     border-bottom: var(--hov-l-b-corners-corner-thickness) solid var(--hov-l-b-corners-corner-color);
   }
 
-  &:hover.hov-l__b-corners:before {
+  &:hover.hov-l__b-corners:before, &:focus.hov-l__b-corners:before {
     opacity: 1;
     right: var(--hov-l-b-corners-corner-distance);
     top: var(--hov-l-b-corners-corner-distance);
   }
 
-  &:hover.hov-l__b-corners:after {
+  &:hover.hov-l__b-corners:after, &:focus.hov-l__b-corners:after {
     opacity: 1;
     left: var(--hov-l-b-corners-corner-distance);
     bottom: var(--hov-l-b-corners-corner-distance);
@@ -74,12 +74,12 @@
     }
   }
 
-  &:hover span:before {
+  &:hover, &:focus span:before {
     opacity: 1;
     left: var(--hov-l-b-corners-corner-distance);
     top: var(--hov-l-b-corners-corner-distance);
   }
-  &:hover span:after {
+  &:hover, &:focus span:after {
     opacity: 1;
     right: var(--hov-l-b-corners-corner-distance);
     bottom: var(--hov-l-b-corners-corner-distance);
