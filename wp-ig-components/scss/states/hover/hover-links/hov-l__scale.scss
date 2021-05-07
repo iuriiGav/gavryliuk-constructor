@@ -1,0 +1,23 @@
+.hov-l__scale {
+  --hov-l-scale-amount-up: 1.05;
+  --hov-l-scale-amount-down: 0.95;
+  --hov-l-scale-animation-speed: 0.1s;
+}
+
+.hov-l__scale {
+  position: relative;
+  transition: transform var(--hov-l-scale-animation-speed) linear;
+
+  &--up {
+    &:hover,
+    &:focus {
+      transform: scale(var(--hov-l-scale-amount-up));
+    }
+  }
+  &--down {
+    &:hover,
+    &:focus {
+      transform: scale(var(--hov-l-scale-amount-down));
+    }
+  }
+}
