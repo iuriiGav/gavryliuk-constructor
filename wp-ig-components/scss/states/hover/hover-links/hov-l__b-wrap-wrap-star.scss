@@ -1,0 +1,63 @@
+.hov-l__b-wrap-wrap-star {
+  --hov-l-b-wrap-wrap-star-border-color: white;
+  --hov-l-b-wrap-wrap-star-border-height: 2px;
+}
+.hov-l__b-wrap-wrap-star {
+  position: relative;
+  overflow: hidden;
+  &:before {
+    width: var(--hov-l-b-wrap-wrap-star-border-height);
+    height: 100%;
+    background: var(--hov-l-b-wrap-wrap-star-border-color);
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform: translateY(100%);
+    transition: 0.3s;
+  }
+  &:after {
+    width: var(--hov-l-b-wrap-wrap-star-border-height);
+    height: 100%;
+    background: var(--hov-l-b-wrap-wrap-star-border-color);
+    content: "";
+    position: absolute;
+    right: 0px;
+    bottom: 0;
+    transform: translateY(-100%);
+    transition: 0.3s;
+  }
+  & span:before {
+    width: 100%;
+    height: var(--hov-l-b-wrap-wrap-star-border-height);
+    background: var(--hov-l-b-wrap-wrap-star-border-color);
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform: translateX(-100%);
+    transition: 0.3s;
+  }
+  & span:after {
+    width: 100%;
+    height: var(--hov-l-b-wrap-wrap-star-border-height);
+    background: var(--hov-l-b-wrap-wrap-star-border-color);
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    transform: translateX(100%);
+    transition: 0.3s;
+  }
+
+  &:hover,
+  &:focus {
+    &:before,
+    &:after,
+    & span:before,
+    & span:after {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+}

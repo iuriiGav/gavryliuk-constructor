@@ -1,0 +1,64 @@
+.hov-l__b-wrap-from-corners {
+  --hov-l-b-wrap-from-corners-border-color: white;
+  --hov-l-b-wrap-from-corners-border-height: 2px;
+}
+
+.hov-l__b-wrap-from-corners {
+  position: relative;
+  overflow: hidden;
+  &:before,
+  &:after {
+    width: var(--hov-l-b-wrap-from-corners-border-height);
+    height: 100%;
+    background: var(--hov-l-b-wrap-from-corners-border-color);
+    content: "";
+    position: absolute;
+    transition: 0.3s;
+    opacity: 0;
+  }
+
+  &:before {
+    left: 0;
+    top: 0;
+    transform: translateY(-100%);
+  }
+
+  &:after {
+    right: 0px;
+    bottom: 0;
+    transform: translateY(100%);
+  }
+
+  & span:before,
+  & span:after {
+    width: 100%;
+    height: var(--hov-l-b-wrap-from-corners-border-height);
+    background: var(--hov-l-b-wrap-from-corners-border-color);
+    content: "";
+    position: absolute;
+    transition: 0.3s;
+    opacity: 0;
+  }
+
+  & span:before {
+    left: 0;
+    top: 0;
+    transform: translateX(-100%);
+  }
+  & span:after {
+    right: 0;
+    bottom: 0;
+    transform: translateX(100%);
+  }
+
+  &:hover,
+  &:focus {
+    &:before,
+    &:after,
+    & span:before,
+    & span:after {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+}
