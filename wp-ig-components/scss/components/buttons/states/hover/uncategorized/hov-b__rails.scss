@@ -7,49 +7,53 @@
   flex-direction: column;
   letter-spacing: 0;
   transition: letter-spacing 0.2s ease-in;
-}
 
-.hov-b__rails:hover,
-.hov-b__rails:active {
-  letter-spacing: 5px;
-  opacity: 1;
-}
-
-.hov-b__rails:after,
-.hov-b__rails:before {
-  backface-visibility: hidden;
-  border: 1px solid var(--hov-rails-rail-color);
-  bottom: 0px;
-  content: " ";
-  display: block;
-  margin: 0 auto;
-  position: relative;
-  transition: all 280ms ease-in-out;
-  width: 0;
-  align-self: flex-start;
-  visibility: hidden;
-}
-
-.hov-b__rails:hover:after,
-.hov-b__rails:hover:before {
-  backface-visibility: hidden;
-  border-color: var(--hov-rails-rail-color);
-  transition: width 350ms ease-in-out;
-  text-align: center;
-  width: 100%;
-  visibility: visible;
-}
-
-.hov-b__rails:hover,
-.hov-b__rails:focus {
-  &:before {
-    bottom: auto;
-    top: 0;
-    width: 100%;
+  &:hover,
+  &:focus,
+  &:active {
+    letter-spacing: 5px;
+    opacity: 1;
   }
+
+  &:before,
   &:after {
-    bottom: auto;
-    top: 0;
-    width: 100%;
+    backface-visibility: hidden;
+    border: 1px solid var(--hov-rails-rail-color);
+    bottom: 0px;
+    content: " ";
+    display: block;
+    margin: 0 auto;
+    position: relative;
+    transition: all 280ms ease-in-out;
+    width: 0;
+    align-self: flex-start;
+    visibility: hidden;
+  }
+
+  &:hover,
+  &:focus {
+    &:before,
+    &:after {
+      backface-visibility: hidden;
+      border-color: var(--hov-rails-rail-color);
+      transition: width 350ms ease-in-out;
+      text-align: center;
+      width: 100%;
+      visibility: visible;
+    }
+  }
+
+  &:hover,
+  &:focus {
+    &:before {
+      bottom: auto;
+      top: 0;
+      width: 100%;
+    }
+    &:after {
+      bottom: auto;
+      top: 0;
+      width: 100%;
+    }
   }
 }
