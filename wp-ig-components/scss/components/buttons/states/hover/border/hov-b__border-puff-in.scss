@@ -29,9 +29,12 @@
     border-radius: 50%;
   }
 
-  &:hover:before {
-    opacity: 0.6;
-    animation-name: hov-puff-in;
+  &:hover,
+  &:focus {
+    &:before {
+      opacity: 0.6;
+      animation-name: hov-puff-in;
+    }
   }
 }
 

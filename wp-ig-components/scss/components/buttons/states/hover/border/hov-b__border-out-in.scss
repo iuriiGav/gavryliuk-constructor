@@ -1,38 +1,39 @@
-
 .hov-b__border-out-in {
-  --hov-border-out-in-color: #78A497;
+  --hov-border-out-in-color: #78a497;
 }
 .hov-b__border-out-in {
+  &:before {
+    content: "";
+    position: absolute;
+    border: var(--hov-border-out-in-color) solid 4px;
+    border-radius: 8px;
+    top: -16px;
+    right: -16px;
+    bottom: -16px;
+    left: -16px;
+    opacity: 0;
+    transition-duration: 0.3s;
+    transition-property: top, right, bottom, left, opacity;
+  }
 
-&:before {
-  content: '';
-  position: absolute;
-  border: var(--hov-border-out-in-color) solid 4px;
-  border-radius: 8px;
-  top: -16px;
-  right: -16px;
-  bottom: -16px;
-  left: -16px;
-  opacity: 0;
-  transition-duration: 0.3s;
-  transition-property: top, right, bottom, left, opacity;
-}
+  &.btnc--square.hov-b__border-out-in:before {
+    border-radius: 0;
+  }
+  &.btnc--pill.hov-b__border-out-in:before {
+    border-radius: 40px;
+  }
+  &.btnc--circle.hov-b__border-out-in:before {
+    border-radius: 50%;
+  }
 
-&.btnc--square.hov-b__border-out-in:before {
-  border-radius: 0;
-}
-&.btnc--pill.hov-b__border-out-in:before {
-  border-radius: 40px;
-}
-&.btnc--circle.hov-b__border-out-in:before {
-  border-radius: 50%;
-}
-
-&:hover:before {
-  top: -8px;
-  right: -8px;
-  bottom: -8px;
-  left: -8px;
-  opacity: 1;
-}
+  &:hover,
+  &:focus {
+    &:before {
+      top: -8px;
+      right: -8px;
+      bottom: -8px;
+      left: -8px;
+      opacity: 1;
+    }
+  }
 }

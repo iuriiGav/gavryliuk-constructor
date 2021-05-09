@@ -22,8 +22,11 @@
     transform: translateY(4px);
   }
 
-  &--b:hover:before {
-    transform: translateY(0);
+  &--b:hover,
+  &--b:focus {
+    &:before {
+      transform: translateY(0);
+    }
   }
 
   &--t:before {
@@ -31,7 +34,10 @@
     transform: translateY(-4px);
   }
 
-  &--t:hover:before {
-    transform: translateY(0);
+  &--t:hover,
+  &--t:focus {
+    &:before {
+      transform: translateY(0);
+    }
   }
 }

@@ -29,18 +29,21 @@
     border-radius: 50%;
   }
 
-  &:hover:before {
-    opacity: 0.6;
-    animation-name: hov-puff-out;
+  &:hover,
+  &:focus {
+    &:before {
+      opacity: 0.6;
+      animation-name: hov-puff-out;
+    }
   }
 }
 
 @keyframes hov-puff-out {
-    100% {
-      top: -12px;
-      right: -12px;
-      bottom: -12px;
-      left: -12px;
-      opacity: 0;
-    }
+  100% {
+    top: -12px;
+    right: -12px;
+    bottom: -12px;
+    left: -12px;
+    opacity: 0;
   }
+}

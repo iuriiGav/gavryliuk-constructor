@@ -8,7 +8,8 @@
     "gulp:build": "gulp build --prod",
     "gulp:bundle": "gulp bundle --prod",
     "npmpush": "git add . && git commit -m 'publishing npm package' && git push origin constructor && npm version patch && npm publish",
-    "npmvp": "npm version patch && npm publish"
+    "npmvp": "npm version patch && npm publish",
+    "p": "npm run npmvp"
   },
   "keywords": [],
   "author": "",

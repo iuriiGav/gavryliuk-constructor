@@ -25,10 +25,13 @@
     border-radius: 50%;
   }
 
-  &:hover:before {
-    top: -8px;
-    right: -8px;
-    bottom: -8px;
-    left: -8px;
+  &:hover,
+  &:focus {
+    &:before {
+      top: -8px;
+      right: -8px;
+      bottom: -8px;
+      left: -8px;
+    }
   }
 }

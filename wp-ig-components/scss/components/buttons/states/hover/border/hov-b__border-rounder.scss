@@ -1,10 +1,10 @@
 .hov-b__border-rounder {
   transition: border-radius 0.2s ease-in;
-  &:hover {
+  &:hover, &:focus {
     border-radius: 1em;
   }
 
-  &.btnc--pill.hov-b__border-rounder:hover {
+  &.btnc--pill.hov-b__border-rounder:hover, &.btnc--pill.hov-b__border-rounder:focus  {
     border-radius: 16px;
   }
 }

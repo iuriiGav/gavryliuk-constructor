@@ -29,7 +29,10 @@
     border: var(--hov-border-frame-border-color) solid 2px;
   }
 
-  &:hover::before {
-    opacity: 1;
+  &:hover,
+  &:focus {
+    &:before {
+      opacity: 1;
+    }
   }
 }

@@ -4,7 +4,7 @@
 
 .hov-b__border-fade {
   transition: box-shadow 0.2s ease-in;
-  &:hover {
+  &:hover, &:focus {
     box-shadow: inset 0 0 0 4px var(--hov-border-fade-border-color);
   }
 }
