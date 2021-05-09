@@ -1,42 +1,84 @@
 ///////////////////////////////////////////////=================OVERFLOW=================//////////////////////////////////
 .ig-oYa {
-    overflow-y: auto;
+  overflow-y: auto;
 }
 
 .ig-oYh {
-    overflow-y: hidden;
+  overflow-y: hidden;
 }
 
 .ig-oYs {
-    overflow-y: scroll;
+  overflow-y: scroll;
 }
 
 .ig-oYv {
-    overflow-y: visible;
+  overflow-y: visible;
 }
 
-
 .ig-oXa {
-    overflow-x: auto;
+  overflow-x: auto;
 }
 
 .ig-oXh {
-    overflow-x: hidden;
+  overflow-x: hidden;
 }
 
 .ig-oXs {
-    overflow-x: scroll;
+  overflow-x: scroll;
 }
 
 .ig-oXv {
-    overflow-x: visible;
+  overflow-x: visible;
 }
 
-//positionning 
+//positionning
 
 .ig-pr {
-    position: relative;
-  }
+  position: relative;
+}
 .ig-pa {
-    position: absolute;
-  }
+  position: absolute;
+}
+
+//width
+
+.ig-w-10 {
+  width: 10%;
+}
+.ig-w-20 {
+  width: 20%;
+}
+.ig-w-30 {
+  width: 30%;
+}
+.ig-w-40 {
+  width: 40%;
+}
+.ig-w-50 {
+  width: 50%;
+}
+.ig-w-60 {
+  width: 60%;
+}
+.ig-w-70 {
+  width: 70%;
+}
+.ig-w-80 {
+  width: 80%;
+}
+.ig-w-90 {
+  width: 90%;
+}
+.ig-w-100 {
+  width: 100%;
+}
+
+//margin
+
+.ig-ml-0 {
+  margin-left: 0;
+}
+
+.ig-mr-0 {
+  margin-right: 0;
+}

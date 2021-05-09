@@ -6,6 +6,7 @@
 }
 
 .hov-l__b-and-t-color-and-bb-change-subtle {
+  transition: all var(--hov-l-b-and-t-color-and-bb-change-subtle-transition-speed) ease;
   position: relative;
   &:before {
     content: "";
@@ -20,7 +21,7 @@
 
   &:hover,
   &:focus {
-    color: var(--hov-l-b-and-t-color-and-bb-change-subtle-hov-text-color);
+    color: var(--hov-l-b-and-t-color-and-bb-change-subtle-hov-text-color) !important;
     &:before {
       opacity: 1;
     }

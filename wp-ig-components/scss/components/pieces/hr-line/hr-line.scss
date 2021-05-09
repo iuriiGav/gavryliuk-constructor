@@ -1,0 +1,18 @@
+.hr-line {
+  border: none;
+  color: var(--hr-line-border-color);
+  margin: var(--hr-line-margin-top-and-bottom, 0.5rem) auto var(--hr-line-margin-top-and-bottom, 0.5rem) auto;
+  border-top: solid var(--hr-line-border-size, 1px) var(--hr-line-border-color, #f1f1e6);
+  opacity: var(--hr-line-line-opacity, 1);
+  width: 100%;
+
+  &--b {
+    border-top: none;
+    border-bottom: solid var(--hr-line-border-size, 1px) var(--hr-line-border-color, #f1f1e6);
+  }
+
+  & span {
+    display: block;
+    opacity: var(--hr-line-text-opacity, inherit);
+  }
+}
