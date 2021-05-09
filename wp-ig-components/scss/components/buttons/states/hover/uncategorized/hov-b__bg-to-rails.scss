@@ -45,7 +45,7 @@
     background-color: var(--hov-bg-to-rails-background-color);
   }
 
-  &:hover {
+  &:hover, &:focus {
     & span {
       letter-spacing: 2px;
     }

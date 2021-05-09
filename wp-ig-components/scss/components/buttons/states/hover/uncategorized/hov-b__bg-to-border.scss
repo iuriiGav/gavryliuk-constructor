@@ -48,7 +48,8 @@
     border-radius: 50%;
   }
 
-  &:hover {
+  &:hover,
+  &:focus {
     &:before {
       opacity: 0;
       transform: scale(0.5, 0.5);

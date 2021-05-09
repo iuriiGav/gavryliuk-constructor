@@ -45,7 +45,7 @@
   }
 }
 
-.hov-b__rect:hover {
+.hov-b__rect:hover, .hov-b__rect:focus {
   background-color: transparent;
 
   rect {
