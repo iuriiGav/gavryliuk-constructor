@@ -1,9 +1,8 @@
 @mixin hov-b__cs--y($color, $bg-color, $transform_origin1, $transform_origin2) {
-    & {
-        z-index: 1;
-        overflow: hidden;
-
-    }
+  & {
+    z-index: 1;
+    overflow: hidden;
+  }
   &:before {
     content: "";
     position: absolute;
@@ -18,7 +17,9 @@
     transition: transform 0.3s cubic-bezier(0.89, -0.1, 0.96, 0.64), color 0.3s cubic-bezier(0.89, -0.1, 0.96, 0.64);
   }
 
-  &:hover {
+  &:hover,
+  &:active,
+  &:focus {
     color: $color;
   }
   &:hover:before,
