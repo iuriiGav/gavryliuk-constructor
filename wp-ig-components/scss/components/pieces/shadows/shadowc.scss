@@ -1,6 +1,4 @@
 .shadowc {
-  --shadowc-1-color-rgb: 0, 0, 0;
-  --shadowc-2-color-rgb: 0, 0, 0;
   @extend .shadowc__h__transition;
 
   &:hover {
@@ -14,48 +12,8 @@
 }
 
 .shadowc__h__transition {
-  --shadowc-h-transition-speed: 0.3s;
-  --shadowc-h-transition-cb: cubic-bezier(0.25, 0.8, 0.25, 1);
-}
-
-.shadowc__h__transition {
   transition: box-shadow var(--shadowc-h-transition-speed, 0.3s)
     var(--shadowc-h-transition-cb, cubic-bezier(0.25, 0.8, 0.25, 1));
-}
-
-.shadowc--sm {
-  --shadowc-sm-1-xyr: 0 1px 3px;
-  --shadowc-sm-1-opacity: 0.12;
-  --shadowc-sm-2-xyr: 0 1px 3px;
-  --shadowc-sm-2-opacity: 0.24;
-}
-
-.shadowc--md {
-  --shadowc-md-1-xyr: 0 3px 6px;
-  --shadowc-md-1-opacity: 0.16;
-  --shadowc-md-2-xyr: 0 3px 6px;
-  --shadowc-md-2-opacity: 0.23;
-}
-
-.shadowc--lg {
-  --shadowc-lg-1-xyr: 0 10px 20px;
-  --shadowc-lg-1-opacity: 0.19;
-  --shadowc-lg-2-xyr: 0 6px 6px;
-  --shadowc-lg-2-opacity: 0.23;
-}
-
-.shadowc--xl {
-  --shadowc-xl-1-xyr: 0 14px 28px;
-  --shadowc-xl-1-opacity: 0.45;
-  --shadowc-xl-2-xyr: 0 10px 10px;
-  --shadowc-xl-2-opacity: 0.22;
-}
-
-.shadowc--xxl {
-  --shadowc-xxl-1-xyr: 0 19px 38px;
-  --shadowc-xxl-2-xyr: 0 15px 12px;
-  --shadowc-xxl-1-opacity: 0.3;
-  --shadowc-xxl-2-opacity: 0.22;
 }
 
 .shadowc--sm {
@@ -114,41 +72,6 @@
       @extend .shadowc__h--xxl;
     }
   }
-}
-
-.shadowc__h--sm {
-  --shadowc-h-sm-1-xyr: 0 1px 3px;
-  --shadowc-h-sm-1-opacity: 0.12;
-  --shadowc-h-sm-2-xyr: 0 1px 3px;
-  --shadowc-h-sm-2-opacity: 0.24;
-}
-
-.shadowc__h--md {
-  --shadowc-h-md-1-xyr: 0 3px 6px;
-  --shadowc-h-md-1-opacity: 0.16;
-  --shadowc-h-md-2-xyr: 0 3px 6px;
-  --shadowc-h-md-2-opacity: 0.23;
-}
-
-.shadowc__h--lg {
-  --shadowc-h-lg-1-xyr: 0 10px 20px;
-  --shadowc-h-lg-1-opacity: 0.19;
-  --shadowc-h-lg-2-xyr: 0 6px 6px;
-  --shadowc-h-lg-2-opacity: 0.23;
-}
-
-.shadowc__h--xl {
-  --shadowc-h-xl-1-xyr: 0 14px 28px;
-  --shadowc-h-xl-1-opacity: 0.45;
-  --shadowc-h-xl-2-xyr: 0 10px 10px;
-  --shadowc-h-xl-2-opacity: 0.22;
-}
-
-.shadowc__h--xxl {
-  --shadowc--xxl-1-xyr: 0 19px 38px;
-  --shadowc--xxl-1-opacity: 0.3;
-  --shadowc--xxl-2-xyr: 0 15px 12px;
-  --shadowc--xxl-2-opacity: 0.22;
 }
 
 .shadowc__h--sm {
