@@ -1,8 +1,8 @@
-.hov__border-frame {
+.hov-b__border-frame {
   --hov-border-frame-border-color: #6a6481;
 }
 
-.hov__border-frame {
+.hov-b__border-frame {
   &:before {
     transition: opacity 0.3s ease-out;
     content: "";
@@ -16,16 +16,16 @@
     opacity: 0;
   }
 
-  &.btnc--square.hov__border-frame:before {
+  &.btnc--square.hov-b__border-frame:before {
     border-radius: 0;
   }
-  &.btnc--pill.hov__border-frame:before {
+  &.btnc--pill.hov-b__border-frame:before {
     border-radius: 40px;
   }
-  &.btnc--circle.hov__border-frame:before {
+  &.btnc--circle.hov-b__border-frame:before {
     border-radius: 50%;
   }
-  &.btnc--sm.hov__border-frame:before {
+  &.btnc--sm.hov-b__border-frame:before {
     border: var(--hov-border-frame-border-color) solid 2px;
   }
 

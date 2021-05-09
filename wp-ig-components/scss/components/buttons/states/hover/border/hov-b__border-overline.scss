@@ -1,14 +1,14 @@
-.hov__border-underline {
-  --hov-border-underline-color: #f4ecff;
+.hov-b__border-overline {
+  --hov-border-overline-color: #f4ecff;
 }
 
-.hov__border-underline {
+.hov-b__border-overline {
   overflow: hidden;
   &:before {
     content: "";
     position: absolute;
-    bottom: 0;
-    background: var(--hov-border-underline-color);
+    top: 0;
+    background: var(--hov-border-overline-color);
     height: 4px;
     transition-property: right, left;
     transition-duration: 0.3s;

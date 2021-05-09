@@ -1,8 +1,8 @@
 
-.hov__border-out-in {
+.hov-b__border-out-in {
   --hov-border-out-in-color: #78A497;
 }
-.hov__border-out-in {
+.hov-b__border-out-in {
 
 &:before {
   content: '';
@@ -18,13 +18,13 @@
   transition-property: top, right, bottom, left, opacity;
 }
 
-&.btnc--square.hov__border-out-in:before {
+&.btnc--square.hov-b__border-out-in:before {
   border-radius: 0;
 }
-&.btnc--pill.hov__border-out-in:before {
+&.btnc--pill.hov-b__border-out-in:before {
   border-radius: 40px;
 }
-&.btnc--circle.hov__border-out-in:before {
+&.btnc--circle.hov-b__border-out-in:before {
   border-radius: 50%;
 }
 

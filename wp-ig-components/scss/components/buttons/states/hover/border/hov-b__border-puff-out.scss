@@ -1,8 +1,8 @@
-.hov__border-puff-out {
+.hov-b__border-puff-out {
   --hov-border-puff-out-color: #e1e1e1;
 }
 
-.hov__border-puff-out {
+.hov-b__border-puff-out {
   transition: all 0.2s ease-in-out 0.1s;
 
   &:before {
@@ -19,13 +19,13 @@
     opacity: 0;
   }
 
-  &.btnc--square.hov__border-puff-out:before {
+  &.btnc--square.hov-b__border-puff-out:before {
     border-radius: 0;
   }
-  &.btnc--pill.hov__border-puff-out:before {
+  &.btnc--pill.hov-b__border-puff-out:before {
     border-radius: 40px;
   }
-  &.btnc--circle.hov__border-puff-out:before {
+  &.btnc--circle.hov-b__border-puff-out:before {
     border-radius: 50%;
   }
 
