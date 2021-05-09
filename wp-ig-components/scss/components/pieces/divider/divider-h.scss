@@ -14,5 +14,6 @@
   & span {
     display: block;
     opacity: var(--divider-h-text-opacity, inherit);
+    user-select: none;
   }
 }
