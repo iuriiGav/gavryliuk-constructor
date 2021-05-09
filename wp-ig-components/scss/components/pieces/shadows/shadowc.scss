@@ -16,6 +16,20 @@
     var(--shadowc-h-transition-cb, cubic-bezier(0.25, 0.8, 0.25, 1));
 }
 
+
+
+.shadowc--subtle {
+  box-shadow: var(--shadowc-subtle-1-xyr, 0 3px 1px -2px)
+      rgba(var(--shadowc-1-color-rgb, 0, 0, 0), var(--shadowc-subtle-1-opacity, 0.2)),
+    var(--shadowc-subtle-2-xyr, 0 2px 2px 0)
+      rgba(var(--shadowc-1-color-rgb, 0, 0, 0), var(--shadowc-subtle-2-opacity, 0.14)),
+    var(--shadowc-subtle-3-xyr, 0 1px 5px 0)
+      rgba(var(--shadowc-1-color-rgb), 0, 0, 0, var(--shadowc-subtle-3-opacity, 0.12));
+  &.shadowc__h {
+    @extend .shadowc__h--subtle;
+  }
+}
+
 .shadowc--sm {
   box-shadow: var(--shadowc-sm-1-xyr, 0 1px 3px)
       rgba(var(--shadowc-1-color-rgb, 0, 0, 0), var(--shadowc-sm-1-opacity, 0.12)),
@@ -42,7 +56,7 @@
 .shadowc--lg {
   box-shadow: var(--shadowc-lg-1-xyr, 0 10px 20px)
       rgba(var(--shadowc-1-color-rgb, 0, 0, 0), var(--shadowc-lg-1-opacity, 0.19)),
-    var(--shadowc-lg-2-xyr) rgba(var(--shadowc-2-color-rgb, 0, 0, 0), var(--shadowc-lg-2-opacity, 0.23));
+    var(--shadowc-lg-2-xyr, 0 6px 6px) rgba(var(--shadowc-2-color-rgb, 0, 0, 0), var(--shadowc-lg-2-opacity, 0.23));
 
   &.shadowc__h {
     &:hover {
@@ -71,6 +85,19 @@
     &:hover {
       @extend .shadowc__h--xxl;
     }
+  }
+}
+
+// hover state
+
+.shadowc__h--subtle {
+  &:hover {
+    box-shadow: var(--shadowc-h-subtle-1-xyr, 0 4px 8px -2px)
+        rgba(var(--shadowc-1-color-rgb, 0, 0, 0), var(--shadowc-h-subtle-1-opacity, 0.2)),
+      var(--shadowc-h-subtle-2-xyr, 0 4px 6px 0)
+        rgba(var(--shadowc-1-color-rgb, 0, 0, 0), var(--shadowc-h-subtle-2-opacity, 0.14)),
+      var(--shadowc-h-subtle-3-xyr, 0 3px 10px 0)
+        rgba(var(--shadowc-1-color-rgb), 0, 0, 0, var(--shadowc-h-subtle-3-opacity, 0.12));
   }
 }
 
@@ -114,3 +141,5 @@
         rgba(var(--shadowc-2-color-rgb, 0, 0, 0), var(--shadowc-h-xxl-2-opacity, 0.22));
   }
 }
+
+
