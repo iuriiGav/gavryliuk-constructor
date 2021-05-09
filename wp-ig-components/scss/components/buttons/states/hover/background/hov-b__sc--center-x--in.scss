@@ -1,4 +1,4 @@
-@mixin hov__cs--x--in($color, $bg-color--before-hover, $bg-color--after-hover, $transform_origin1, $transform_origin2) {
+@mixin hov-b__cs--x--in($color, $bg-color--before-hover, $bg-color--after-hover, $transform_origin1, $transform_origin2) {
   & {
       z-index: 1;
       overflow: hidden;

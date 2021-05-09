@@ -1,9 +1,9 @@
-@mixin hov__cs--y--in($color, $bg-color--before-hover, $bg-color--after-hover, $transform_origin1, $transform_origin2) {
-  & {
-    z-index: 1;
-    overflow: hidden;
-    background-color: $bg-color--after-hover;
-  }
+@mixin hov-b__cs--y($color, $bg-color, $transform_origin1, $transform_origin2) {
+    & {
+        z-index: 1;
+        overflow: hidden;
+
+    }
   &:before {
     content: "";
     position: absolute;
@@ -12,8 +12,8 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: $bg-color--before-hover;
-    transform: scaleY(1);
+    background: $bg-color;
+    transform: scaleY(0);
     transform-origin: $transform_origin1 $transform_origin2;
     transition: transform 0.3s cubic-bezier(0.89, -0.1, 0.96, 0.64), color 0.3s cubic-bezier(0.89, -0.1, 0.96, 0.64);
   }
@@ -24,6 +24,6 @@
   &:hover:before,
   &:active:before,
   &:focus:before {
-    transform: scaleY(0);
+    transform: scaleY(1);
   }
 }

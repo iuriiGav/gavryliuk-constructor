@@ -1,4 +1,4 @@
-@mixin hov__c-swap($color, $bg-color) {
+@mixin hov-b__c-swap($color, $bg-color) {
     transition: color .3s ease, background-color .3s ease;
   
     color: $color;
