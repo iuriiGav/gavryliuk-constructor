@@ -1,0 +1,18 @@
+.divider-h {
+  border: none;
+  color: var(--divider-h-border-color);
+  margin: var(--divider-h-margin-top-and-bottom, 0.5rem) auto var(--divider-h-margin-top-and-bottom, 0.5rem) auto;
+  border-top: solid var(--divider-h-border-size, 1px) var(--divider-h-border-color, #f1f1e6);
+  opacity: var(--divider-h-line-opacity, 1);
+  width: 100%;
+
+  &--b {
+    border-top: none;
+    border-bottom: solid var(--divider-h-border-size, 1px) var(--divider-h-border-color, #f1f1e6);
+  }
+
+  & span {
+    display: block;
+    opacity: var(--divider-h-text-opacity, inherit);
+  }
+}
