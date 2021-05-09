@@ -1,11 +1,11 @@
-.hov-l__text-shrink {
-  --hov-l-text-shrink-color: #fff;
+.hov-l__t-shrink {
+  --hov-l-t-shrink-color: #fff;
 }
 
-.hov-l__text-shrink {
+.hov-l__t-shrink {
   position: relative;
   &:before {
-    color: var(--hov-l-text-shrink-color);
+    color: var(--hov-l-t-shrink-color);
     content: attr(data-css-hov-l);
     position: absolute;
     transition: transform 0.3s, opacity 0.3s;

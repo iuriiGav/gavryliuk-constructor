@@ -1,10 +1,10 @@
-.hov-l__char {
+.hov-l__shape-char-lr {
   --hov-l-char-content-left: "<";
   --hov-l-char-left-adjustment-margin-rem: -0.875rem;
   --hov-l-char-content-right: ">";
 }
 
-.hov-l__char {
+.hov-l__shape-char-lr {
   position: relative;
   &:before,
   &:after {

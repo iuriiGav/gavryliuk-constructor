@@ -1,0 +1,44 @@
+.hov-l__b-and-t-color-and-bb-change {
+  --hov-l-b-and-t-color-and-bb-change-overlay-color: #fff;
+  --hov-l-b-and-t-color-and-bb-change-overlay-text-shadow: rgba(255, 255, 255, 0.1);
+  --hov-l-b-and-t-color-and-bb-change-border-bottom-height: 2px;
+}
+
+.hov-l__b-and-t-color-and-bb-change {
+  position: relative;
+  &:before {
+    color: var(--hov-l-b-and-t-color-and-bb-change-overlay-color);
+    text-shadow: 0 0 1px var(--hov-l-b-and-t-color-and-bb-change-overlay-text-shadow);
+    content: attr(data-css-hov-l);
+    position: absolute;
+    transition: transform 0.3s, opacity 0.3s;
+    pointer-events: none;
+  }
+
+  &:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: var(--hov-l-b-and-t-color-and-bb-change-border-bottom-height);
+    background-color: var(--hov-l-b-and-t-color-and-bb-change-overlay-color);
+    opacity: 0;
+    transform: translateY(5px);
+    transition: transform 0.3s, opacity 0.3s;
+    pointer-events: none;
+  }
+
+  &:hover,
+  &:focus {
+    &:before {
+      opacity: 0;
+      transform: translateY(-2px);
+    }
+
+    &:after {
+      opacity: 1;
+      transform: translateY(0px);
+    }
+  }
+}

@@ -1,14 +1,14 @@
-.hov-l__text-fill {
-  --hov-l-text-fill-color: #e8efff;
+.hov-l__t-fill {
+  --hov-l-t-fill-color: #e8efff;
 }
 
-.hov-l__text-fill {
+.hov-l__t-fill {
   position: relative;
   &:before {
     position: absolute;
     left: 0;
     overflow: hidden;
-    color: var(--hov-l-text-fill-color);
+    color: var(--hov-l-t-fill-color);
     content: attr(data-css-hov-l);
     transition: max-height 0.5s, width 0.3s;
   }

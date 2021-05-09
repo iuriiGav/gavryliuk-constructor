@@ -1,4 +1,4 @@
-.hov-l__bg-shape-custom {
+.hov-l__shape-bg-custom {
   --hov-l-bg-shape-custom-shape-color: rgba(0, 0, 0, 0.1);
   --hov-l-bg-shape-custom-initial-border-size: 2px;
   --hov-l-bg-shape-custom-small-shape-width: 5.25rem;
@@ -14,7 +14,7 @@
   --hov-l-bg-shape-custom-hovered-rotation: 135deg;
 }
 
-.hov-l__bg-shape-custom {
+.hov-l__shape-bg-custom {
   position: relative;
   &:before,
   &:after {

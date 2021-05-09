@@ -1,0 +1,28 @@
+.hov-l__b-and-t-color-and-bb-change-subtle {
+  --hov-l-b-and-t-color-and-bb-change-subtle-border-color: #b6aec8;
+  --hov-l-b-and-t-color-and-bb-change-subtle-border-size: 1px;
+  --hov-l-b-and-t-color-and-bb-change-subtle-hov-text-color: #5C5976;
+  --hov-l-b-and-t-color-and-bb-change-subtle-transition-speed: 0.2s;
+}
+
+.hov-l__b-and-t-color-and-bb-change-subtle {
+  position: relative;
+  &:before {
+    content: "";
+    border-bottom: solid var(--hov-l-b-and-t-color-and-bb-change-subtle-border-size) var(--hov-l-b-and-t-color-and-bb-change-subtle-border-color);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    opacity: 0;
+    transition: all var(--hov-l-b-and-t-color-and-bb-change-subtle-transition-speed) ease;
+  }
+
+  &:hover,
+  &:focus {
+    color: var(--hov-l-b-and-t-color-and-bb-change-subtle-hov-text-color);
+    &:before {
+      opacity: 1;
+    }
+  }
+}

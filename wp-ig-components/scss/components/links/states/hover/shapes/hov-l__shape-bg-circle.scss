@@ -1,4 +1,4 @@
-.hov-l__bg-circle {
+.hov-l__shape-bg-circle {
   --hov-l-bg-circle-circle-color: rgba(0, 0, 0, 0.1);
   --hov-l-bg-circle-initial-border-size: 2px;
   --hov-l-bg-circle-small-circle-radius: 6.25rem;
@@ -6,7 +6,7 @@
   --hov-l-bg-circle-big-circle-border-width: 6px;
 }
 
-.hov-l__bg-circle {
+.hov-l__shape-bg-circle {
   position: relative;
   &:before,
   &:after {
