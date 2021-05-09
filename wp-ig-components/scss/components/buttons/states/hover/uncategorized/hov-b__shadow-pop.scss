@@ -1,9 +1,9 @@
-.hov__shadow-pop {
+.hov-b__shadow-pop {
   --hov-shadow-pop-bg-color: #fff;
   --hov-shadow-pop-shadow-color: rgba(0, 0, 0, 0.2);
 }
 
-.hov__shadow-pop {
+.hov-b__shadow-pop {
   border: none;
   display: inline-block;
   transition: all 0.2s;
@@ -22,13 +22,13 @@
     background-color: var(--hov-shadow-pop-bg-color);
   }
 
-  &.btnc--square.hov__shadow-pop:after {
+  &.btnc--square.hov-b__shadow-pop:after {
     border-radius: 0;
   }
-  &.btnc--pill.hov__shadow-pop:after {
+  &.btnc--pill.hov-b__shadow-pop:after {
     border-radius: 40px;
   }
-  &.btnc--circle.hov__shadow-pop:after {
+  &.btnc--circle.hov-b__shadow-pop:after {
     border-radius: 50%;
   }
 
