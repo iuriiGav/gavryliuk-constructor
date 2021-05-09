@@ -1,9 +1,9 @@
-.hov__down {
+.hov-b__up {
   transition: transform 0.2s ease-in;
   &:hover {
-    transform: translateY(8px);
+    transform: translateY(-8px);
   }
   &:active {
-    transform: scale(0.9);
+    transform: scale(1.1);
   }
 }
