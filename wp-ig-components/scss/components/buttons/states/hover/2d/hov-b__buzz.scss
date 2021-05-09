@@ -1,8 +1,8 @@
 .hov-b__buzz {
-    &:hover {
+    &:hover, &:focus {
         animation: hov-buzz .15s linear infinite;
     }
-    &:active, &:focus {
+    &:active {
         animation: none;
     }
 }

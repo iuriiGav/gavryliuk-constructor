@@ -1,5 +1,6 @@
 .hov-b__push {
-  &:hover {
+  &:hover,
+  &:focus {
     animation: hov-push 0.3s linear 1;
   }
 }

@@ -1,10 +1,7 @@
 .hov-b__left {
-  &:hover {
-    animation: hov-left 0.3s ease-in forwards;
-  }
-  &:active,
+  &:hover,
   &:focus {
-    animation: none;
+    animation: hov-left 0.3s ease-in forwards;
   }
 }
 

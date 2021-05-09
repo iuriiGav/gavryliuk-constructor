@@ -1,10 +1,9 @@
 .hov-b__beat {
-  &:hover {
+  &:hover, &:focus {
     animation: hov-beat 1s linear infinite;
   }
 
-  &:active,
-  &:focus {
+  &:active {
     animation: none;
   }
 }

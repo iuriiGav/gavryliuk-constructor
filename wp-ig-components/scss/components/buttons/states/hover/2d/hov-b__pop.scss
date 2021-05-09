@@ -1,5 +1,6 @@
 .hov-b__pop {
-  &:hover {
+  &:hover,
+  &:focus {
     animation: hover-pop 0.3s linear 1;
   }
 }

@@ -1,9 +1,8 @@
 .hov-b__buzz-once {
-  &:hover {
+  &:hover, &:focus {
     animation: hover-buzz-once 0.75s linear 1;
   }
-  &:active,
-  &:focus {
+  &:active {
     animation: none;
   }
 }

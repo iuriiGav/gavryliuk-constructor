@@ -1,10 +1,10 @@
 .hov-b__beat-shrink {
-  &:hover {
+  &:hover,
+  &:focus {
     animation: hov-beat-shrink 1s linear infinite;
   }
 
-  &:active,
-  &:focus {
+  &:active {
     animation: none;
   }
 }

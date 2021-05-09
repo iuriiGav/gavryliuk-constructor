@@ -1,6 +1,6 @@
 .hov-b__up {
   transition: transform 0.2s ease-in;
-  &:hover {
+  &:hover, &:focus {
     transform: translateY(-8px);
   }
   &:active {

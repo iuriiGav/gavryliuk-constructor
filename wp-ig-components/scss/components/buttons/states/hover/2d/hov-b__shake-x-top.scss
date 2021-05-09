@@ -1,9 +1,9 @@
 .hov-b__shake-x-top {
     transform-origin: 0 100%;
-    &:hover {
+    &:hover, &:focus {
         animation: hover-shake-x-top 1s ease-in-out 1;
     }
-    &:active, &:focus {
+    &:active {
         animation: none;
     }
 

@@ -1,10 +1,6 @@
 .hov-b__right {
-  &:hover {
+  &:hover, &:focus {
     animation: hov-right 0.3s ease-in forwards;
-  }
-  &:active,
-  &:focus {
-    animation: none;
   }
 }
 

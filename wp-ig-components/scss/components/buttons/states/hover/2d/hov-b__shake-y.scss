@@ -1,9 +1,8 @@
 .hov-b__shake-y {
-  &:hover {
+  &:hover, &:focus {
     animation: hover-shake-y 1s ease-in-out 1;
   }
-  &:active,
-  &:focus {
+  &:active {
     animation: none;
   }
 }
