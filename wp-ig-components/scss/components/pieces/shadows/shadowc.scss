@@ -24,7 +24,7 @@
     var(--shadowc-subtle-2-xyr, 0 2px 2px 0)
       rgba(var(--shadowc-1-color-rgb, 0, 0, 0), var(--shadowc-subtle-2-opacity, 0.14)),
     var(--shadowc-subtle-3-xyr, 0 1px 5px 0)
-      rgba(var(--shadowc-1-color-rgb), 0, 0, 0, var(--shadowc-subtle-3-opacity, 0.12));
+      rgba(var(--shadowc-1-color-rgb, 0, 0, 0), var(--shadowc-subtle-3-opacity, 0.12));
   &.shadowc__h {
     @extend .shadowc__h--subtle;
   }
@@ -97,7 +97,7 @@
       var(--shadowc-h-subtle-2-xyr, 0 4px 6px 0)
         rgba(var(--shadowc-1-color-rgb, 0, 0, 0), var(--shadowc-h-subtle-2-opacity, 0.14)),
       var(--shadowc-h-subtle-3-xyr, 0 3px 10px 0)
-        rgba(var(--shadowc-1-color-rgb), 0, 0, 0, var(--shadowc-h-subtle-3-opacity, 0.12));
+        rgba(var(--shadowc-1-color-rgb, 0, 0, 0), var(--shadowc-h-subtle-3-opacity, 0.12));
   }
 }
 
