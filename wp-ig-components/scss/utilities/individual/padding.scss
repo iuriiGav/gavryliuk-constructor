@@ -1,26 +1,24 @@
 :root {
-  --padding-and-margin-spacer: 1em;
+  --pm-spacer: 1em;
 }
-
-$pm-spacer: var(--padding-and-margin-spacer, 1em);
 
 //Padding around
 
 .ig-p-1 {
-  padding: calc($pm-spacer * 0.25) !important;
+  padding: calc(var(--pm-spacer, 1em) * 0.25) !important;
 }
 
 //Padding left and right
 .ig-px-2 {
-  padding-right: calc($pm-spacer * 0.5) !important;
-  padding-left: calc($pm-spacer * 0.5) !important;
+  padding-right: calc(var(--pm-spacer, 1em) * 0.5) !important;
+  padding-left: calc(var(--pm-spacer, 1em) * 0.5) !important;
 }
 
 //Padding top and bottom
 
 //Padding left
 .ig-pl-2 {
-  padding-left: calc($pm-spacer * 0.5) !important;
+  padding-left: calc(var(--pm-spacer, 1em) * 0.5) !important;
 }
 
 //Padding right
