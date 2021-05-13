@@ -1,0 +1,33 @@
+.hov-i__bg--circle {
+  --hov-i-bg-circle-width-and-height: 50px;
+  --hov-i-bg-circle-width-and-height-sm: 35px;
+  --hov-i-bg-circle-bg-color: rgba(168, 168, 168, 0.2);
+  --hov-i-bg-circle-bg-color-light: rgba(219, 219, 219, 0.2);
+}
+
+.hov-i__bg-circle {
+  position: relative;
+  border-radius: 50%;
+  width: var(--hov-i-bg-circle-width-and-height, 50px);
+  height: var(--hov-i-bg-circle-width-and-height, 50px);
+  transition: background-color 0.3s linear;
+
+  &--sm {
+    width: var(--hov-i-bg-circle-width-and-height-sm, 35px);
+    height: var(--hov-i-bg-circle-width-and-height-sm, 35px);
+  }
+
+  &:hover {
+    background-color: var(--hov-i-bg-circle-bg-color, rgba(168, 168, 168, 0.2));
+  }
+
+  &--light {
+    &:hover {
+      background-color: var(--hov-i-bg-circle-bg-color-light, rgba(219, 219, 219, 0.2));
+    }
+  }
+
+  & svg {
+    @include center("both");
+  }
+}

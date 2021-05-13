@@ -6,7 +6,7 @@
   &--reverse {
     flex-direction: row-reverse;
     justify-content: flex-end;
-    & div {
+    & i {
       margin-right: var(--flex-area-with-icon-reverse-icon-mr, 1.4em);
     }
   }
@@ -21,35 +21,90 @@
   margin: var(--cardc-margin, 0.2rem 1rem);
   overflow: hidden;
 
-  &__header {
-    padding: var(--cardc-header-padding, 0.4em 1em);
-
-    &__flex {
-      @include flex-area-with-icon-layout;
-    }
-  }
-
   &__img {
     min-height: var(--cardc-image-min-height, 300px);
     max-height: var(--cardc-image-max-height, 300px);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: left center;
+    padding: var(--cardc-content-padding, 1em);
+
+ 
+
   }
 }
+
+
 
 .cardc-content {
   padding: var(--cardc-content-padding, 1em);
 
   &__extra-text {
     margin-top: var(--cardc-content-extra-text-mt, 1.2rem);
-    opacity: 0.78;
+    opacity: var(--cardc-content-extra-text-opacity, 0.78);
   }
 
   &__buttons-container {
     margin-top: var(--cardc-content-btn-container-mt, 1.2rem);
+    &--space-between {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
   }
   &__flex {
     @include flex-area-with-icon-layout;
+
+    &--header {
+      padding: var(--cardc-header-padding, 0.4em 1em);
+    }
+  }
+}
+
+.cardc-buttons {
+
+  &__icon {
+    display: inline-block;
+    cursor: pointer;
+  }
+}
+
+.ig-px-2 {
+  padding-right: .5em;
+  padding-left: .5em;
+}
+.ig-pl-2 {
+  padding-left: .5em;
+}
+
+
+
+
+
+
+.cardc-img {
+  &__content-container {
+    display: flex;
+    &--c-between {
+      flex-direction: column;
+      justify-content: space-between;
+    }
+  }
+  &__text {
+    &--light {
+      color: white;
+    }
+
+    &--dark {
+      color: black;
+    }
+  }
+}
+
+
+.ig-svg-i-light {
+  svg {
+    fill: white;
+
   }
 }

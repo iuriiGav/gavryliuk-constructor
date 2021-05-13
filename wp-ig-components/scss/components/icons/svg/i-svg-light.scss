@@ -1,0 +1,9 @@
+.i-svg-light {
+  --i-svg-light-color: white;
+}
+
+.i-svg-light {
+  svg {
+    fill: var(--i-svg-light-color, white);
+  }
+}
