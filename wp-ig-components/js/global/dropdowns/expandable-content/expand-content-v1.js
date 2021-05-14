@@ -1,22 +1,17 @@
 export const expandContentV1 = () => {
   const expandTrigger = document.querySelectorAll(`[data-js-trigger="expand-content-v1-trigger"]`);
-  let i = 0;
-  const len = expandTrigger.length;
-
-  for (; i < len; i++) {
+  const numOfExpandElements = expandTrigger.length;
+  const expandingClass = "expand-content-v1__inner-content--is-open";
+  for (let i = 0; i < numOfExpandElements; i++) {
     expandTrigger[i].onclick = function (e) {
-      for (var j = 0; j < len; j++) {
+      for (var j = 0; j < numOfExpandElements; j++) {
         if (this != expandTrigger[j]) {
-          expandTrigger[j].parentNode.className = expandTrigger[j].parentNode.className.replace(
-            / expand-content-v1__inner-content--is-open/i,
-            ""
-          );
+          expandTrigger[j].parentNode.classList.remove(expandingClass);
         }
       }
-      var cn = this.parentNode.className;
-      this.parentNode.className = ~cn.search(/expand-content-v1__inner-content--is-open/i)
-        ? cn.replace(/ expand-content-v1__inner-content--is-open/i, "")
-        : cn + " expand-content-v1__inner-content--is-open";
+      this.parentNode.classList.contains(expandingClass)
+        ? this.parentNode.classList.remove(expandingClass)
+        : this.parentNode.classList.add(expandingClass);
     };
   }
 };
