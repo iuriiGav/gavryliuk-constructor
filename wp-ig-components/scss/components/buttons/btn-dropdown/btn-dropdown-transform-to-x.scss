@@ -5,7 +5,7 @@
 
     &.btn-dropdown-transform-to-x__arrow--active {
       & .btn-dropdown-transform-to-x__arrow {
-        transform: rotate(45deg) translate(-5px, -5px);
+        transform: rotate(45deg) translate(-3px, -3px);
         &:before {
           transform: translate(5px, 0);
         }
@@ -47,6 +47,17 @@
   }
 }
 
-.btn-dropdown-transform-to-x__arrow {
-  --btn-dropdown-transform-to-x-arrow-color: #fff;
+.btn-dropdown-transform-to-x__hover-circle {
+  position: relative;
+  padding: 1.6em;
+  border-radius: 50%;
+  transition: background-color 0.3s linear;
+
+  & > div {
+    @include center("both");
+    margin-left: 0.2em;
+  }
+  &:hover {
+    background-color: var(--btn-dropdown-transform-to-x-hover-circle-color, rgba(168, 168, 168, 0.2));
+  }
 }
