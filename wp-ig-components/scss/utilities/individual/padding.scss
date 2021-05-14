@@ -4,6 +4,10 @@
 
 //Padding around
 
+.ig-p-0 {
+  padding: 0 !important;
+}
+
 .ig-p-1 {
   padding: calc(var(--pm-spacer, 1em) * 0.25) !important;
 }
