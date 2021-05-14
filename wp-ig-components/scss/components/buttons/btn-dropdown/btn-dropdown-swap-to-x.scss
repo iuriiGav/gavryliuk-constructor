@@ -19,8 +19,8 @@
       content: "";
       display: inline-block;
       width: 9px;
-      height: 2px;
-      background-color: #fff;
+      height: var(--btn-dropdown-swap-to-x-arrow-height, 2px);
+      background-color: var(--btn-dropdown-swap-to-x-arrow-color, #fff);
       transition: 0.4s ease;
     }
 
@@ -67,6 +67,4 @@
   }
 }
 
-.btn-dropdown-swap-to-x__hover-circle {
-  --btn-dropdown-swap-to-x-hover-circle-color: rgba(168, 168, 168, 0.2);
-}
+

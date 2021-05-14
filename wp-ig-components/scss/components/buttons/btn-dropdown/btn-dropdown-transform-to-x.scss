@@ -34,7 +34,7 @@
       content: "";
       display: inline-block;
       width: 12px;
-      height: 3px;
+      height: var(--btn-dropdown-transform-to-x-arrow-height, 3px);
       background-color: var(--btn-dropdown-transform-to-x-arrow-color, #fff);
       transition: 0.4s ease;
     }

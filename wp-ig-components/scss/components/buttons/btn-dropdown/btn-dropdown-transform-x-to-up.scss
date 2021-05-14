@@ -31,7 +31,7 @@
     content: "";
     display: inline-block;
     width: 12px;
-    height: 3px;
+    height: var(--btn-dropdown-transform-x-to-up-arrow-height, 3px);
     background-color: var(--btn-dropdown-transform-x-to-up-arrow-color, #fff);
     transition: 0.4s ease;
   }
