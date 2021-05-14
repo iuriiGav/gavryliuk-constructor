@@ -1,0 +1,52 @@
+.btn-dropdown-transform-to-x {
+  &__container {
+    transition: 0.15s ease;
+    cursor: pointer;
+
+    &.btn-dropdown-transform-to-x__arrow--active {
+      & .btn-dropdown-transform-to-x__arrow {
+        transform: rotate(45deg) translate(-5px, -5px);
+        &:before {
+          transform: translate(5px, 0);
+        }
+        &:after {
+          transform: rotate(90deg) translate(5px, 0);
+        }
+      }
+    }
+  }
+
+  &__arrow {
+    width: 13px;
+    height: 13px;
+    position: relative;
+    bottom: -5px;
+    left: -10px;
+    transition: 0.4s ease;
+    margin-top: 2px;
+    text-align: left;
+    transform: rotate(45deg);
+    float: right;
+
+    &:before,
+    &:after {
+      position: absolute;
+      content: "";
+      display: inline-block;
+      width: 12px;
+      height: 3px;
+      background-color: var(--btn-dropdown-transform-to-x-arrow-color, #fff);
+      transition: 0.4s ease;
+    }
+
+    &:after {
+      transform: rotate(90deg);
+      top: -5px;
+      left: 5px;
+    }
+  }
+}
+
+.btn-dropdown-transform-to-x__arrow {
+  --btn-dropdown-transform-to-x-arrow-color: #fff;
+}
