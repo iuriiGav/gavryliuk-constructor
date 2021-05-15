@@ -1,4 +1,8 @@
-export const cardcToggleExpand = function (collapseOthersInGroup = false, togglerTrigger = 'js--cardc-has-expand-toggler' ) {
+export const cardcToggleExpand = function (
+  collapseOthersInGroup = false,
+  togglerBtnActivationClass = false,
+  togglerTrigger = "js--cardc-has-expand-toggler"
+) {
   const expandableAreaToggler = document.getElementsByClassName(`${togglerTrigger}`);
   const expandableAreaTogglerCount = expandableAreaToggler.length;
   const activizationClass = "js--cardc-has-expand--is-open";
@@ -11,6 +15,10 @@ export const cardcToggleExpand = function (collapseOthersInGroup = false, toggle
             const openedExpandsContentParent = expandableAreaToggler[j].closest(".js--cardc-has-expand");
 
             openedExpandsContentParent.classList.remove(activizationClass);
+
+            if (togglerBtnActivationClass) {
+              expandableAreaToggler[j].classList.remove(togglerBtnActivationClass);
+            }
           }
         }
       }

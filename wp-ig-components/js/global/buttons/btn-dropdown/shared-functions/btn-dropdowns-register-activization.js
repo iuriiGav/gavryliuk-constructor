@@ -1,5 +1,5 @@
-export const btnDropdownsRegisterActivization = (dataJsTriggerVal, className, collapseOthersInGroup) => {
-  const btns = document.querySelectorAll(`[data-js-trigger="${dataJsTriggerVal}"]`);
+export const btnDropdownsRegisterActivization = (btnTriggerClass, className, collapseOthersInGroup) => {
+  const btns = document.getElementsByClassName(btnTriggerClass);
   const btnsCount = btns.length;
   const activizationClass = className;
 
