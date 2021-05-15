@@ -1,8 +1,5 @@
-export const btnDropdownTransformXToUp = () => {
-  const btn = document.querySelectorAll(`[data-js-trigger="btn-dropdown-transform-x-to-up"]`).item(0);
-  if (btn !== undefined && btn !== null) {
-    btn.addEventListener("click", () => {
-      btn.classList.toggle("btn-dropdown-transform-x-to-up__arrow--active");
-    });
-  }
+import {btnDropdownsRegisterActivization} from './shared-functions/btn-dropdowns-register-activization';
+
+export const btnDropdownTransformXToUp = (dataJsTriggerVal = 'btn-dropdown-transform-x-to-up', collapseOthersInGroup = false, classToActivateBtn = "btn-dropdown-transform-x-to-up__arrow--active") => {
+  btnDropdownsRegisterActivization(dataJsTriggerVal, classToActivateBtn , collapseOthersInGroup)
 };
