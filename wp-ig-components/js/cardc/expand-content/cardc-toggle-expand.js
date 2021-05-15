@@ -1,4 +1,4 @@
-const cardcToggleExpand = function (collapseOthersInGroup = false, togglerTrigger = 'js--cardc-has-expand-toggler' ) {
+export const cardcToggleExpand = function (collapseOthersInGroup = false, togglerTrigger = 'js--cardc-has-expand-toggler' ) {
   const expandableAreaToggler = document.getElementsByClassName(`${togglerTrigger}`);
   const expandableAreaTogglerCount = expandableAreaToggler.length;
   const activizationClass = "js--cardc-has-expand--is-open";
