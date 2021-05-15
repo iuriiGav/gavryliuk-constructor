@@ -1,8 +1,4 @@
-export const btnDropdownInCircleRotating = () => {
-  const btn = document.querySelectorAll(`[data-js-trigger="btn-dropdown-in-circle-rotating"]`).item(0);
-  if (btn !== undefined && btn !== null) {
-    btn.addEventListener("click", () => {
-      btn.classList.toggle("btn-dropdown-in-circle-rotating--active");
-    });
-  }
-};
+import {btnDropdownsRegisterActivization} from './shared-functions/btn-dropdowns-register-activization';
+export const btnDropdownInCircleRotating = (collapseOthersInGroup = false, dataJsTriggerVal = 'btn-dropdown-in-circle-rotating', classToActivateBtn = "btn-dropdown-in-circle-rotating--active") => {
+  btnDropdownsRegisterActivization(dataJsTriggerVal, classToActivateBtn , collapseOthersInGroup)
+}

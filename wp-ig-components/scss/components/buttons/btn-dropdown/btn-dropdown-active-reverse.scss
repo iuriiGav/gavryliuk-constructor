@@ -9,20 +9,6 @@
     border-radius: 4px;
     padding-top: 2px;
     padding-left: 3px;
-
-    &--active {
-      & .btn-dropdown-active-reverse__arrow {
-        &:before {
-          transform-origin: center center;
-          transform: rotate(-45deg);
-        }
-
-        &:after {
-          transform-origin: center center;
-          transform: rotate(45deg);
-        }
-      }
-    }
   }
 
   &__arrow {
@@ -46,6 +32,20 @@
 
     &:after {
       transform: rotate(135deg);
+    }
+  }
+
+  &--active {
+    & .btn-dropdown-active-reverse__arrow {
+      &:before {
+        transform-origin: center center;
+        transform: rotate(-45deg);
+      }
+
+      &:after {
+        transform-origin: center center;
+        transform: rotate(45deg);
+      }
     }
   }
 }

@@ -1,8 +1,5 @@
-export const btnDropdownSwapToX = () => {
-  const btn = document.querySelectorAll(`[data-js-trigger="btn-dropdown-swap-to-x"]`).item(0);
-  if (btn !== undefined && btn !== null) {
-    btn.addEventListener("click", () => {
-      btn.classList.toggle("btn-dropdown-swap-to-x--active");
-    });
-  }
-};
+import {btnDropdownsRegisterActivization} from './shared-functions/btn-dropdowns-register-activization';
+
+export const btnDropdownSwapToX = (collapseOthersInGroup = false, dataJsTriggerVal = 'btn-dropdown-swap-to-x', classToActivateBtn = "btn-dropdown-swap-to-x--active") => {
+  btnDropdownsRegisterActivization(dataJsTriggerVal, classToActivateBtn , collapseOthersInGroup)
+}

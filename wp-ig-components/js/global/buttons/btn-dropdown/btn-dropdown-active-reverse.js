@@ -1,8 +1,4 @@
-export const btnDropdownActiveReverse = () => {
-  const btn = document.querySelectorAll(`[data-js-trigger="btn-dropdown-active-reverse"]`).item(0);
-  if (btn !== undefined && btn !== null) {
-    btn.addEventListener("click", () => {
-      btn.classList.toggle("btn-dropdown-active-reverse__container--active");
-    });
-  }
-};
+import {btnDropdownsRegisterActivization} from './shared-functions/btn-dropdowns-register-activization';
+export const btnDropdownActiveReverse = (collapseOthersInGroup = false, dataJsTriggerVal = 'btn-dropdown-active-reverse', classToActivateBtn = "btn-dropdown-active-reverse--active") => {
+  btnDropdownsRegisterActivization(dataJsTriggerVal, classToActivateBtn , collapseOthersInGroup)
+}
