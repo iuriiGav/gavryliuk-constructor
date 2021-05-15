@@ -1,9 +1,11 @@
-export const expandContentV2 = (dataJsTrigger = "expand-content-v2-trigger") => {
+export const expandContentV2 = (
+  dataJsTrigger = "expand-content-v2-trigger",
+  dataJsCollapse = "expand-content-v2-collapse-neighbours"
+) => {
   const expandTrigger = document.querySelectorAll(`[data-js-trigger="${dataJsTrigger}"]`);
   const collapseNeighbours =
-    document.querySelectorAll(`[data-js-collapse="expand-content-v2-collapse-neighbours"]`).item(0) !== null &&
-    document.querySelectorAll(`[data-js-collapse="expand-content-v2-collapse-neighbours"]`).item(0) !== undefined;
-  console.log(collapseNeighbours);
+    document.querySelectorAll(`[data-js-collapse="${dataJsCollapse}"]`).item(0) !== null &&
+    document.querySelectorAll(`[data-js-collapse="${dataJsCollapse}"]`).item(0) !== undefined;
   const numOfExpandElements = expandTrigger.length;
   const expandingClass = "expand-content-v2--active";
 
