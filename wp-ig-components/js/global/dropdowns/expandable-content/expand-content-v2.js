@@ -1,5 +1,5 @@
-export const expandContentV2 = () => {
-  const expandTrigger = document.querySelectorAll(`[data-js-trigger="expand-content-v2-trigger"]`);
+export const expandContentV2 = (dataJsTrigger = "expand-content-v2-trigger") => {
+  const expandTrigger = document.querySelectorAll(`[data-js-trigger="${dataJsTrigger}"]`);
   const collapseNeighbours =
     document.querySelectorAll(`[data-js-collapse="expand-content-v2-collapse-neighbours"]`).item(0) !== null &&
     document.querySelectorAll(`[data-js-collapse="expand-content-v2-collapse-neighbours"]`).item(0) !== undefined;

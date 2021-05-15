@@ -1,21 +1,3 @@
-.expand-content-v2__container {
-  --expand-content-v2-container-margins: 40px auto;
-  --expand-content-v2-container-width: 400px;
-  --expand-content-v2-title-trigger-padding: 0 12px 16px;
-  --expand-content-v2-title-trigger-margins: 0;
-  --expand-content-v2-title-trigger-text-color: rgb(255, 255, 255);
-  --expand-content-v2-title-trigger-opacity: 0.3;
-  --expand-content-v2-border-bottom-color-rgb: 255, 255, 255;
-  --expand-content-v2-title-trigger-border-bottom-opacity: 0.2;
-  --expand-content-v2-title-trigger-border-bottom-on-hover-opacity: 0.4;
-  --expand-content-v2-inner-content-padding: 0;
-  --expand-content-v2-inner-content-margins: 0;
-  --expand-content-v2-inner-content-border-bottom-opacity: 0.5;
-  --expand-content-v2-inner-content-expanded-opacity: 0.6;
-  --expand-content-v2-inner-content-expanded-max-height: 500px;
-  --expand-content-v2-transition: 0.15s ease;
-}
-
 .expand-content-v2 {
   &__container {
     margin: var(--expand-content-v2-container-margins, 0);
@@ -70,14 +52,16 @@
   }
 }
 
-.expand-content-v2--active {
-  & .btn-dropdown-transform-to-x__arrow {
-    transform: rotate(45deg) translate(-3px, -3px);
-    &:before {
-      transform: translate(5px, 0);
-    }
-    &:after {
-      transform: rotate(90deg) translate(5px, 0);
+.expand-content-v2__expanded-border {
+    & .expand-content-v2 {
+      &__title-trigger {
+        position: relative;
+        z-index: 1;
+      }
+      &__inner-content {
+        position: relative;
+        border: var(--expand-content-v2-expanded-border-border, 1px solid rgba(255, 255, 255, 0.5));
+        padding: var(--expand-content-v2-expanded-border-inner-content-padding, 0);
+      }
     }
   }
-}
