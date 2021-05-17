@@ -1,0 +1,125 @@
+:root {
+  --pm-spacer: 1em;
+}
+
+@mixin generate-spacing-utils($prefix, $property) {
+  // List of sizes to generate for each
+  $sizes: 0, 0.25, 0.5, 1, 1.5, 3;
+  // Spacing to multiply the sizes by
+  $spacing: var(--pm-spacer, 1rem);
+
+  // Loop through all of the sizes(we use @for rather than @each, as we want access to the index)
+  @for $i from 1 through length($sizes) {
+    // Get the size for the current index
+    $size: nth($sizes, $i);
+
+    // Create the rule
+    .#{$prefix}-#{$i - 1} {
+      #{$property}: $spacing * $size;
+    }
+  }
+}
+@mixin generate-negative-spacing-utils($prefix, $property) {
+  // List of sizes to generate for each
+  $sizes: -0.25, -0.5, -1, -1.5, -3;
+  // Spacing to multiply the sizes by
+  $spacing: var(--pm-spacer, 1rem);
+
+  // Loop through all of the sizes(we use @for rather than @each, as we want access to the index)
+  @for $i from 2 through length($sizes) {
+    // Get the size for the current index
+    $size: nth($sizes, $i);
+
+    // Create the rule
+    .#{$prefix}-#{$i - 1} {
+      #{$property}: $spacing * $size;
+    }
+  }
+}
+
+@mixin generate-spacing-utils-double($prefix, $property, $property2) {
+  // List of sizes to generate for each
+  $sizes: 0, 0.25, 0.5, 1, 1.5, 3;
+  // Spacing to multiply the sizes by
+  $spacing: var(--pm-spacer, 1rem);
+
+  // Loop through all of the sizes(we use @for rather than @each, as we want access to the index)
+  @for $i from 1 through length($sizes) {
+    // Get the size for the current index
+    $size: nth($sizes, $i);
+
+    // Create the rule
+    .#{$prefix}-#{$i - 1} {
+      #{$property}: $spacing * $size !important;
+      #{$property2}: $spacing * $size !important;
+    }
+  }
+}
+
+// =============================PADDING==========================
+
+//Padding around
+
+@include generate-spacing-utils("ig-p", "padding");
+
+//Padding left and right
+
+@include generate-spacing-utils-double("ig-px", "padding-left", "padding-right");
+
+//Padding top and bottom
+
+@include generate-spacing-utils-double("ig-py", "padding-top", "padding-bottom");
+
+//Padding left
+@include generate-spacing-utils("ig-pl", "padding-left");
+
+//Padding right
+@include generate-spacing-utils("ig-pr", "padding-right");
+//Padding top
+@include generate-spacing-utils("ig-pt", "padding-top");
+
+//Padding bottom
+@include generate-spacing-utils("ig-pb", "padding-bottom");
+
+// ==================================== MARGIN ==============================
+
+//Margin around
+
+@include generate-spacing-utils("ig-m", "margin");
+
+//Margin left and right
+
+@include generate-spacing-utils-double("ig-mx", "margin-left", "margin-right");
+
+//Margin top and bottom
+
+@include generate-spacing-utils-double("ig-my", "margin-top", "margin-bottom");
+
+//Margin left
+@include generate-spacing-utils("ig-ml", "margin-left");
+
+//Margin right
+@include generate-spacing-utils("ig-mr", "margin-right");
+
+//Margin top
+@include generate-spacing-utils("ig-mt", "margin-top");
+
+//Margin bottom
+@include generate-spacing-utils("ig-mb", "margin-bottom");
+
+.ig-mx-auto {
+  margin-left: auto !important;
+  margin-right: auto !important; 
+}
+
+// ============================ Negative Margins ==============================
+
+
+//Margin negativeleft
+@include generate-negative-spacing-utils('ig-mln', "margin-left");
+//Margin negativeright
+@include generate-negative-spacing-utils('ig-mrn', "margin-right");
+//Margin negativetop
+@include generate-negative-spacing-utils('ig-mtn', "margin-top");
+//Margin negativebottom
+@include generate-negative-spacing-utils('ig-mbn', "margin-bottom");
