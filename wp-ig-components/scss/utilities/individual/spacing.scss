@@ -1,12 +1,8 @@
-:root {
-  --pm-spacer: 1em;
-}
-
 @mixin generate-spacing-utils($prefix, $property) {
   // List of sizes to generate for each
   $sizes: 0, 0.25, 0.5, 1, 1.5, 3;
   // Spacing to multiply the sizes by
-  $spacing: var(--pm-spacer, 1rem);
+  $spacing: 1rem;
 
   // Loop through all of the sizes(we use @for rather than @each, as we want access to the index)
   @for $i from 1 through length($sizes) {
@@ -21,12 +17,12 @@
 }
 @mixin generate-negative-spacing-utils($prefix, $property) {
   // List of sizes to generate for each
-  $sizes: -0.25, -0.5, -1, -1.5, -3;
+  $sizes: 0, -0.25, -0.5, -1, -1.5, -3;
   // Spacing to multiply the sizes by
-  $spacing: var(--pm-spacer, 1rem);
+  $spacing: 1rem;
 
   // Loop through all of the sizes(we use @for rather than @each, as we want access to the index)
-  @for $i from 2 through length($sizes) {
+  @for $i from 1 through length($sizes) {
     // Get the size for the current index
     $size: nth($sizes, $i);
 
@@ -41,7 +37,7 @@
   // List of sizes to generate for each
   $sizes: 0, 0.25, 0.5, 1, 1.5, 3;
   // Spacing to multiply the sizes by
-  $spacing: var(--pm-spacer, 1rem);
+  $spacing: 1rem;
 
   // Loop through all of the sizes(we use @for rather than @each, as we want access to the index)
   @for $i from 1 through length($sizes) {
@@ -109,17 +105,16 @@
 
 .ig-mx-auto {
   margin-left: auto !important;
-  margin-right: auto !important; 
+  margin-right: auto !important;
 }
 
 // ============================ Negative Margins ==============================
 
-
 //Margin negativeleft
-@include generate-negative-spacing-utils('ig-mln', "margin-left");
+@include generate-negative-spacing-utils("ig-mln", "margin-left");
 //Margin negativeright
-@include generate-negative-spacing-utils('ig-mrn', "margin-right");
+@include generate-negative-spacing-utils("ig-mrn", "margin-right");
 //Margin negativetop
-@include generate-negative-spacing-utils('ig-mtn', "margin-top");
+@include generate-negative-spacing-utils("ig-mtn", "margin-top");
 //Margin negativebottom
-@include generate-negative-spacing-utils('ig-mbn', "margin-bottom");
+@include generate-negative-spacing-utils("ig-mbn", "margin-bottom");
