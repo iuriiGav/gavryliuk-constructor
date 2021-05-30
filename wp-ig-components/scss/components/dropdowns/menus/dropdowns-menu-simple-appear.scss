@@ -1,18 +1,3 @@
-.dropdown-menu-simple-appear__container {
-  --dropdown-menu-simple-appear-bg-color-rgb: 0, 0, 0;
-  --dropdown-menu-simple-appear-bg-color-opacity: 0.2;
-  --dropdown-menu-simple-appear-min-width: 280px;
-  --dropdown-menu-simple-appear-padding: 1rem;
-  --dropdown-menu-simple-appear-label-color: black;
-  --dropdown-menu-simple-appear-label-hover-color-rgb: 255, 255, 255;
-  --dropdown-menu-simple-appear-label-hover-color-opacity: 0.8;
-  --dropdown-menu-simple-appear-list-item-padding: 2rem;
-  --dropdown-menu-simple-appear-list-item-bg-color-rgb: 255, 255, 255;
-  --dropdown-menu-simple-appear-list-item-bg-color-opacity: 0.2;
-  --dropdown-menu-simple-appear-hover-list-item-bg-color-rgb: 255, 255, 255;
-  --dropdown-menu-simple-appear-hover-list-item-bg-color-opacity: 0.5;
-}
-
 .dropdown-menu-simple-appear {
   &__container {
     background-color: rgba(
