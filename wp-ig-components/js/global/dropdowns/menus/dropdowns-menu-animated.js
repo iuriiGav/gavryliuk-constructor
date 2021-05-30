@@ -1,4 +1,4 @@
-const dmaAnimateEachItem = function () {
+export const dmaAnimateEachItem = function () {
   const dmaMenu = document.getElementsByClassName("js--dma-animate-each-item");
   const numOfMenus = dmaMenu.length;
 
@@ -34,9 +34,8 @@ const dmaAnimateEachItem = function () {
   }
 };
 
-dmaAnimateEachItem();
 
-const dmaJsHoverOffOpenDropdown = function () {
+export const dmaJsHoverOffOpenDropdown = function () {
   const dropdownMenuItemWithHoverOff = document.getElementsByClassName("js--dma-hover-off");
   const numOfDropdowns = dropdownMenuItemWithHoverOff.length;
   const activizationClass = "dma-item-active";
@@ -67,7 +66,6 @@ const dmaJsHoverOffOpenDropdown = function () {
   }
 };
 
-dmaJsHoverOffOpenDropdown();
 
 function hideOnClickOutside(element, activizationClass) {
   const outsideClickListener = (event) => {
