@@ -4,11 +4,9 @@
     height: 15px;
     width: 25px;
     display: inline-block;
-    padding: 0;
     cursor: pointer;
     border-radius: 4px;
-    padding-top: 2px;
-    padding-left: 3px;
+    padding: var(--btn-dropdown-active-reverse-padding, 0.4rem 1.6rem 1.2rem 1rem);
   }
 
   &__arrow {

@@ -1,7 +1,6 @@
 .btn-dropdown-addition-circle-shadow-wrapper {
   --btn-dropdown-addition-circle-shadow-wrapper-rgb-color: 0, 0, 0;
   --btn-dropdown-addition-circle-shadow-wrapper-bg-color: transparent;
-  --btn-dropdown-addition-circle-shadow-wrapper-inner-div-margins: 0 0 0 0.3em;
 }
 
 .btn-dropdown-addition-circle-shadow-wrapper {
@@ -14,7 +13,6 @@
 
   & > div {
     @include center("both");
-    margin: var(--btn-dropdown-addition-circle-shadow-wrapper-inner-div-margins, 0);
   }
 
   &__hover {

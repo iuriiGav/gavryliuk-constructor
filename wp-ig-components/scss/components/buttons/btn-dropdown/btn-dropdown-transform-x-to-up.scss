@@ -1,5 +1,6 @@
 .btn-dropdown-transform-x-to-up__container {
   cursor: pointer;
+  padding: var(--btn-dropdown-transform-x-to-up-padding, 1rem 1rem 1rem 1.3rem);
   &.btn-dropdown-transform-x-to-up__arrow--active {
     & .btn-dropdown-transform-x-to-up__arrow {
       transform: rotate(45deg) translate(-5px, -5px);

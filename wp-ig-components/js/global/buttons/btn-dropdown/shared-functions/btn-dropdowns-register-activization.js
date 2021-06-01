@@ -9,12 +9,17 @@ export const btnDropdownsRegisterActivization = (btnTriggerClass, className, col
         for (var j = 0; j < btnsCount; j++) {
           if (this != btns[j]) {
             btns[j].classList.remove(activizationClass);
+            btns[j].setAttribute("aria-expanded", "false");
           }
         }
       }
-      this.classList.contains(activizationClass)
-        ? this.classList.remove(activizationClass)
-        : this.classList.add(activizationClass);
+      if (this.classList.contains(activizationClass)) {
+        this.classList.remove(activizationClass);
+        this.setAttribute("aria-expanded", "false");
+      } else {
+        this.classList.add(activizationClass);
+        this.setAttribute("aria-expanded", "true");
+      }
     });
   }
 };

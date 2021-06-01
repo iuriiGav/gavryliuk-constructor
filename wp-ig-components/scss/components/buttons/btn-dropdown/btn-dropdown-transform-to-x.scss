@@ -2,7 +2,7 @@
   &__container {
     transition: 0.15s ease;
     cursor: pointer;
-
+    padding: var(--btn-dropdown-transform-to-x-padding, 0.6rem 0.6rem 0.8rem 1rem);
     &.btn-dropdown-transform-to-x__arrow--active {
       & .btn-dropdown-transform-to-x__arrow {
         transform: rotate(45deg) translate(-3px, -3px);
