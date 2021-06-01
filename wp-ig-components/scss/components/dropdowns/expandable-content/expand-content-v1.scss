@@ -8,6 +8,7 @@
     transition: var(--expand-content-v1-transition-duration, 0.55s);
   }
   &__title-trigger {
+    border: none;
     padding: var(--expand-content-v1-title-trigger-padding, 0);
     background-color: var(--expand-content-v1-title-trigger-bg-color, black);
     color: var(--expand-content-v1-title-trigger-text-color, #fff);

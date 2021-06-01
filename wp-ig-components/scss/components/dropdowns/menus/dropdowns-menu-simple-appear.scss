@@ -1,15 +1,22 @@
+.btn-dropdown-menu-simple-appear {
+  background-color: rgba(
+    var(--dropdown-menu-simple-appear-bg-color-rgb, 0, 0, 0),
+    var(--dropdown-menu-simple-appear-bg-color-opacity, 0.2)
+  );
+  --dropdown-menu-simple-appear-bg-color-rgb: 0, 0, 0;
+  --dropdown-menu-simple-appear-bg-color-opacity: 0.2;
+  padding: var(--dropdown-menu-simple-appear-padding, 1rem);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
 .dropdown-menu-simple-appear {
   &__container {
-    background-color: rgba(
-      var(--dropdown-menu-simple-appear-bg-color-rgb, 0, 0, 0),
-      var(--dropdown-menu-simple-appear-bg-color-opacity, 0.2)
-    );
     min-width: var(--dropdown-menu-simple-appear-min-width, 280px);
-    padding: var(--dropdown-menu-simple-appear-padding, 1rem);
     cursor: pointer;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+
     &:hover,
     &:focus {
       .dropdown-menu-simple-appear__label {
