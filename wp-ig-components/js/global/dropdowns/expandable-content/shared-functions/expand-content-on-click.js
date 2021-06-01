@@ -10,12 +10,17 @@ export const expandContentOnClick = function (expandContentTrigger, closeExpande
         for (var j = 0; j < numOfExpandElements; j++) {
           if (this != expandTrigger[j]) {
             expandTrigger[j].parentNode.classList.remove(expandingClass);
+            expandTrigger[j].parentNode.setAttribute("aria-expanded", "false");
           }
         }
       }
-      this.parentNode.classList.contains(expandingClass)
-        ? this.parentNode.classList.remove(expandingClass)
-        : this.parentNode.classList.add(expandingClass);
+      if (this.parentNode.classList.contains(expandingClass)) {
+        this.parentNode.classList.remove(expandingClass);
+        this.setAttribute("aria-expanded", "false");
+      } else {
+        this.parentNode.classList.add(expandingClass);
+        this.setAttribute("aria-expanded", "true");
+      }
     };
   }
 };

@@ -8,6 +8,7 @@
     border-radius: 3px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     opacity: 0;
+    visibility: hidden;
     max-height: 0;
     overflow: hidden;
   }
@@ -63,6 +64,7 @@
   animation-delay: 200ms, 0;
   height: auto;
   max-height: 1000px;
+  visibility: visible;
 }
 
 .fade_reverse {
@@ -70,4 +72,5 @@
   animation-duration: 100ms, 200ms;
   animation-timing-function: linear, cubic-bezier(0.23, 1, 0.32, 1);
   animation-delay: 100ms, 0;
+  visibility: hidden;
 }
