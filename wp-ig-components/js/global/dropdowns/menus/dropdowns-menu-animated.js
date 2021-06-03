@@ -1,41 +1,5 @@
 import { hideDropdownContentOnClickOutside } from "../../global-funtions/hide-dropdown-content-on-click-outside";
 
-export const dmaAnimateEachItem = function () {
-  const dmaMenu = document.getElementsByClassName("js--dma-animate-each-item");
-  const numOfMenus = dmaMenu.length;
-
-  for (let i = 0; i < numOfMenus; i++) {
-    const numOfListItems = dmaMenu[i].getElementsByTagName("li");
-    const numOfLiArr = Array.from(numOfListItems);
-    let animationTiming = 60;
-    const animationDuration = numOfLiArr.length * 60;
-
-    numOfLiArr.map(function (li) {
-      if (dmaMenu[i].classList.contains("js--dma-animation-translate-y")) {
-        dmaMenu[i].classList.remove("dma__hiddent-content--animated");
-        li.style.cssText = `animation: slideDown ${animationDuration}ms ${animationTiming}ms ease-in-out forwards;`;
-        animationTiming += 60;
-      } else if (dmaMenu[i].classList.contains("js--dma-animation-rotate-x")) {
-        dmaMenu[i].classList.remove("dma__hiddent-content--animated");
-        li.style.cssText = `animation: rotateX ${animationDuration}ms ${animationTiming}ms ease-in-out forwards;`;
-        animationTiming += 60;
-      } else if (dmaMenu[i].classList.contains("js--dma-animation-translate-z")) {
-        dmaMenu[i].classList.remove("dma__hiddent-content--animated");
-        li.style.cssText = `animation: rotateZ ${animationDuration}ms ${animationTiming}ms ease-in-out forwards;`;
-        animationTiming += 60;
-      } else if (dmaMenu[i].classList.contains("js--dma-animation-scale-z")) {
-        dmaMenu[i].classList.remove("dma__hiddent-content--animated");
-        li.style.cssText = `animation: scaleZ ${animationDuration}ms ${animationTiming}ms ease-in-out forwards;`;
-        animationTiming += 60;
-      } else if (dmaMenu[i].classList.contains("js--dma-animation-translate-x")) {
-        dmaMenu[i].classList.remove("dma__hiddent-content--animated");
-        li.style.cssText = `animation: translateX ${animationDuration}ms ${animationTiming}ms ease-in-out forwards;`;
-        animationTiming += 60;
-      }
-    });
-  }
-};
-
 export const dmaJsHoverOffOpenDropdown = function () {
   const dropdownMenuItemWithHoverOff = document.getElementsByClassName("js--dma-hover-off");
   const numOfDropdowns = dropdownMenuItemWithHoverOff.length;
