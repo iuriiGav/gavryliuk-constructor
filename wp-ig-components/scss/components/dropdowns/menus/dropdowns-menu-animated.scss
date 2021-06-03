@@ -15,9 +15,28 @@
   display: flex;
   justify-content: center;
 }
+.dma__list-item {
+  position: relative;
 
+  &:hover {
+    & .dma__hiddent-content {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      perspective: 1000px;
+      &--animated {
+        display: block;
+      }
+    }
+    & .dma__hiddent-content-item {
+      display: block;
+    }
+  }
+}
 .dma__label {
   padding: var(--dma-label-padding, 20px 40px);
+  border: none;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -28,24 +47,10 @@
   perspective: 1000px;
   z-index: 100;
 
-  &:hover {
+  &:hover,
+  &:focus {
     background: var(--dma-label-hover-bg-color, #2980b9);
     cursor: pointer;
-
-    & .dma__hiddent-content {
-      position: absolute;
-      top: 100%;
-      left: 0;
-      width: 100%;
-      perspective: 1000px;
-      z-index: -1;
-      &--animated {
-        display: block;
-      }
-    }
-    & .dma__hiddent-content-item {
-      display: block;
-    }
   }
 }
 
@@ -54,13 +59,19 @@
     display: none;
     color: var(--dma-hidden-content-item-text-color, #fff);
     background-color: var(--dma-hidden-content-item-bg-color, #34495e);
-    padding: var(--dma-hidden-content-item-padding, 10px 20px);
     font-size: var(--dma-hidden-content-item-font-size, 16px);
     opacity: 0;
-    &:hover {
-      background-color: var(--dma-hidden-content-item-hover-bg-color, #2980b9);
+
+    & a {
+      padding: var(--dma-hidden-content-item-padding, 10px 20px);
+      display: block;
+      &:hover,
+      &:focus {
+        background-color: var(--dma-hidden-content-item-hover-bg-color, #2980b9);
+      }
     }
   }
+
   &--animated {
     display: none;
     & li {
@@ -71,7 +82,7 @@
 }
 
 .dma--hover-off {
-  & .dma__label {
+  & .dma__list-item {
     &:hover {
       & .dma__hiddent-content--animated {
         display: none;
@@ -85,24 +96,23 @@
 }
 
 .dma-item-active {
-  &.dma__label {
+  & .dma__label {
     background: var(--dma-label-hover-bg-color, #2980b9);
     cursor: pointer;
+  }
 
-    & .dma__hiddent-content {
-      position: absolute;
-      top: 100%;
-      left: 0;
-      width: 100%;
-      perspective: 1000px;
-      z-index: -1;
-      &--animated {
-        display: block !important;
-      }
-    }
-    & .dma__hiddent-content-item {
+  & .dma__hiddent-content {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    perspective: 1000px;
+    &--animated {
       display: block !important;
     }
+  }
+  & .dma__hiddent-content-item {
+    display: block !important;
   }
 }
 

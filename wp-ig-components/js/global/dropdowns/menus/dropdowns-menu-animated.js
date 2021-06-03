@@ -34,7 +34,6 @@ export const dmaAnimateEachItem = function () {
   }
 };
 
-
 export const dmaJsHoverOffOpenDropdown = function () {
   const dropdownMenuItemWithHoverOff = document.getElementsByClassName("js--dma-hover-off");
   const numOfDropdowns = dropdownMenuItemWithHoverOff.length;
@@ -50,15 +49,18 @@ export const dmaJsHoverOffOpenDropdown = function () {
         } else {
           for (var j = 0; j < dropdownLabelsArr.length; j++) {
             if (this != dropdownLabelsArr[j]) {
-              dropdownLabelsArr[j].classList.remove(activizationClass);
+              dropdownLabelsArr[j].parentNode.classList.remove(activizationClass);
+              dropdownLabelsArr[j].setAttribute("aria-expanded", "false");
             }
           }
 
-          if (this.classList.contains(activizationClass)) {
-            this.classList.remove(activizationClass);
+          if (this.parentNode.classList.contains(activizationClass)) {
+            this.parentNode.classList.remove(activizationClass);
+            this.setAttribute("aria-expanded", "false");
           } else {
-            this.classList.add(activizationClass);
-            hideOnClickOutside(this, activizationClass);
+            this.parentNode.classList.add(activizationClass);
+            this.setAttribute("aria-expanded", "true");
+            hideDropdownContentOnClickOutside(this, activizationClass);
           }
         }
       });
@@ -66,11 +68,11 @@ export const dmaJsHoverOffOpenDropdown = function () {
   }
 };
 
-
-function hideOnClickOutside(element, activizationClass) {
+function hideDropdownContentOnClickOutside(element, activizationClass) {
   const outsideClickListener = (event) => {
-    if (element.classList.contains(activizationClass) && !element.contains(event.target)) {
-      element.classList.remove(activizationClass);
+    if (element.parentNode.classList.contains(activizationClass) && !element.parentNode.contains(event.target)) {
+      element.parentNode.classList.remove(activizationClass);
+      element.setAttribute("aria-expanded", "false");
       removeClickListener();
     }
   };
