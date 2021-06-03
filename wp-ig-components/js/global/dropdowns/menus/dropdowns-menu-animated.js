@@ -1,3 +1,5 @@
+import { hideDropdownContentOnClickOutside } from "../../global-funtions/hide-dropdown-content-on-click-outside";
+
 export const dmaAnimateEachItem = function () {
   const dmaMenu = document.getElementsByClassName("js--dma-animate-each-item");
   const numOfMenus = dmaMenu.length;
@@ -60,7 +62,7 @@ export const dmaJsHoverOffOpenDropdown = function () {
           } else {
             this.parentNode.classList.add(activizationClass);
             this.setAttribute("aria-expanded", "true");
-            hideDropdownContentOnClickOutside(this, activizationClass);
+            hideDropdownContentOnClickOutside(this, activizationClass, "parent");
           }
         }
       });
@@ -68,18 +70,16 @@ export const dmaJsHoverOffOpenDropdown = function () {
   }
 };
 
-function hideDropdownContentOnClickOutside(element, activizationClass) {
-  const outsideClickListener = (event) => {
-    if (element.parentNode.classList.contains(activizationClass) && !element.parentNode.contains(event.target)) {
-      element.parentNode.classList.remove(activizationClass);
-      element.setAttribute("aria-expanded", "false");
-      removeClickListener();
-    }
-  };
+export const dmaCloseOtherMenusOnKeyupOutside = function (trigger) {
+  const dmaBtns = document.getElementsByClassName(trigger);
 
-  const removeClickListener = () => {
-    document.removeEventListener("click", outsideClickListener);
-  };
-
-  document.addEventListener("click", outsideClickListener);
-}
+  for (let i = 0; i < dmaBtns.length; i++) {
+    dmaBtns[i].addEventListener("click", function (e) {
+      if (e.target !== this) {
+        return;
+      } else {
+        hideDropdownContentOnClickOutside(this, "dma-item-active", "parent");
+      }
+    });
+  }
+};
