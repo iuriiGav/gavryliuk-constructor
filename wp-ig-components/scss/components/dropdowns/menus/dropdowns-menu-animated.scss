@@ -1,15 +1,3 @@
-.dma__container {
-  --dma-label-padding: 20px 40px;
-  --dma-label-text-color: #fff;
-  --dma-label-bg-color: #34495e;
-  --dma-label-font-size: 18px;
-  --dma-label-hover-bg-color: #2980b9;
-  --dma-hidden-content-item-text-color: #fff;
-  --dma-hidden-content-item-bg-color: #34495e;
-  --dma-hidden-content-item-padding: 10px 20px;
-  --dma-hidden-content-item-font-size: 16px;
-  --dma-hidden-content-item-hover-bg-color: #2980b9;
-}
 // dma - dropdown-menu-animated
 .dma__container {
   display: flex;
@@ -23,7 +11,7 @@
       position: absolute;
       top: 100%;
       left: 0;
-      width: 100%;
+      min-width: 100%;
       perspective: 1000px;
       &--animated {
         display: block;
@@ -33,6 +21,17 @@
       display: block;
     }
   }
+
+  // &:last-child {
+  //   & .dma__hiddent-content {
+  //     right: 0;
+  //     left: auto;
+  //   }
+  //   &:hover {
+  //     right: 0;
+  //     left: auto;
+  //   }
+  // }
 }
 .dma__label {
   padding: var(--dma-label-padding, 20px 40px);
@@ -61,6 +60,7 @@
     background-color: var(--dma-hidden-content-item-bg-color, #34495e);
     font-size: var(--dma-hidden-content-item-font-size, 16px);
     opacity: 0;
+    white-space: nowrap;
 
     & a {
       padding: var(--dma-hidden-content-item-padding, 10px 20px);
@@ -104,8 +104,8 @@
   & .dma__hiddent-content {
     position: absolute;
     top: 100%;
-    left: 0;
-    width: 100%;
+
+    min-width: 100%;
     perspective: 1000px;
     &--animated {
       display: block !important;
@@ -113,6 +113,39 @@
   }
   & .dma__hiddent-content-item {
     display: block !important;
+  }
+}
+
+.dma--shaped-dropdown {
+  & .dma__hiddent-content {
+    padding-top: 10px;
+    &:after {
+      transition: all 0.3s;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      top: 0;
+      width: 0;
+      height: 0;
+      content: "";
+      opacity: 0;
+      border-left: 10px solid transparent;
+      border-right: 10px solid transparent;
+      border-bottom: 10px solid var(--dma-hidden-content-item-bg-color, #34495e);
+    }
+  }
+
+  & .dma__list-item:hover {
+    & .dma__hiddent-content:after {
+      opacity: 1;
+    }
+  }
+}
+
+.dma--centered-dropdown {
+  & .dma__list-item:hover .dma__hiddent-content {
+    left: 50%;
+    transform: translateX(-50%);
   }
 }
 
@@ -249,7 +282,6 @@
     transform: scale(1);
   }
 }
-
 
 @keyframes dma__translateX {
   0% {
