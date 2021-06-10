@@ -8,6 +8,18 @@ export const dmaJsHoverOffOpenDropdown = function () {
     const dropdownLabels = dropdownMenuItemWithHoverOff[i].getElementsByClassName("js--dma-dropdown-trigger");
     const dropdownLabelsArr = Array.from(dropdownLabels);
 
+    const hoverOffMenuListItems = dropdownMenuItemWithHoverOff[i].children;
+    const hoverOffMenuListItemsArr = Array.from(hoverOffMenuListItems);
+
+    hoverOffMenuListItemsArr.map((listItem) => {
+      // for(let i = 0; i<listItem.children.length; i++) {
+      //   if(listItem.children[i].classList.contains('dma__hiddent-content--animated')) {
+      //     listItem.children[i].classList.remove('dma__hiddent-content--animated')
+      //     listItem.children[i].classList.add('dma__hidden-content-on-click')
+      //   }
+      // }
+    });
+
     for (let i = 0; i < dropdownLabelsArr.length; i++) {
       dropdownLabelsArr[i].addEventListener("click", function (e) {
         if (e.target !== this) {

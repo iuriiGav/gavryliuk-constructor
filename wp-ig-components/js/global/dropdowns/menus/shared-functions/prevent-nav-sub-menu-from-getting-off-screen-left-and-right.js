@@ -1,46 +1,121 @@
 export const preventNavSubMenuFromGettingOffScreenLeftAndRight = function (dropdownTrigger) {
-  const triggers = document.getElementsByClassName(dropdownTrigger);
-  let originalMargins;
-  for (let i = 0; i < triggers.length; i++) {
-    triggers[i].addEventListener("mouseenter", () => {
-      const marginAdjust = 100;
-      const parentElement = triggers[i].parentNode;
-      const navWidth = parentElement.offsetWidth;
-      const position = getElementsPosition(triggers[i]);
-      const triggerChildren = triggers[i].getElementsByTagName("ul");
-      const triggerChildStyle = window.getComputedStyle(triggerChildren[0]);
-      originalMargins = triggerChildStyle.getPropertyValue("margin");
-      const thisWidth = triggerChildren[0].offsetWidth;
+  const dropdownTriggers = document.getElementsByClassName(dropdownTrigger);
+  let originalMargins = null;
+  let dropdownTriggerAndContainer = null;
+  let dropdownHiddenContentContainer = null;
+  let ulNavContainer = null;
+  let dropdownHiddenContentContainerWidth = null;
+  let dropdownHiddenContentContainerPositionLeftDiscardingAnimation = null;
 
-      const thisRight = position.left + thisWidth - marginAdjust;
+  for (let i = 0; i < dropdownTriggers.length; i++) {
+    dropdownTriggers[i].addEventListener("mouseenter", (e) => {
+      dropdownTriggerAndContainer = e.target;
 
-      if (thisRight > navWidth) {
-        triggerChildren[0].style.marginLeft = navWidth - thisRight + "px";
-      }
-
-      /// left
-      const distanceFromScreenEdge = triggerChildren[0].getBoundingClientRect();
-
-      if (distanceFromScreenEdge.left <= 0) {
-        triggerChildren[0].style.marginLeft = Math.abs(distanceFromScreenEdge.left) + 10 + "px";
+      if (!dropdownTriggerAndContainer.parentElement.classList.contains("js--dma-hover-off")) {
+        adjustPositionOfDropdownIfItIsOffScreen(dropdownTriggerAndContainer);
       }
     });
 
-    triggers[i].addEventListener("mouseleave", () => {
-      const triggerChildren = triggers[i].getElementsByTagName("ul");
-      triggerChildren[0].style.margin = originalMargins;
+    dropdownTriggers[i].addEventListener("mouseleave", (e) => {
+      if (!dropdownTriggerAndContainer.parentElement.classList.contains("js--dma-hover-off")) {
+        dropdownHiddenContentContainer.style.margin = originalMargins;
+      }
+    });
+
+    dropdownTriggers[i].addEventListener("click", function (e) {
+      dropdownTriggerAndContainer = e.target.parentElement;
+      if (!this.classList.contains("dma-trigger-clicked")) {
+        adjustPositionOfDropdownIfItIsOffScreen(dropdownTriggerAndContainer);
+        setTimeout(() => {
+          this.classList.add("dma-trigger-clicked");
+        }, 10);
+      }
+
+      if (this.classList.contains("dma-trigger-clicked") && dropdownHiddenContentContainer !== null) {
+        dropdownHiddenContentContainer.style.margin = originalMargins;
+        this.classList.remove("dma-trigger-clicked");
+      }
+    });
+
+    dropdownTriggers[i].addEventListener("keyup", function (e) {
+      const enterKeyCode = 13;
+      const spaceKeyCode = 32;
+
+      if (e.keyCode == enterKeyCode || e.keyCode == spaceKeyCode) {
+        dropdownTriggerAndContainer = e.target.parentElement;
+        if (!this.classList.contains("dma-trigger-clicked")) {
+          adjustPositionOfDropdownIfItIsOffScreen(dropdownTriggerAndContainer);
+          setTimeout(() => {
+            this.classList.add("dma-trigger-clicked");
+          }, 10);
+        }
+
+        if (this.classList.contains("dma-trigger-clicked") && dropdownHiddenContentContainer !== null) {
+          dropdownHiddenContentContainer.style.margin = originalMargins;
+          this.classList.remove("dma-trigger-clicked");
+        }
+      }
     });
   }
+
+  const adjustPositionOfDropdownIfItIsOffScreen = (dropdownTriggerAndContainer) => {
+    dropdownHiddenContentContainer = dropdownTriggerAndContainer.getElementsByTagName("ul").item(0);
+    const hiddenContentPosition = dropdownHiddenContentContainer.getBoundingClientRect();
+    const hiddenContentComputedStyles = window.getComputedStyle(dropdownHiddenContentContainer);
+    originalMargins = hiddenContentComputedStyles.getPropertyValue("margin");
+    ulNavContainer = dropdownTriggerAndContainer.parentElement;
+    dropdownHiddenContentContainerWidth = hiddenContentComputedStyles.getPropertyValue("width");
+
+    dropdownHiddenContentContainerPositionLeftDiscardingAnimation = getElementPositionLeftAfterAnimationFinished(
+      dropdownHiddenContentContainer,
+      hiddenContentPosition,
+      dropdownHiddenContentContainerWidth
+    );
+
+    if (ulNavContainer.classList.contains("dma--centered-dropdown")) {
+      if (hiddenContentPosition.left <= 0) {
+        dropdownHiddenContentContainer.style.marginLeft = Math.abs(hiddenContentPosition.left) + 10 + "px";
+      }
+
+      if (hiddenContentPosition.right > window.innerWidth) {
+        dropdownHiddenContentContainer.style.marginLeft =
+          -Math.abs(hiddenContentPosition.right - window.innerWidth + 28) + "px";
+      }
+    } else if (
+      dropdownHiddenContentContainerPositionLeftDiscardingAnimation + parseFloat(dropdownHiddenContentContainerWidth) >
+      window.innerWidth
+    ) {
+      dropdownHiddenContentContainer.style.marginLeft =
+        -Math.abs(
+          dropdownHiddenContentContainerPositionLeftDiscardingAnimation +
+            parseFloat(dropdownHiddenContentContainerWidth) -
+            window.innerWidth +
+            28
+        ) + "px";
+    } else if (
+      dropdownHiddenContentContainer.classList.contains("js--dma-animate-each-item") &&
+      hiddenContentPosition.right > window.innerWidth
+    ) {
+      dropdownHiddenContentContainer.style.marginLeft =
+        -Math.abs(hiddenContentPosition.right - window.innerWidth + 28) + "px";
+    }
+  };
 };
 
-
-const getElementsPosition = (targetEl) => {
-  const cs = window.getComputedStyle(targetEl);
-  const marginTop = cs.getPropertyValue("margin-top");
-  const marginLeft = cs.getPropertyValue("margin-left");
-
-  return {
-    top: targetEl.offsetTop - parseFloat(marginTop),
-    left: targetEl.offsetLeft - parseFloat(marginLeft),
-  };
+const getElementPositionLeftAfterAnimationFinished = (
+  dropdownHiddenContentContainer,
+  hiddenContentPosition,
+  dropdownHiddenContentContainerWidth
+) => {
+  if (dropdownHiddenContentContainer.classList.contains("dma-animation__rotate-y")) {
+    return hiddenContentPosition.left - parseFloat(dropdownHiddenContentContainerWidth) / 2;
+  } else if (dropdownHiddenContentContainer.classList.contains("dma-animation__scale-up")) {
+    return hiddenContentPosition.left - parseFloat(dropdownHiddenContentContainerWidth) / 2;
+  } else if (dropdownHiddenContentContainer.classList.contains("dma-animation__translate-z")) {
+    return hiddenContentPosition.left;
+  } else if (dropdownHiddenContentContainer.classList.contains("dma-animation__rotate-x")) {
+    return hiddenContentPosition.left;
+  } else if (dropdownHiddenContentContainer.classList.contains("dma-animation__scale-down")) {
+    return hiddenContentPosition.left;
+  }
 };

@@ -122,8 +122,10 @@
     &:after {
       transition: all 0.3s;
       position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
+      left: var(--js-dma-shaped-dropdown-position-left, 50%);
+      right: var(--js-dma-shaped-dropdown-position-right, auto);
+      transform: var(--js-dma-shaped-dropdown-position-translate-x, translateX(-50%));
+      margin: var(--js-dma-shaped-dropdown-after-margin, 0);
       top: 0;
       width: 0;
       height: 0;
@@ -143,6 +145,7 @@
 }
 
 .dma--centered-dropdown {
+  // .dma--centered-dropdown is also used in js file prevent-nav-sub-menu-from-getting-off-screen-left-and-right.js
   & .dma__list-item:hover .dma__hiddent-content {
     left: 50%;
     transform: translateX(-50%);
