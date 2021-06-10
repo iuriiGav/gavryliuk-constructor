@@ -23,19 +23,35 @@ export const preventNavSubMenuFromGettingOffScreenLeftAndRight = function (dropd
     });
 
     dropdownTriggers[i].addEventListener("click", function (e) {
-      dropdownTriggerAndContainer = e.target.parentElement;
-      if (!this.classList.contains("dma-trigger-clicked")) {
-        adjustPositionOfDropdownIfItIsOffScreen(dropdownTriggerAndContainer);
-        setTimeout(() => {
-          this.classList.add("dma-trigger-clicked");
-        }, 10);
-      }
+      if (dropdownTriggerAndContainer !== this) {
+        return;
+      } else {
+        dropdownTriggerAndContainer = e.target.parentElement;
+        if (!this.classList.contains("dma-trigger-clicked")) {
+          adjustPositionOfDropdownIfItIsOffScreen(dropdownTriggerAndContainer);
+          setTimeout(() => {
+            this.classList.add("dma-trigger-clicked");
+            window.addEventListener("click", removeTrggerClickedOnClickOutside);
+          }, 10);
+        }
 
-      if (this.classList.contains("dma-trigger-clicked") && dropdownHiddenContentContainer !== null) {
-        dropdownHiddenContentContainer.style.margin = originalMargins;
-        this.classList.remove("dma-trigger-clicked");
+        if (this.classList.contains("dma-trigger-clicked") && dropdownHiddenContentContainer !== null) {
+          dropdownHiddenContentContainer.style.margin = originalMargins;
+          this.classList.remove("dma-trigger-clicked");
+        }
       }
     });
+
+    const removeTrggerClickedOnClickOutside = (e) => {
+      console.log(e.target.parentElement);
+      if (!e.target.parentElement.classList.contains("dma-trigger-clicked")) {
+        const clickedTrigger = document.getElementsByClassName("dma-trigger-clicked");
+        for (let i = 0; i < clickedTrigger.length; i++) {
+          clickedTrigger[i].classList.remove("dma-trigger-clicked");
+        }
+        window.removeEventListener("click", removeTrggerClickedOnClickOutside);
+      }
+    };
 
     dropdownTriggers[i].addEventListener("keyup", function (e) {
       const enterKeyCode = 13;
@@ -47,6 +63,7 @@ export const preventNavSubMenuFromGettingOffScreenLeftAndRight = function (dropd
           adjustPositionOfDropdownIfItIsOffScreen(dropdownTriggerAndContainer);
           setTimeout(() => {
             this.classList.add("dma-trigger-clicked");
+            window.addEventListener("click", removeTrggerClickedOnClickOutside);
           }, 10);
         }
 
@@ -73,13 +90,38 @@ export const preventNavSubMenuFromGettingOffScreenLeftAndRight = function (dropd
     );
 
     if (ulNavContainer.classList.contains("dma--centered-dropdown")) {
+      // console.log(hiddenContentPosition.right + parseFloat(dropdownHiddenContentContainerWidth) / 2);
+      // console.log(window.innerWidth)
       if (hiddenContentPosition.left <= 0) {
+        console.log("hiddenContentPosition.left <= 0");
         dropdownHiddenContentContainer.style.marginLeft = Math.abs(hiddenContentPosition.left) + 10 + "px";
       }
 
-      if (hiddenContentPosition.right > window.innerWidth) {
+      if (
+        dropdownHiddenContentContainer.classList.contains("js--dma-animate-each-item") &&
+        hiddenContentPosition.right > window.innerWidth
+      ) {
+        console.log(
+          'dropdownHiddenContentContainer.classList.contains("js--dma-animate-each-item") && hiddenContentPosition.right > window.innerWidth'
+        );
+
         dropdownHiddenContentContainer.style.marginLeft =
           -Math.abs(hiddenContentPosition.right - window.innerWidth + 28) + "px";
+        console.log(dropdownHiddenContentContainer);
+        dropdownHiddenContentContainer.style.setProperty(
+          "--js-dma-shaped-dropdown-after-margin",
+          `0 0 0 ${hiddenContentPosition.right - window.innerWidth + 28}px`
+        );
+      } else if (
+        !dropdownHiddenContentContainer.classList.contains("js--dma-animate-each-item") &&
+        hiddenContentPosition.right + parseFloat(dropdownHiddenContentContainerWidth) / 2 > window.innerWidth
+      ) {
+        console.log("!dropdownHiddenContentContainer.classList.contains(.....");
+
+        dropdownHiddenContentContainer.style.marginLeft =
+          -Math.abs(
+            hiddenContentPosition.right + parseFloat(dropdownHiddenContentContainerWidth) / 2 - window.innerWidth + 28
+          ) + "px";
       }
     } else if (
       dropdownHiddenContentContainerPositionLeftDiscardingAnimation + parseFloat(dropdownHiddenContentContainerWidth) >
