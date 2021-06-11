@@ -58,7 +58,7 @@ export const preventNavSubMenuFromGettingOffScreenLeftAndRight = function (dropd
       }
     };
 
-    dropdownTriggers[i].addEventListener("keyup", function (e) {
+    dropdownTriggers[i].addEventListener("keyup", function (e) { 
       const enterKeyCode = 13;
       const spaceKeyCode = 32;
 
