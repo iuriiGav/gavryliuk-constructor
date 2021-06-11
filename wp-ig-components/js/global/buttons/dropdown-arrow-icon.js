@@ -48,7 +48,6 @@ export const animateArrowInDropdoenItem = (navName, breakpoint) => {
 const BTN_DROPDOWN_INDICATOR = document.querySelectorAll(`[data-js-trigger="btn-dropdown-indicator"]`).item(0);
 
 const onMouseEnterHandler = () => {
-  console.log(BTN_DROPDOWN_INDICATOR)
   BTN_DROPDOWN_INDICATOR.classList.add("btn-dropdown__triangle-outline__open");
 };
 const onMouseLeaveHandler = () => {

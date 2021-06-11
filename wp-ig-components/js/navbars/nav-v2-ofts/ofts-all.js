@@ -39,7 +39,6 @@ const preventDefaultOnDropdown = (navName) => {
 
 export const animateHamburgerBtnAndOverlay = (navName, overlayName) => {
   const btnHamburgerGeneral = document.querySelectorAll(`[data-js-trigger="btn-hamburger-general"]`).item(0);
-  console.log(btnHamburgerGeneral)
   const overlay = document.querySelectorAll(`[data-js-trigger="overlay"]`).item(0);
   if (btnHamburgerGeneral !== undefined && btnHamburgerGeneral !== null) {
     btnHamburgerGeneral.addEventListener("click", () => {

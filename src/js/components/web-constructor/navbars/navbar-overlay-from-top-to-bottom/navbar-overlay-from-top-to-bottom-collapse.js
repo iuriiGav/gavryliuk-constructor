@@ -105,7 +105,7 @@ const setWidthOfDropdownUL = () => {
 
 const changeDropdownClassesOnWindowResize = () => {
 $(window).on("resize", () => {
-    console.log("resizing")
+    ("resizing")
     $(".ig-ttbc-dropdown").off("mouseenter", actionOnMouseIn)
     $(".ig-ttbc-dropdown").off("mouseleave", actionOnMouseLeave);
   

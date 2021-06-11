@@ -7,7 +7,6 @@ export const navbarTopToBottom = () => {
   ) {
     $(".ttb-menu-item-has-children").attr("aria-haspopup", "true");
     $(".ig-ttb-dropdown-toggle").on("click", (e) => {
-      console.log("toggled");
       e.preventDefault();
     });
   }

@@ -105,7 +105,6 @@ const setWidthOfDropdownUL = () => {
 
 const changeDropdownClassesOnWindowResize = () => {
 $(window).on("resize", () => {
-    console.log("resizing")
     $(".ig-ftsc-dropdown").off("mouseenter", actionOnMouseIn)
     $(".ig-ftsc-dropdown").off("mouseleave", actionOnMouseLeave);
   

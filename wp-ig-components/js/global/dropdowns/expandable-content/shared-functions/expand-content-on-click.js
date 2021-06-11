@@ -2,7 +2,6 @@ export const expandContentOnClick = function (expandContentTrigger, closeExpande
   const expandTrigger = document.getElementsByClassName(expandContentTrigger);
   const numOfExpandElements = expandTrigger.length;
   const collapseNeighbours = document.getElementsByClassName(closeExpandedOnFocusOut).length > 0;
-  console.log(collapseNeighbours);
 
   for (let i = 0; i < numOfExpandElements; i++) {
     expandTrigger[i].onclick = function (e) {

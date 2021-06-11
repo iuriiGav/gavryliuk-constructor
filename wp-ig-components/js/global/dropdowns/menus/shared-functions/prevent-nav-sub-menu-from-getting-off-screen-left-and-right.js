@@ -43,11 +43,16 @@ export const preventNavSubMenuFromGettingOffScreenLeftAndRight = function (dropd
     });
 
     const removeTrggerClickedOnClickOutside = (e) => {
-      console.log(e.target.parentElement);
       if (!e.target.parentElement.classList.contains("dma-trigger-clicked")) {
         const clickedTrigger = document.getElementsByClassName("dma-trigger-clicked");
         for (let i = 0; i < clickedTrigger.length; i++) {
-          clickedTrigger[i].classList.remove("dma-trigger-clicked");
+          if (clickedTrigger[i].classList.contains("dma-trigger-clicked")) {
+            clickedTrigger[i].getElementsByClassName("dma__hiddent-content")[0].style.margin = originalMargins;
+            clickedTrigger[i]
+              .getElementsByClassName("dma__hiddent-content")[0]
+              .style.setProperty("--js-dma-shaped-dropdown-after-margin", `0`);
+            clickedTrigger[i].classList.remove("dma-trigger-clicked");
+          }
         }
         window.removeEventListener("click", removeTrggerClickedOnClickOutside);
       }
@@ -90,24 +95,26 @@ export const preventNavSubMenuFromGettingOffScreenLeftAndRight = function (dropd
     );
 
     if (ulNavContainer.classList.contains("dma--centered-dropdown")) {
-      // console.log(hiddenContentPosition.right + parseFloat(dropdownHiddenContentContainerWidth) / 2);
-      // console.log(window.innerWidth)
       if (hiddenContentPosition.left <= 0) {
-        console.log("hiddenContentPosition.left <= 0");
+        // console.log("hiddenContentPosition.left <= 0");
         dropdownHiddenContentContainer.style.marginLeft = Math.abs(hiddenContentPosition.left) + 10 + "px";
+
+        dropdownHiddenContentContainer.style.setProperty(
+          "--js-dma-shaped-dropdown-after-margin",
+          `0 0 0 ${-Math.abs(hiddenContentPosition.left) + 10}px`
+        );
       }
 
       if (
         dropdownHiddenContentContainer.classList.contains("js--dma-animate-each-item") &&
         hiddenContentPosition.right > window.innerWidth
       ) {
-        console.log(
-          'dropdownHiddenContentContainer.classList.contains("js--dma-animate-each-item") && hiddenContentPosition.right > window.innerWidth'
-        );
+        // console.log(
+        //   'dropdownHiddenContentContainer.classList.contains("js--dma-animate-each-item") && hiddenContentPosition.right > window.innerWidth'
+        // );
 
         dropdownHiddenContentContainer.style.marginLeft =
           -Math.abs(hiddenContentPosition.right - window.innerWidth + 28) + "px";
-        console.log(dropdownHiddenContentContainer);
         dropdownHiddenContentContainer.style.setProperty(
           "--js-dma-shaped-dropdown-after-margin",
           `0 0 0 ${hiddenContentPosition.right - window.innerWidth + 28}px`
@@ -116,7 +123,7 @@ export const preventNavSubMenuFromGettingOffScreenLeftAndRight = function (dropd
         !dropdownHiddenContentContainer.classList.contains("js--dma-animate-each-item") &&
         hiddenContentPosition.right + parseFloat(dropdownHiddenContentContainerWidth) / 2 > window.innerWidth
       ) {
-        console.log("!dropdownHiddenContentContainer.classList.contains(.....");
+        // console.log("!dropdownHiddenContentContainer.classList.contains(.....");
 
         dropdownHiddenContentContainer.style.marginLeft =
           -Math.abs(

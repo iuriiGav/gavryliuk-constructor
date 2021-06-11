@@ -121,7 +121,7 @@
   & .dma__hiddent-content {
     padding-top: 10px;
     &:after {
-      transition: all 0.3s;
+      transition: none;
       position: absolute;
       left: var(--js-dma-shaped-dropdown-position-left, 50%);
       right: var(--js-dma-shaped-dropdown-position-right, auto);
