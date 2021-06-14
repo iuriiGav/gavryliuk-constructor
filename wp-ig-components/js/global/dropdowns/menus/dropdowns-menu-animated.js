@@ -1,5 +1,11 @@
 import { hideDropdownContentOnClickOutside } from "../../global-funtions/hide-dropdown-content-on-click-outside";
 
+export const registerDmaFunctions = (trigger) => {
+  dmaJsHoverOffOpenDropdown();
+  dmaCloseOtherMenusOnKeyupOutside(trigger);
+  openDropdownOnClickWhileHoverIsActive();
+};
+
 export const dmaJsHoverOffOpenDropdown = function () {
   const dropdownMenuItemWithHoverOff = document.getElementsByClassName("js--dma-hover-off");
   const numOfDropdowns = dropdownMenuItemWithHoverOff.length;
@@ -8,20 +14,10 @@ export const dmaJsHoverOffOpenDropdown = function () {
     const dropdownLabels = dropdownMenuItemWithHoverOff[i].getElementsByClassName("js--dma-dropdown-trigger");
     const dropdownLabelsArr = Array.from(dropdownLabels);
 
-    const hoverOffMenuListItems = dropdownMenuItemWithHoverOff[i].children;
-    const hoverOffMenuListItemsArr = Array.from(hoverOffMenuListItems);
-
-    hoverOffMenuListItemsArr.map((listItem) => {
-      // for(let i = 0; i<listItem.children.length; i++) {
-      //   if(listItem.children[i].classList.contains('dma__hiddent-content--animated')) {
-      //     listItem.children[i].classList.remove('dma__hiddent-content--animated')
-      //     listItem.children[i].classList.add('dma__hidden-content-on-click')
-      //   }
-      // }
-    });
-
     for (let i = 0; i < dropdownLabelsArr.length; i++) {
       dropdownLabelsArr[i].addEventListener("click", function (e) {
+        e.preventDefault();
+        console.log("clicked");
         if (e.target !== this) {
           return;
         } else {
@@ -57,5 +53,17 @@ export const dmaCloseOtherMenusOnKeyupOutside = function (trigger) {
         hideDropdownContentOnClickOutside(this, "dma-item-active", "parent");
       }
     });
+  }
+};
+
+const openDropdownOnClickWhileHoverIsActive = () => {
+  const dropdownTriggerContainer = document.getElementsByClassName("js--dma-list-item");
+  for (let i = 0; i < dropdownTriggerContainer.length; i++) {
+    if (dropdownTriggerContainer[i].classList.contains("js--dma-has-dropdown")) {
+      dropdownTriggerContainer[i].addEventListener("click", (e) => {
+        e.preventDefault();
+        dropdownTriggerContainer[i].classList.add("dma-item-active");
+      });
+    }
   }
 };

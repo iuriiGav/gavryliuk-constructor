@@ -18,7 +18,9 @@ export const preventNavSubMenuFromGettingOffScreenLeftAndRight = function (dropd
 
     dropdownTriggers[i].addEventListener("mouseleave", (e) => {
       if (!dropdownTriggerAndContainer.parentElement.classList.contains("js--dma-hover-off")) {
-        dropdownHiddenContentContainer.style.margin = originalMargins;
+        if (dropdownHiddenContentContainer !== null && dropdownHiddenContentContainer !== undefined) {
+          dropdownHiddenContentContainer.style.margin = originalMargins;
+        }
       }
     });
 
@@ -58,7 +60,7 @@ export const preventNavSubMenuFromGettingOffScreenLeftAndRight = function (dropd
       }
     };
 
-    dropdownTriggers[i].addEventListener("keyup", function (e) { 
+    dropdownTriggers[i].addEventListener("keyup", function (e) {
       const enterKeyCode = 13;
       const spaceKeyCode = 32;
 
@@ -82,71 +84,75 @@ export const preventNavSubMenuFromGettingOffScreenLeftAndRight = function (dropd
 
   const adjustPositionOfDropdownIfItIsOffScreen = (dropdownTriggerAndContainer) => {
     dropdownHiddenContentContainer = dropdownTriggerAndContainer.getElementsByTagName("ul").item(0);
-    const hiddenContentPosition = dropdownHiddenContentContainer.getBoundingClientRect();
-    const hiddenContentComputedStyles = window.getComputedStyle(dropdownHiddenContentContainer);
-    originalMargins = hiddenContentComputedStyles.getPropertyValue("margin");
-    ulNavContainer = dropdownTriggerAndContainer.parentElement;
-    dropdownHiddenContentContainerWidth = hiddenContentComputedStyles.getPropertyValue("width");
 
-    dropdownHiddenContentContainerPositionLeftDiscardingAnimation = getElementPositionLeftAfterAnimationFinished(
-      dropdownHiddenContentContainer,
-      hiddenContentPosition,
-      dropdownHiddenContentContainerWidth
-    );
+    if (dropdownHiddenContentContainer !== null && dropdownHiddenContentContainer !== undefined) {
+      const hiddenContentPosition = dropdownHiddenContentContainer.getBoundingClientRect();
+      const hiddenContentComputedStyles = window.getComputedStyle(dropdownHiddenContentContainer);
+      originalMargins = hiddenContentComputedStyles.getPropertyValue("margin");
+      ulNavContainer = dropdownTriggerAndContainer.parentElement;
+      dropdownHiddenContentContainerWidth = hiddenContentComputedStyles.getPropertyValue("width");
 
-    if (ulNavContainer.classList.contains("dma--centered-dropdown")) {
-      if (hiddenContentPosition.left <= 0) {
-        // console.log("hiddenContentPosition.left <= 0");
-        dropdownHiddenContentContainer.style.marginLeft = Math.abs(hiddenContentPosition.left) + 10 + "px";
+      dropdownHiddenContentContainerPositionLeftDiscardingAnimation = getElementPositionLeftAfterAnimationFinished(
+        dropdownHiddenContentContainer,
+        hiddenContentPosition,
+        dropdownHiddenContentContainerWidth
+      );
 
-        dropdownHiddenContentContainer.style.setProperty(
-          "--js-dma-shaped-dropdown-after-margin",
-          `0 0 0 ${-Math.abs(hiddenContentPosition.left) + 10}px`
-        );
-      }
+      if (ulNavContainer.classList.contains("dma--centered-dropdown")) {
+        if (hiddenContentPosition.left <= 0) {
+          // console.log("hiddenContentPosition.left <= 0");
+          dropdownHiddenContentContainer.style.marginLeft = Math.abs(hiddenContentPosition.left) + 10 + "px";
 
-      if (
+          dropdownHiddenContentContainer.style.setProperty(
+            "--js-dma-shaped-dropdown-after-margin",
+            `0 0 0 ${-Math.abs(hiddenContentPosition.left) + 10}px`
+          );
+        }
+
+        if (
+          dropdownHiddenContentContainer.classList.contains("js--dma-animate-each-item") &&
+          hiddenContentPosition.right > window.innerWidth
+        ) {
+          // console.log(
+          //   'dropdownHiddenContentContainer.classList.contains("js--dma-animate-each-item") && hiddenContentPosition.right > window.innerWidth'
+          // );
+
+          dropdownHiddenContentContainer.style.marginLeft =
+            -Math.abs(hiddenContentPosition.right - window.innerWidth + 28) + "px";
+          dropdownHiddenContentContainer.style.setProperty(
+            "--js-dma-shaped-dropdown-after-margin",
+            `0 0 0 ${hiddenContentPosition.right - window.innerWidth + 28}px`
+          );
+        } else if (
+          !dropdownHiddenContentContainer.classList.contains("js--dma-animate-each-item") &&
+          hiddenContentPosition.right + parseFloat(dropdownHiddenContentContainerWidth) / 2 > window.innerWidth
+        ) {
+          // console.log("!dropdownHiddenContentContainer.classList.contains(.....");
+
+          dropdownHiddenContentContainer.style.marginLeft =
+            -Math.abs(
+              hiddenContentPosition.right + parseFloat(dropdownHiddenContentContainerWidth) / 2 - window.innerWidth + 28
+            ) + "px";
+        }
+      } else if (
+        dropdownHiddenContentContainerPositionLeftDiscardingAnimation +
+          parseFloat(dropdownHiddenContentContainerWidth) >
+        window.innerWidth
+      ) {
+        dropdownHiddenContentContainer.style.marginLeft =
+          -Math.abs(
+            dropdownHiddenContentContainerPositionLeftDiscardingAnimation +
+              parseFloat(dropdownHiddenContentContainerWidth) -
+              window.innerWidth +
+              28
+          ) + "px";
+      } else if (
         dropdownHiddenContentContainer.classList.contains("js--dma-animate-each-item") &&
         hiddenContentPosition.right > window.innerWidth
       ) {
-        // console.log(
-        //   'dropdownHiddenContentContainer.classList.contains("js--dma-animate-each-item") && hiddenContentPosition.right > window.innerWidth'
-        // );
-
         dropdownHiddenContentContainer.style.marginLeft =
           -Math.abs(hiddenContentPosition.right - window.innerWidth + 28) + "px";
-        dropdownHiddenContentContainer.style.setProperty(
-          "--js-dma-shaped-dropdown-after-margin",
-          `0 0 0 ${hiddenContentPosition.right - window.innerWidth + 28}px`
-        );
-      } else if (
-        !dropdownHiddenContentContainer.classList.contains("js--dma-animate-each-item") &&
-        hiddenContentPosition.right + parseFloat(dropdownHiddenContentContainerWidth) / 2 > window.innerWidth
-      ) {
-        // console.log("!dropdownHiddenContentContainer.classList.contains(.....");
-
-        dropdownHiddenContentContainer.style.marginLeft =
-          -Math.abs(
-            hiddenContentPosition.right + parseFloat(dropdownHiddenContentContainerWidth) / 2 - window.innerWidth + 28
-          ) + "px";
       }
-    } else if (
-      dropdownHiddenContentContainerPositionLeftDiscardingAnimation + parseFloat(dropdownHiddenContentContainerWidth) >
-      window.innerWidth
-    ) {
-      dropdownHiddenContentContainer.style.marginLeft =
-        -Math.abs(
-          dropdownHiddenContentContainerPositionLeftDiscardingAnimation +
-            parseFloat(dropdownHiddenContentContainerWidth) -
-            window.innerWidth +
-            28
-        ) + "px";
-    } else if (
-      dropdownHiddenContentContainer.classList.contains("js--dma-animate-each-item") &&
-      hiddenContentPosition.right > window.innerWidth
-    ) {
-      dropdownHiddenContentContainer.style.marginLeft =
-        -Math.abs(hiddenContentPosition.right - window.innerWidth + 28) + "px";
     }
   };
 };
