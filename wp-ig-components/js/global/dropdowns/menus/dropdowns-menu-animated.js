@@ -4,6 +4,7 @@ export const registerDmaFunctions = (trigger) => {
   dmaJsHoverOffOpenDropdown();
   dmaCloseOtherMenusOnKeyupOutside(trigger);
   openDropdownOnClickWhileHoverIsActive();
+  countFixedNavbarHeight();
 };
 
 export const dmaJsHoverOffOpenDropdown = function () {
@@ -67,3 +68,16 @@ const openDropdownOnClickWhileHoverIsActive = () => {
     }
   }
 };
+
+const countFixedNavbarHeight = () => {
+  const mainNavbar = document.getElementsByClassName('js--main-nav');
+  for (let i = 0; i < mainNavbar.length; i++) {
+      if(window.getComputedStyle(mainNavbar[i]).getPropertyValue('position').toLowerCase() === 'fixed') {
+          const navHeight = mainNavbar[i].offsetHeight;
+          const mainContentContainer = document.getElementsByClassName('js--main-content-container');
+          if(mainContentContainer !== undefined && mainContentContainer !== null) {
+              mainContentContainer[0].style.paddingTop = navHeight + 'px';
+          }
+      }
+  }
+}
