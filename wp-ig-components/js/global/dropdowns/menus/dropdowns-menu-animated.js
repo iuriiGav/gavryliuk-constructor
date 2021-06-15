@@ -3,8 +3,8 @@ import { hideDropdownContentOnClickOutside } from "../../global-funtions/hide-dr
 export const registerDmaFunctions = (trigger) => {
   dmaJsHoverOffOpenDropdown();
   dmaCloseOtherMenusOnKeyupOutside(trigger);
-  openDropdownOnClickWhileHoverIsActive();
-  countFixedNavbarHeight();
+  openDropdownOnClickWhileHover();
+  incrementZIndexOfDropdownListItems();
 };
 
 export const dmaJsHoverOffOpenDropdown = function () {
@@ -18,7 +18,6 @@ export const dmaJsHoverOffOpenDropdown = function () {
     for (let i = 0; i < dropdownLabelsArr.length; i++) {
       dropdownLabelsArr[i].addEventListener("click", function (e) {
         e.preventDefault();
-        console.log("clicked");
         if (e.target !== this) {
           return;
         } else {
@@ -57,27 +56,38 @@ export const dmaCloseOtherMenusOnKeyupOutside = function (trigger) {
   }
 };
 
-const openDropdownOnClickWhileHoverIsActive = () => {
+const openDropdownOnClickWhileHover = () => {
   const dropdownTriggerContainer = document.getElementsByClassName("js--dma-list-item");
   for (let i = 0; i < dropdownTriggerContainer.length; i++) {
     if (dropdownTriggerContainer[i].classList.contains("js--dma-has-dropdown")) {
-      dropdownTriggerContainer[i].addEventListener("click", (e) => {
+      const triggerLink = dropdownTriggerContainer[i].getElementsByClassName("js--dma-link")[0];
+
+      triggerLink.addEventListener("click", (e) => {
         e.preventDefault();
-        dropdownTriggerContainer[i].classList.add("dma-item-active");
+        hideDropdownContentOnClickOutside(triggerLink, "dma-item-active", "parent");
+
+        if (!dropdownTriggerContainer[i].classList.contains("dma-item-active")) {
+          dropdownTriggerContainer[i].classList.add("dma-item-active");
+          triggerLink.setAttribute("aria-expanded", "true");
+        } else {
+          dropdownTriggerContainer[i].classList.remove("dma-item-active");
+          triggerLink.setAttribute("aria-expanded", "false");
+        }
       });
     }
   }
 };
 
-const countFixedNavbarHeight = () => {
-  const mainNavbar = document.getElementsByClassName('js--main-nav');
-  for (let i = 0; i < mainNavbar.length; i++) {
-      if(window.getComputedStyle(mainNavbar[i]).getPropertyValue('position').toLowerCase() === 'fixed') {
-          const navHeight = mainNavbar[i].offsetHeight;
-          const mainContentContainer = document.getElementsByClassName('js--main-content-container');
-          if(mainContentContainer !== undefined && mainContentContainer !== null) {
-              mainContentContainer[0].style.paddingTop = navHeight + 'px';
-          }
-      }
-  }
-}
+const incrementZIndexOfDropdownListItems = () => {
+  // this function is needed to make border hover effects, styled with :after
+  // come through
+  const dropdownContent = Array.from(document.getElementsByClassName("js--dma-hidden-content"));
+  dropdownContent.map((dropdown) => {
+    const listItems = dropdown.getElementsByTagName("li");
+    let startingZIndex = 1;
+    for (let i = listItems.length - 1; i >= 0; i--) {
+      listItems[i].style.zIndex = startingZIndex;
+      startingZIndex++;
+    }
+  });
+};
