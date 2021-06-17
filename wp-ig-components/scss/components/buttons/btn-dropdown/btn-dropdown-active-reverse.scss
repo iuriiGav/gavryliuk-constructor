@@ -1,8 +1,8 @@
 .btn-dropdown-active-reverse {
   &__container {
-    position: relative;
-    height: 15px;
-    width: 25px;
+     position: relative;
+    height: var(--btn-dropdown-active-reverse-height, 15px);
+    width: var(--btn-dropdown-active-reverse-width, 25px);
     display: inline-block;
     cursor: pointer;
     border-radius: 4px;
@@ -17,7 +17,8 @@
       position: absolute;
       width: var(--btn-dropdown-active-reverse-arrow-width, 3px);
       height: 10px;
-      border-bottom: 12px solid var(--btn-dropdown-active-reverse-arrow-color, #fff);
+      border-bottom: var(--btn-dropdown-active-reverse-border-bottom-size, 12px) solid
+        var(--btn-dropdown-active-reverse-arrow-color, #fff);
       top: 0;
       left: 0;
       transition: var(--btn-dropdown-active-reverse-transition, all 0.5s cubic-bezier(0.25, 1.7, 0.35, 0.8));
@@ -25,7 +26,7 @@
 
     &:before {
       transform: rotate(-135deg);
-      left: 7px;
+      left: var(--btn-dropdown-active-reverse-right-el-left, 7px);
     }
 
     &:after {
@@ -37,12 +38,12 @@
     & .btn-dropdown-active-reverse__arrow {
       &:before {
         transform-origin: center center;
-        transform: rotate(-45deg);
+        transform: rotate(-45deg) !important;
       }
 
       &:after {
         transform-origin: center center;
-        transform: rotate(45deg);
+        transform: rotate(45deg) !important;
       }
     }
   }

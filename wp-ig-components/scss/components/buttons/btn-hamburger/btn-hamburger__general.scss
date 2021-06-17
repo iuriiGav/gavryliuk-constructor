@@ -1,81 +1,90 @@
-@import '../../../mixins/mixins';
+@import "../../../mixins/mixins";
 
 .btn-hamburger__general {
---btn-hamburger-general: white;
---btn-hamburger-general-active: lightgray;
+  --btn-hamburger-general-span-color: white;
+  --btn-hamburger-general-active: lightgray;
+  --btn-hamburger-general-padding: 0 20px;
+  --btn-hamburger-general-position-top: 5%;
+  --btn-hamburger-general-position-right: 2%;
+  --btn-hamburger-general-height: 36px;
+  --btn-hamburger-general-width: 22px;
 }
 
 .btn-hamburger__general {
   background-color: transparent;
   border: none;
 
-    position: fixed;
-    top: 5%;
-    right: 2%;
-    height: 27px;
-    width: 35px;
+  position: relative;
+  padding: var(--btn-hamburger-general-padding, 0 20px);
+
+  top: var(--btn-hamburger-general-position-top, 5%);
+  right: var(--btn-hamburger-general-position-right, 2%);
+  height: var(--btn-hamburger-general-height, 36px);
+  width: var(--btn-hamburger-general-width, 22px);
+  cursor: pointer;
+  z-index: 100;
+  transition: all 0.25s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &:focus {
+    @include outline;
+    opacity: 1;
+  }
+
+  span {
+    border: none;
+    height: 3px;
+    width: 100%;
+    position: absolute;
+    top: 10px;
+    background-color: var(--btn-hamburger-general-span-color, white);
+    width: 80%;
+    margin: 0 auto;
+    transition: all 0.35s ease;
     cursor: pointer;
-    z-index: 100;
-    transition: all 0.25s ease;
 
-  
-  
-    &:hover {
-      opacity: 0.8;
+    &:nth-of-type(2) {
+      top: 16px;
     }
 
-    &:focus {
-      @include outline;
-      opacity: 1;
-    }
-  
-    span {
-      border: none;
-      height: 3px;
-      width: 100%;
-      position: absolute;
-      top: 0px;
-      background-color: var(--btn-hamburger-general);
-      left: 0;
-      transition: all 0.35s ease;
-      cursor: pointer;
-  
-      &:nth-of-type(2) {
-        top: 10px;
-      }
-  
-      &:nth-of-type(3) {
-        top: 20px;
-      }
-    }
-  
-    &--active {
-      span {
-        transform: translateY(10px) translateX(0) rotate(45deg);
-        background-color: var(--btn-hamburger-general-active);
-        &:nth-of-type(2) {
-          opacity: 0;
-          background-color: var(--btn-hamburger-general-active);
-        }
-  
-        &:nth-of-type(3) {
-          transform: translateY(-10px) translateX(0) rotate(-45deg);
-          background-color: var(--btn-hamburger-general-active);
-        }
-      }
+    &:nth-of-type(3) {
+      top: 22px;
     }
   }
 
-  // HTML CODE
-  //
-  //
-  // <div class="btn-hamburger__general" id="fts-navbar-toggler-js" tabindex="0">
-  // <span></span>
-  // <span></span>
-  // <span></span>
-  // </div>
-  //
-  //
-  //
-  //
-  //
+  &--active {
+    span {
+      transform: translateY(6px) translateX(0) rotate(45deg);
+      background-color: var(--btn-hamburger-general-active, lightgray);
+      &:nth-of-type(2) {
+        opacity: 0;
+        background-color: var(--btn-hamburger-general-active, lightgray);
+      }
+
+      &:nth-of-type(3) {
+        transform: translateY(-6px) translateX(0) rotate(-45deg);
+        background-color: var(--btn-hamburger-general-active, lightgray);
+      }
+    }
+  }
+}
+
+// HTML CODE
+//
+//
+// <div class="btn-hamburger__general" id="fts-navbar-toggler-js" tabindex="0">
+// <span></span>
+// <span></span>
+// <span></span>
+// </div>
+//
+//
+//
+//
+//
