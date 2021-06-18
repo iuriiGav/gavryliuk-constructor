@@ -105,3 +105,7 @@ a {
   font: inherit;
   cursor: pointer;
 }
+
+[class^="btn-dropdown"] > * {
+  pointer-events: none;
+}
