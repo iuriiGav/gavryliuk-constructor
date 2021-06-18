@@ -1,4 +1,5 @@
 import { hideDropdownContentOnClickOutside } from "../../global-funtions/hide-dropdown-content-on-click-outside";
+import { trapFocusInsideElement } from "../../global-funtions/trap-focus-inside-element";
 
 export const registerNavFunctions = (
   localizationWrapper,
@@ -8,6 +9,7 @@ export const registerNavFunctions = (
 ) => {
   openCloseMainNavOnClick(localizationWrapper, mainNavTriggerActiveClass);
   openDropdownOnClickWhileHover(localizationWrapper, dropdownIconActiveClass);
+  trapFocusInsideElement(localizationWrapper);
   if (incrementZIndex) {
     incrementZIndexOfDropdownListItems(localizationWrapper);
   }
