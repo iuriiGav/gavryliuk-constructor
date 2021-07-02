@@ -2,26 +2,30 @@ export const expandDropdownContentOnClick = function (
   functionLimitingContainer,
   expandContentTrigger,
   expandingClass,
+  expandOnParentElementClickTrigger = false,
   onlyOneItemExpandedAtATime = false,
   dropdownIconContainer = false,
   dropdownIconActiveClass = ""
 ) {
   // Arguments:
-  // functionLimitingContainer --> this is a class that wraps all of the elements of the section and making the scope
-  //                               of this function local to that wrapper class
+  // functionLimitingContainer -------->  this is a class that wraps all of the elements of the section and making the scope
+  //                                      of this function local to that wrapper class
   //
-  // expandContentTrigger -------> element that is responsible for openning the content (button, heading, icon etc)
+  // expandContentTrigger ------------->  element that is responsible for openning the content (button, heading, icon etc)
   //
-  // onlyOneItemExpandedAtATime -> default false. Default: when one content is already opened and you open another
-  //                               all the open dropdowns stay visible. When set to true, only one dropdown stays open
-  //                               while others are being closed.
+  // expandingClass ------------------->  class which is added to the .js--card-collapse-expand'
   //
-  // expandingClass -------------> class which is added to the .js--card-collapse-expand'
+  // expandOnParentElementClickTrigger->  if set to true, the expandContentTrigger class must be placed NOT on the dropdown button
+  //                                      but on the parent element of the button (header, card container etc)
   //
-  // dropdownIconContainer ------> class that targets dropdown icon (if it exists) and adds an active class to it on click
-  //                               to show that the dropdown is expanded
+  // onlyOneItemExpandedAtATime ------->  default false. Default: when one content is already opened and you open another
+  //                                      all the open dropdowns stay visible. When set to true, only one dropdown stays open
+  //                                      while others are being closed.
   //
-  // dropdownIconActiveClass ----> class that makes dropdown icon change on activation
+  // dropdownIconContainer ------------>  class that targets dropdown icon (if it exists) and adds an active class to it on click
+  //                                      to show that the dropdown is expanded
+  //
+  // dropdownIconActiveClass ---------->  class that makes dropdown icon change on activation
 
   const functionalityContainer = document.getElementsByClassName(functionLimitingContainer)[0];
 
@@ -37,7 +41,14 @@ export const expandDropdownContentOnClick = function (
       // closeDropdown function triggers closing of the dropdown on click outside, click on close btn, esc btn etc.
       const closeDropdown = (expandedContentTarget, expandTrigger, elementContainsDropdowIcon) => {
         expandedContentTarget.classList.remove(expandingClass);
-        expandTrigger.setAttribute("aria-expanded", "false");
+
+        if (expandOnParentElementClickTrigger) {
+          // if the trigger is not on a button itself but on the parent element
+          expandTrigger.getElementsByTagName("button")[0].setAttribute("aria-expanded", "false");
+        } else {
+          expandTrigger.setAttribute("aria-expanded", "false");
+        }
+
         if (dropdownIconContainer !== false) {
           const dropdownIcon = Array.from(elementContainsDropdowIcon.getElementsByClassName(dropdownIconContainer));
           dropdownIcon.map((icon) => {
@@ -71,10 +82,21 @@ export const expandDropdownContentOnClick = function (
       if (expandableContent[0].classList.contains(expandingClass)) {
         closeDropdown(expandableContent[0], expandTrigger[i], cardContainer);
         expandableContent[0].classList.remove(expandingClass);
-        expandTrigger[i].setAttribute("aria-expanded", "false");
+
+        if (expandOnParentElementClickTrigger) {
+          expandTrigger[i].getElementsByTagName("button")[0].setAttribute("aria-expanded", "false");
+          console.log("here");
+        } else {
+          expandTrigger[i].setAttribute("aria-expanded", "false");
+        }
       } else {
         expandableContent[0].classList.add(expandingClass);
-        expandTrigger[i].setAttribute("aria-expanded", "true");
+
+        if (expandOnParentElementClickTrigger) {
+          expandTrigger[i].getElementsByTagName("button")[0].setAttribute("aria-expanded", "true");
+        } else {
+          expandTrigger[i].setAttribute("aria-expanded", "true");
+        }
 
         // if there is a dropdown icon, toggle betweeb active and inactive classes to change dropdown icon look
         if (dropdownIconContainer !== false) {
@@ -86,13 +108,22 @@ export const expandDropdownContentOnClick = function (
 
         // close drodpowns if clicked outside
         const closeDropdownOnClickOutside = (e) => {
-          if (
-            !cardContainer.contains(e.target) &&
-            !e.target.classList.contains(expandContentTrigger) &&
-            !e.target.classList.contains("js--card-collapse-close-btn")
-          ) {
-            closeDropdown(expandableContent[0], expandTrigger[i], cardContainer);
-            window.removeEventListener("click", closeDropdownOnClickOutside);
+          const parentEl = document.getElementsByClassName(expandContentTrigger);
+
+          if (expandOnParentElementClickTrigger) {
+            if (!cardContainer.contains(e.target) && !e.target.closest(".js--card-collapse")) {
+              closeDropdown(expandableContent[0], expandTrigger[i], cardContainer);
+              window.removeEventListener("click", closeDropdownOnClickOutside);
+            }
+          } else {
+            if (
+              !cardContainer.contains(e.target) &&
+              !e.target.classList.contains(expandContentTrigger) &&
+              !e.target.classList.contains("js--card-collapse-close-btn")
+            ) {
+              closeDropdown(expandableContent[0], expandTrigger[i], cardContainer);
+              window.removeEventListener("click", closeDropdownOnClickOutside);
+            }
           }
         };
         window.addEventListener("click", closeDropdownOnClickOutside);
