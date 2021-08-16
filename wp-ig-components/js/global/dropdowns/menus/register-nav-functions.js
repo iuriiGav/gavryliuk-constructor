@@ -5,11 +5,35 @@ export const registerNavFunctions = (
   localizationWrapper,
   dropdownIconActiveClass,
   mainNavTriggerActiveClass,
+  startFocusTrappingOnBreakpoint = false,
   incrementZIndex = false
 ) => {
   openCloseMainNavOnClick(localizationWrapper, mainNavTriggerActiveClass);
-  openDropdownOnClickWhileHover(localizationWrapper, dropdownIconActiveClass);
-  trapFocusInsideElement(localizationWrapper);
+  openDropdownOnClick(localizationWrapper, dropdownIconActiveClass);
+
+  const navContainer = document.getElementsByClassName(localizationWrapper);
+
+  if (startFocusTrappingOnBreakpoint === false) {
+    console.log("startFocusTrappingOnBreakpoint === false");
+    trapFocusInsideElement(localizationWrapper);
+    navContainer[0].setAttribute("data-focus-trapped", "true");
+  } else if (startFocusTrappingOnBreakpoint !== false && window.innerWidth <= startFocusTrappingOnBreakpoint) {
+    console.log("startFocusTrappingOnBreakpoint !== false && window.innerWidth <= startFocusTrappingOnBreakpoint");
+    trapFocusInsideElement(localizationWrapper);
+    navContainer[0].setAttribute("data-focus-trapped", "true");
+  }
+  if (startFocusTrappingOnBreakpoint !== false) {
+    window.addEventListener("resize", function () {
+      if (window.innerWidth <= startFocusTrappingOnBreakpoint) {
+        navContainer[0].setAttribute("data-focus-trapped", "true");
+        trapFocusInsideElement(localizationWrapper);
+      } else {
+        navContainer[0].setAttribute("data-focus-trapped", "false");
+        trapFocusInsideElement(localizationWrapper);
+      }
+    });
+  }
+
   if (incrementZIndex) {
     incrementZIndexOfDropdownListItems(localizationWrapper);
   }
@@ -17,7 +41,7 @@ export const registerNavFunctions = (
 
 let dropdownOpen = false;
 
-const openDropdownOnClickWhileHover = (localizationWrapper, dropdownIconActiveClass) => {
+const openDropdownOnClick = (localizationWrapper, dropdownIconActiveClass) => {
   const menuContainer = document.getElementsByClassName(localizationWrapper)[0];
   const navItem = menuContainer.getElementsByClassName("js--nav-item");
 

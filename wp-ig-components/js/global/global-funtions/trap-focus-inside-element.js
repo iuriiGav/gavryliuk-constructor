@@ -6,11 +6,12 @@ export const trapFocusInsideElement = (localizationWrapper = false) => {
   const firstFocusableElement = trappedFocusContainer[0].querySelectorAll(focusableElements)[0]; // get first element to be focused inside modal
   const focusableContent = trappedFocusContainer[0].querySelectorAll(focusableElements);
   const lastFocusableElement = focusableContent[focusableContent.length - 1]; // get last element to be focused inside modal
+  const navbarContainer = elementWrapper.getElementsByClassName("js--nav");
 
-  document.addEventListener("keydown", function (e) {
+  const trapFocusInsideTheElementFn = (e) => {
     let isTabPressed = e.key === "Tab" || e.keyCode === 9;
-
-    if (!isTabPressed) {
+    const navContainer = document.getElementsByClassName(localizationWrapper);
+    if (!isTabPressed || navContainer[0].getAttribute("data-focus-trapped") === "false") {
       return;
     }
 
@@ -28,7 +29,9 @@ export const trapFocusInsideElement = (localizationWrapper = false) => {
         e.preventDefault();
       }
     }
-  });
+  };
 
-  firstFocusableElement.focus();
+  document.addEventListener("keydown", trapFocusInsideTheElementFn);
+
+  // firstFocusableElement.focus();
 };

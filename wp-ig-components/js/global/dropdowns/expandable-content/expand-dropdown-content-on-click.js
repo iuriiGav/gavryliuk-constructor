@@ -29,7 +29,9 @@ export const expandDropdownContentOnClick = function (
 
   const functionalityContainer = document.getElementsByClassName(functionLimitingContainer)[0];
 
-  const expandTrigger = functionalityContainer.getElementsByClassName(expandContentTrigger);
+  const expandTrigger = functionalityContainer
+    ? functionalityContainer.getElementsByClassName(expandContentTrigger)
+    : [];
 
   for (let i = 0; i < expandTrigger.length; i++) {
     // listen to click on dropdown trigger and define constants that are shared across the fucntion
